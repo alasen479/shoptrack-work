@@ -6,9 +6,9 @@
 <title>ShopTrack — Run Your Business From Your Phone</title>
 <meta name="description" content="ShopTrack is a complete business management platform for small businesses in Africa. Sales, inventory, rentals, WhatsApp automation, AI Studio and more. Free 30-day trial."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
-:root{--navy:#0f1f5c;--blue:#4361ee;--blue-lt:#eef1fd;--green:#10b981;--green-lt:#ecfdf5;--amber:#f59e0b;--amber-lt:#fffbeb;--red:#ef4444;--red-lt:#fee2e2;--ink:#0f172a;--body:#374151;--muted:#6b7280;--border:#e5e7eb;--surface:#f9fafb;--white:#ffffff;--display:'Syne',sans-serif;--condensed:'Barlow Condensed',sans-serif;--sans:'DM Sans',sans-serif;--radius:14px;--shadow:0 4px 24px rgba(15,31,92,.09);--shadow-lg:0 16px 60px rgba(15,31,92,.14)}
+:root{--navy:#0f1f5c;--blue:#4361ee;--blue-lt:#eef1fd;--green:#10b981;--green-lt:#ecfdf5;--amber:#f59e0b;--amber-lt:#fffbeb;--red:#ef4444;--red-lt:#fee2e2;--ink:#0f172a;--body:#374151;--muted:#6b7280;--border:#e5e7eb;--surface:#f9fafb;--white:#ffffff;--display:'DM Sans',sans-serif;--condensed:'DM Sans',sans-serif;--sans:'DM Sans',sans-serif;--radius:14px;--shadow:0 4px 24px rgba(15,31,92,.09);--shadow-lg:0 16px 60px rgba(15,31,92,.14)}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:var(--sans);color:var(--body);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -20,7 +20,7 @@ a{color:inherit;text-decoration:none}
 .tag.amber{background:var(--amber-lt);color:#92400e}
 h1,h2,h3,h4{font-family:var(--display);color:var(--ink);line-height:1.1}
 h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:800}
-.hero h1{font-family:var(--condensed);font-size:clamp(3rem,6.5vw,5.2rem);font-weight:900;letter-spacing:-.01em;line-height:1.0}
+.hero h1{font-family:var(--sans);font-size:clamp(3rem,6.5vw,5.2rem);font-weight:800;letter-spacing:-.02em;line-height:1.05}
 h2{font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:700;margin-bottom:16px}
 h3{font-size:1.25rem;font-weight:700;margin-bottom:8px}
 h4{font-size:1rem;font-weight:600}
@@ -266,7 +266,7 @@ h4{font-size:1rem;font-weight:600}
 <nav class="nav">
   <div class="nav-inner">
     <a href="#" class="nav-logo" onclick="showPage('home');return false">
-      <div class="nav-logo-dot"></div>ShopTrack
+      <img src="logo.png" alt="ShopTrack" style="height:32px;width:auto;">
     </a>
     <ul class="nav-links">
       <li><a href="#" onclick="showPage('product');return false" data-page="product">Product</a></li>
@@ -443,21 +443,21 @@ h4{font-size:1rem;font-weight:600}
       <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:20px 22px;display:flex;gap:16px;align-items:flex-start">
         <div style="font-size:1.5rem;flex-shrink:0">🔗</div>
         <div>
-          <div style="font-family:'Syne',sans-serif;font-weight:700;color:#fff;margin-bottom:4px" data-en="Get your unique referral link" data-fr="Obtenez votre lien de parrainage unique">Get your unique referral link</div>
+          <div style="font-family:'DM Sans',sans-serif;font-weight:700;color:#fff;margin-bottom:4px" data-en="Get your unique referral link" data-fr="Obtenez votre lien de parrainage unique">Get your unique referral link</div>
           <div style="font-size:.83rem;color:rgba(255,255,255,.5);line-height:1.5" data-en="Sign up free, get your personal link instantly. Share it anywhere." data-fr="Inscrivez-vous gratuitement, obtenez votre lien personnel instantanément. Partagez-le partout.">Sign up free, get your personal link instantly. Share it anywhere.</div>
         </div>
       </div>
       <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:20px 22px;display:flex;gap:16px;align-items:flex-start">
         <div style="font-size:1.5rem;flex-shrink:0">💼</div>
         <div>
-          <div style="font-family:'Syne',sans-serif;font-weight:700;color:#fff;margin-bottom:4px" data-en="Ideal for accountants &amp; coaches" data-fr="Idéal pour comptables &amp; coachs">Ideal for accountants &amp; coaches</div>
+          <div style="font-family:'DM Sans',sans-serif;font-weight:700;color:#fff;margin-bottom:4px" data-en="Ideal for accountants &amp; coaches" data-fr="Idéal pour comptables &amp; coachs">Ideal for accountants &amp; coaches</div>
           <div style="font-size:.83rem;color:rgba(255,255,255,.5);line-height:1.5" data-en="If you advise businesses, ShopTrack is a natural recommendation — and you earn every month they use it." data-fr="Si vous conseillez des entreprises, ShopTrack est une recommandation naturelle — et vous gagnez chaque mois.">If you advise businesses, ShopTrack is a natural recommendation — and you earn every month they use it.</div>
         </div>
       </div>
       <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:20px 22px;display:flex;gap:16px;align-items:flex-start">
         <div style="font-size:1.5rem;flex-shrink:0">💰</div>
         <div>
-          <div style="font-family:'Syne',sans-serif;font-weight:700;color:#6ee7b7;margin-bottom:4px" data-en="Recurring commissions — every month" data-fr="Commissions récurrentes — chaque mois">Recurring commissions — every month</div>
+          <div style="font-family:'DM Sans',sans-serif;font-weight:700;color:#6ee7b7;margin-bottom:4px" data-en="Recurring commissions — every month" data-fr="Commissions récurrentes — chaque mois">Recurring commissions — every month</div>
           <div style="font-size:.83rem;color:rgba(255,255,255,.5);line-height:1.5" data-en="You earn for the lifetime of every customer you bring. The more you refer, the more you earn." data-fr="Vous gagnez pendant toute la durée de vie de chaque client que vous amenez. Plus vous référencez, plus vous gagnez.">You earn for the lifetime of every customer you bring. The more you refer, the more you earn.</div>
         </div>
       </div>
@@ -859,7 +859,7 @@ h4{font-size:1rem;font-weight:600}
 <div style="max-width:640px;margin:0 auto 36px;background:linear-gradient(135deg,#0f1f5c,#1e3a8a);border-radius:16px;padding:24px 32px;display:flex;align-items:center;gap:22px;flex-wrap:wrap" class="reveal">
   <div style="font-size:2rem;flex-shrink:0">🎁</div>
   <div style="flex:1;min-width:200px">
-    <p style="font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:5px" data-en="Your 30-day trial is full Premium — zero limitations." data-fr="Votre essai 30 jours est Premium complet — zéro limitation.">Your 30-day trial is full Premium — zero limitations.</p>
+    <p style="font-family:'DM Sans',sans-serif;font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:5px" data-en="Your 30-day trial is full Premium — zero limitations." data-fr="Votre essai 30 jours est Premium complet — zéro limitation.">Your 30-day trial is full Premium — zero limitations.</p>
     <p style="font-size:.83rem;color:rgba(255,255,255,.6);line-height:1.55" data-en="Every module below, every tool, every report — all unlocked from the moment you sign up. No card, no tricks." data-fr="Chaque module ci-dessous, chaque outil, chaque rapport — tout débloqué dès l'inscription. Sans carte, sans condition.">Every module below, every tool, every report — all unlocked from the moment you sign up. No card, no tricks.</p>
   </div>
   <a href="https://shoptrack.org" target="_blank" class="btn btn-white btn-sm" style="white-space:nowrap;flex-shrink:0" data-en="Start Free →" data-fr="Commencer →">Start Free →</a>
@@ -920,7 +920,7 @@ h4{font-size:1rem;font-weight:600}
   <div style="display:flex;align-items:center;gap:18px">
     <div style="font-size:2.2rem;flex-shrink:0">🤝</div>
     <div>
-      <p style="font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:5px" data-en="Know businesses that need this? Earn commissions." data-fr="Vous connaissez des entreprises qui ont besoin de ça ? Gagnez des commissions.">Know businesses that need this? Earn commissions.</p>
+      <p style="font-family:'DM Sans',sans-serif;font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:5px" data-en="Know businesses that need this? Earn commissions." data-fr="Vous connaissez des entreprises qui ont besoin de ça ? Gagnez des commissions.">Know businesses that need this? Earn commissions.</p>
       <p style="font-size:.84rem;color:rgba(255,255,255,.55);line-height:1.5" data-en="Join the ShopTrack affiliate program. Refer a business, earn a recurring commission every month they subscribe." data-fr="Rejoignez le programme d'affiliation ShopTrack. Référencez une entreprise, gagnez une commission récurrente chaque mois.">Join the ShopTrack affiliate program. Refer a business, earn a recurring commission every month they subscribe.</p>
     </div>
   </div>
@@ -935,7 +935,7 @@ h4{font-size:1rem;font-weight:600}
 <div class="container">
 <div class="foot-grid">
   <div>
-    <div class="foot-brand">ShopTrack</div>
+    <div class="foot-brand"><img src="logo.png" alt="ShopTrack" style="height:30px;width:auto;filter:brightness(0) invert(1);"></div>
     <p class="foot-desc" data-en="The complete business management platform for small businesses in Cameroon and the Cameroonian diaspora in the USA. Sales, inventory, rentals, WhatsApp automation, AI Studio and more." data-fr="La plateforme de gestion complète pour les PME camerounaises et la diaspora aux États-Unis. Ventes, stocks, locations, automatisation WhatsApp, Studio IA et plus.">The complete business management platform for small businesses in Cameroon and the Cameroonian diaspora in the USA. Sales, inventory, rentals, WhatsApp automation, AI Studio and more.</p>
   </div>
   <div>
