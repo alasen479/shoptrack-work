@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>ShopTrack — Run Your Business From Your Phone</title>
+<meta name="description" content="ShopTrack is a complete business management platform for small businesses in Africa. Sales, inventory, rentals, WhatsApp automation, AI Studio and more. Free 30-day trial."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet"/>
+<style>
+:root{--navy:#0f1f5c;--blue:#4361ee;--blue-lt:#eef1fd;--green:#10b981;--green-lt:#ecfdf5;--amber:#f59e0b;--amber-lt:#fffbeb;--red:#ef4444;--red-lt:#fee2e2;--ink:#0f172a;--body:#374151;--muted:#6b7280;--border:#e5e7eb;--surface:#f9fafb;--white:#ffffff;--display:'Syne',sans-serif;--condensed:'Barlow Condensed',sans-serif;--sans:'DM Sans',sans-serif;--radius:14px;--shadow:0 4px 24px rgba(15,31,92,.09);--shadow-lg:0 16px 60px rgba(15,31,92,.14)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--body);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.container{max-width:1160px;margin:0 auto;padding:0 24px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.tag{display:inline-block;background:var(--blue-lt);color:var(--blue);font-size:.72rem;font-weight:600;letter-spacing:.8px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+.tag.green{background:var(--green-lt);color:var(--green)}
+.tag.amber{background:var(--amber-lt);color:#92400e}
+h1,h2,h3,h4{font-family:var(--display);color:var(--ink);line-height:1.1}
+h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:800}
+.hero h1{font-family:var(--condensed);font-size:clamp(3rem,6.5vw,5.2rem);font-weight:900;letter-spacing:-.01em;line-height:1.0}
+h2{font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:700;margin-bottom:16px}
+h3{font-size:1.25rem;font-weight:700;margin-bottom:8px}
+h4{font-size:1rem;font-weight:600}
+.lead{font-size:1.1rem;color:var(--muted);line-height:1.7}
+.section{padding:88px 0}
+.section-hd{text-align:center;max-width:680px;margin:0 auto 56px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:10px;font-family:var(--sans);font-size:.95rem;font-weight:600;cursor:pointer;border:none;transition:all .2s;white-space:nowrap}
+.btn-primary{background:var(--blue);color:var(--white);box-shadow:0 4px 16px rgba(67,97,238,.35)}
+.btn-primary:hover{background:#3451d1;transform:translateY(-1px);box-shadow:0 8px 24px rgba(67,97,238,.4)}
+.btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--border)}
+.btn-outline:hover{border-color:var(--blue);color:var(--blue)}
+.btn-white{background:var(--white);color:var(--blue);box-shadow:0 4px 16px rgba(0,0,0,.1)}
+.btn-white:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(0,0,0,.15)}
+.btn-lg{padding:16px 36px;font-size:1.05rem;border-radius:12px}
+.btn-sm{padding:9px 18px;font-size:.85rem}
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 24px}
+.nav-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:1.3rem;font-weight:800;color:var(--navy)}
+.nav-logo-dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px rgba(16,185,129,.2)}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links a{font-size:.88rem;font-weight:500;color:var(--muted);transition:color .15s}
+.nav-links a:hover,.nav-links a.active{color:var(--ink)}
+.nav-cta{display:flex;align-items:center;gap:10px}
+.lang-toggle{display:flex;gap:2px;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:2px}
+.lang-btn{padding:4px 11px;border-radius:18px;font-size:.75rem;font-weight:600;cursor:pointer;border:none;transition:all .15s;background:transparent;color:var(--muted)}
+.lang-btn.active{background:var(--white);color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,.1)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.hamburger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:.2s}
+.mobile-menu{display:none;flex-direction:column;background:var(--white);border-top:1px solid var(--border);padding:16px 24px 24px}
+.mobile-menu a{display:block;padding:12px 0;font-size:1rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--border)}
+.mobile-menu .btn{margin-top:16px;justify-content:center}
+/* HERO */
+.hero{background:linear-gradient(160deg,#f0f4ff 0%,#ffffff 50%,#ecfdf5 100%);padding:100px 0 80px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(67,97,238,.06) 0%,transparent 70%);pointer-events:none}
+.hero-dots{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(67,97,238,.07) 1px,transparent 1px);background-size:32px 32px;pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--white);border:1.5px solid rgba(67,97,238,.2);border-radius:30px;padding:6px 16px;font-size:.8rem;font-weight:600;color:var(--blue);margin-bottom:24px;box-shadow:0 2px 12px rgba(67,97,238,.1)}
+.hero-badge-dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 2px rgba(16,185,129,.25)}
+.hero h1{margin-bottom:20px;letter-spacing:-.02em}
+.hero h1 span{color:var(--blue)}
+.hero .lead{max-width:540px;margin-bottom:36px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px}
+.hero-proof{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.hero-proof-item{display:flex;align-items:center;gap:7px;font-size:.83rem;color:var(--muted);font-weight:500}
+.hpc{width:18px;height:18px;border-radius:50%;background:var(--green-lt);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--green);font-weight:700;flex-shrink:0}
+/* HERO CARD */
+.hero-card{background:var(--white);border-radius:20px;box-shadow:var(--shadow-lg);border:1px solid var(--border);overflow:hidden}
+.hc-bar{background:var(--navy);padding:13px 18px;display:flex;align-items:center;gap:8px}
+.hc-dots{display:flex;gap:5px}
+.hc-dots span{width:9px;height:9px;border-radius:50%}
+.hc-dots span:nth-child(1){background:#ef4444}
+.hc-dots span:nth-child(2){background:#f59e0b}
+.hc-dots span:nth-child(3){background:#22c55e}
+.hc-title{font-family:var(--display);font-size:.72rem;font-weight:700;color:rgba(255,255,255,.45);letter-spacing:1px;text-transform:uppercase;margin-left:6px}
+.hc-kpis{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border)}
+.hc-kpi{background:var(--white);padding:18px}
+.hc-kpi-lbl{font-size:.72rem;color:var(--muted);font-weight:500;margin-bottom:3px}
+.hc-kpi-val{font-family:var(--condensed);font-size:1.7rem;font-weight:900;letter-spacing:-.01em}
+.hc-kpi-val.blue{color:var(--blue)}.hc-kpi-val.green{color:var(--green)}.hc-kpi-val.amber{color:var(--amber)}
+.hc-kpi-sub{font-size:.68rem;color:var(--muted);margin-top:2px}
+.hc-feats{padding:14px 18px;display:flex;flex-direction:column;gap:9px}
+.hc-feat{display:flex;align-items:center;gap:9px;font-size:.8rem;font-weight:500;color:var(--body)}
+.hc-check{width:16px;height:16px;border-radius:50%;flex-shrink:0;background:var(--green-lt);display:flex;align-items:center;justify-content:center;font-size:.58rem;color:var(--green)}
+/* PROOF BAR */
+.proof-bar{background:var(--navy);padding:28px 0}
+.proof-bar-inner{display:flex;align-items:center;justify-content:center;gap:56px;flex-wrap:wrap}
+.proof-stat{text-align:center}
+.proof-stat-num{font-family:var(--condensed);font-size:2.4rem;font-weight:900;color:var(--white);line-height:1;letter-spacing:-.01em}
+.proof-stat-num span{color:var(--green)}
+.proof-stat-lbl{font-size:.76rem;color:rgba(255,255,255,.45);margin-top:4px;font-weight:500}
+.proof-div{width:1px;height:36px;background:rgba(255,255,255,.1)}
+/* PROBLEM/SOLUTION */
+.ps-section{background:var(--surface)}
+.ps-table{background:var(--white);border-radius:20px;box-shadow:var(--shadow);overflow:hidden;border:1px solid var(--border)}
+.ps-hdr{display:grid;grid-template-columns:1fr 52px 1fr;background:var(--navy)}
+.ps-hdr div{padding:15px 22px;font-family:var(--display);font-size:.82rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+.ps-hdr .bad{color:#fca5a5}
+.ps-hdr .mid{text-align:center;color:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center}
+.ps-hdr .good{color:#86efac}
+.ps-row{display:grid;grid-template-columns:1fr 52px 1fr;border-bottom:1px solid var(--border);transition:background .15s}
+.ps-row:last-child{border-bottom:none}
+.ps-row:hover{background:var(--surface)}
+.ps-bad,.ps-good{padding:16px 22px;font-size:.88rem;line-height:1.5}
+.ps-bad{color:#b91c1c}
+.ps-good{color:#065f46;font-weight:600}
+.ps-arr{display:flex;align-items:center;justify-content:center;color:#d1d5db;font-size:1rem}
+/* FEATURE TILES */
+.tile-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tile{background:var(--white);border-radius:16px;border:1.5px solid var(--border);padding:26px 22px;transition:all .2s}
+.tile:hover{border-color:var(--blue);box-shadow:var(--shadow);transform:translateY(-3px)}
+.tile-icon{font-size:1.7rem;margin-bottom:12px}
+.tile h3{margin-bottom:7px}
+.tile p{font-size:.85rem;color:var(--muted);line-height:1.55}
+/* FEAT PANEL */
+.feat-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:44px;justify-content:center}
+.feat-tab{padding:8px 17px;border-radius:30px;font-size:.83rem;font-weight:600;border:1.5px solid var(--border);background:var(--white);color:var(--muted);cursor:pointer;transition:all .15s}
+.feat-tab:hover,.feat-tab.active{background:var(--navy);color:var(--white);border-color:var(--navy)}
+.feat-panel{display:none}
+.feat-panel.active{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+.feat-items{display:flex;flex-direction:column;gap:16px}
+.feat-item{display:flex;gap:14px;align-items:flex-start;padding:18px;border-radius:12px;border:1.5px solid var(--border);transition:all .2s;background:var(--white)}
+.feat-item:hover{border-color:var(--blue);box-shadow:0 4px 16px rgba(67,97,238,.1);transform:translateX(3px)}
+.feat-ico{width:40px;height:40px;border-radius:10px;flex-shrink:0;background:var(--blue-lt);display:flex;align-items:center;justify-content:center;font-size:1rem}
+.feat-ico.g{background:var(--green-lt)}.feat-ico.a{background:var(--amber-lt)}
+.feat-item h4{color:var(--ink);margin-bottom:3px}
+.feat-item p{font-size:.83rem;color:var(--muted);line-height:1.5}
+.feat-card{background:var(--navy);border-radius:18px;padding:28px;position:sticky;top:80px;box-shadow:var(--shadow-lg)}
+.feat-card-title{font-family:var(--display);font-size:1.15rem;font-weight:700;color:var(--white);margin-bottom:6px}
+.feat-card-sub{font-size:.83rem;color:rgba(255,255,255,.45);margin-bottom:20px}
+.feat-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
+.feat-stat{background:rgba(255,255,255,.07);border-radius:9px;padding:13px;border:1px solid rgba(255,255,255,.07)}
+.feat-stat .n{font-family:var(--display);font-size:1.35rem;font-weight:800;margin-bottom:2px}
+.feat-stat .l{font-size:.7rem;color:rgba(255,255,255,.4)}
+.feat-stat.b .n{color:#93c5fd}.feat-stat.g .n{color:#6ee7b7}.feat-stat.a .n{color:#fcd34d}.feat-stat.r .n{color:#fca5a5}
+.feat-checks{display:flex;flex-direction:column;gap:8px}
+.feat-check{display:flex;gap:9px;align-items:flex-start;font-size:.82rem;color:rgba(255,255,255,.75);line-height:1.4}
+.feat-check::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;margin-top:1px}
+/* WA SECTION */
+.wa-sec{background:linear-gradient(135deg,#064e3b,#065f46);padding:88px 0;position:relative;overflow:hidden}
+.wa-sec::before{content:'';position:absolute;top:-80px;right:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,.18) 0%,transparent 70%)}
+.wa-sec h2,.wa-sec .lead{color:var(--white)}
+.wa-sec .lead{color:rgba(255,255,255,.65)}
+.wa-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:36px}
+.wa-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:18px;transition:all .2s}
+.wa-card:hover{background:rgba(255,255,255,.12);transform:translateY(-2px)}
+.wa-type{font-size:.7rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-bottom:10px;padding:3px 9px;border-radius:20px;display:inline-block}
+.wa-type.ow{background:rgba(99,102,241,.28);color:#c7d2fe}
+.wa-type.cu{background:rgba(16,185,129,.28);color:#6ee7b7}
+.wa-card h4{color:var(--white);font-size:.92rem;margin-bottom:5px}
+.wa-card p{font-size:.8rem;color:rgba(255,255,255,.5);line-height:1.5}
+/* USE CASES */
+.uc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.uc-card{background:var(--white);border-radius:14px;border:1.5px solid var(--border);padding:26px 22px;transition:all .2s}
+.uc-card:hover{border-color:var(--blue);box-shadow:var(--shadow);transform:translateY(-2px)}
+.uc-icon{font-size:1.7rem;margin-bottom:12px}
+.uc-card h3{margin-bottom:7px}
+.uc-card p{font-size:.84rem;color:var(--muted);margin-bottom:14px;line-height:1.5}
+.uc-tags{display:flex;flex-wrap:wrap;gap:6px}
+.uc-tag{font-size:.7rem;font-weight:600;color:var(--blue);background:var(--blue-lt);border-radius:20px;padding:3px 9px}
+/* PRICING */
+.price-wrap{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:840px;margin:0 auto}
+.price-card{background:var(--white);border-radius:18px;border:1.5px solid var(--border);padding:34px;position:relative}
+.price-card.feat{border-color:var(--blue);box-shadow:0 12px 48px rgba(67,97,238,.16)}
+.price-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--blue);color:var(--white);font-size:.7rem;font-weight:700;letter-spacing:.6px;text-transform:uppercase;padding:4px 14px;border-radius:20px}
+.price-name{font-family:var(--display);font-size:.9rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px}
+.price-amt{font-family:var(--display);font-size:2.6rem;font-weight:800;color:var(--ink);line-height:1;margin-bottom:4px}
+.price-amt span{font-size:.95rem;font-weight:500;color:var(--muted)}
+.price-per{font-size:.8rem;color:var(--muted);margin-bottom:22px}
+.price-div{height:1px;background:var(--border);margin:22px 0}
+.price-feats{display:flex;flex-direction:column;gap:11px;list-style:none;margin-bottom:26px}
+.price-feats li{display:flex;gap:9px;align-items:flex-start;font-size:.86rem;line-height:1.4}
+.chk{color:var(--green);flex-shrink:0;font-weight:700}
+.no{color:var(--muted);flex-shrink:0}
+.price-note{font-size:.75rem;color:var(--muted);text-align:center;margin-top:14px}
+.pay-methods{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:36px}
+.pay-badge{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:6px 13px;font-size:.76rem;font-weight:600;color:var(--body)}
+/* REPORTS */
+.rep-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rep-card{background:var(--white);border-radius:12px;border:1.5px solid var(--border);padding:20px;transition:all .2s}
+.rep-card:hover{border-color:var(--blue);box-shadow:var(--shadow)}
+.rep-icon{font-size:1.4rem;margin-bottom:10px}
+.rep-card h4{margin-bottom:5px}
+.rep-card p{font-size:.8rem;color:var(--muted);line-height:1.5}
+.bank-box{background:linear-gradient(135deg,var(--navy),#1e3a8a);border-radius:18px;padding:44px;display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;margin-top:56px}
+.bank-box h3{font-family:var(--display);font-size:1.5rem;color:var(--white);margin-bottom:11px}
+.bank-box>div>p{color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:22px}
+.bank-list{display:flex;flex-direction:column;gap:10px}
+.bank-item{display:flex;gap:12px;align-items:center;font-size:.86rem}
+.bank-q{color:rgba(255,255,255,.4);flex:1}
+.bank-a{color:var(--green);font-weight:600;flex:1;text-align:right;font-size:.8rem}
+/* TESTIMONIALS */
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.test-card{background:var(--white);border-radius:14px;border:1.5px solid var(--border);padding:26px;position:relative}
+.test-card::before{content:'\201C';font-family:var(--display);font-size:4.5rem;color:var(--blue-lt);line-height:1;position:absolute;top:14px;left:22px}
+.test-text{font-size:.88rem;line-height:1.65;color:var(--body);margin-bottom:18px;margin-top:22px}
+.test-author{display:flex;align-items:center;gap:11px}
+.test-avatar{width:38px;height:38px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:.85rem;font-weight:800;color:var(--white);flex-shrink:0}
+.test-avatar.g{background:var(--green)}.test-avatar.n{background:var(--navy)}
+.test-name{font-weight:600;font-size:.88rem;color:var(--ink)}
+.test-role{font-size:.76rem;color:var(--muted)}
+/* CTA SECTION */
+.cta-sec{background:var(--navy);padding:88px 0;text-align:center;position:relative;overflow:hidden}
+.cta-sec::before{content:'';position:absolute;top:-160px;left:50%;transform:translateX(-50%);width:700px;height:350px;border-radius:50%;background:radial-gradient(circle,rgba(67,97,238,.25) 0%,transparent 70%)}
+.cta-sec h2{color:var(--white);font-size:clamp(1.9rem,4vw,2.9rem);margin-bottom:14px}
+.cta-sec .lead{color:rgba(255,255,255,.55);max-width:540px;margin:0 auto 32px}
+.cta-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.cta-feats{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+.cta-feat{display:flex;gap:7px;align-items:center;font-size:.83rem;color:rgba(255,255,255,.45)}
+.cta-dot{width:5px;height:5px;border-radius:50%;background:var(--green);flex-shrink:0}
+/* FOOTER */
+.footer{background:var(--ink);padding:56px 0 28px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:36px;margin-bottom:44px}
+.foot-brand{font-family:var(--display);font-size:1.25rem;font-weight:800;color:var(--white);margin-bottom:10px}
+.foot-desc{font-size:.83rem;color:rgba(255,255,255,.35);line-height:1.65;max-width:250px}
+.foot-col-ttl{font-size:.73rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:14px}
+.foot-links{list-style:none;display:flex;flex-direction:column;gap:9px}
+.foot-links a{font-size:.85rem;color:rgba(255,255,255,.45);transition:color .15s}
+.foot-links a:hover{color:var(--white)}
+.foot-bot{border-top:1px solid rgba(255,255,255,.07);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.foot-bot-l{font-size:.8rem;color:rgba(255,255,255,.25)}
+.foot-bot-r{display:flex;gap:18px}
+.foot-bot-r a{font-size:.8rem;color:rgba(255,255,255,.25);transition:color .15s}
+.foot-bot-r a:hover{color:rgba(255,255,255,.55)}
+/* PDF DOWNLOAD CARDS */
+.pdf-dl-card{display:flex;align-items:center;gap:18px;background:var(--white);border:1.5px solid var(--border);border-radius:14px;padding:22px 24px;transition:all .2s;cursor:pointer}
+.pdf-dl-card:hover{border-color:var(--blue);box-shadow:var(--shadow);transform:translateY(-2px)}
+.pdf-dl-icon{font-size:2.2rem;flex-shrink:0}
+.pdf-dl-title{font-family:var(--display);font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:2px}
+.pdf-dl-lang{font-size:.75rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px}
+.pdf-dl-hint{font-size:.82rem;font-weight:600;color:var(--blue)}
+@media(max-width:600px){.pdf-dl-grid{grid-template-columns:1fr!important}}
+
+.page{display:none}.page.active{display:block}
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}
+/* RESPONSIVE */
+@media(max-width:900px){
+  .grid-2,.feat-panel.active,.bank-box,.price-wrap{grid-template-columns:1fr}
+  .feat-card{display:none}
+  .wa-grid,.uc-grid,.test-grid,.rep-grid,.tile-grid{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .proof-div{display:none}
+  .proof-bar-inner{gap:28px}
+  .hero-card{display:none}
+}
+@media(max-width:600px){
+  .nav-links,.nav-cta .btn-outline{display:none}
+  .hamburger{display:flex}
+  .wa-grid,.uc-grid,.test-grid,.rep-grid,.tile-grid{grid-template-columns:1fr}
+  .section{padding:60px 0}
+  .hero{padding:64px 0 44px}
+  .hero-ctas{flex-direction:column}
+  .hero-ctas .btn{justify-content:center}
+  .foot-grid{grid-template-columns:1fr}
+  .ps-bad,.ps-good{padding:11px 12px;font-size:.8rem}
+}
+</style>
+</head>
+<body>
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" onclick="showPage('home');return false">
+      <div class="nav-logo-dot"></div>ShopTrack
+    </a>
+    <ul class="nav-links">
+      <li><a href="#" onclick="showPage('product');return false" data-page="product">Product</a></li>
+      <li><a href="#" onclick="showPage('usecases');return false" data-page="usecases">Use Cases</a></li>
+      <li><a href="#" onclick="showPage('whatsapp');return false" data-page="whatsapp">WhatsApp</a></li>
+      <li><a href="#" onclick="showPage('reports');return false" data-page="reports">Reports</a></li>
+      <li><a href="#" onclick="showPage('pricing');return false" data-page="pricing">Pricing</a></li>
+      <li><a href="https://shoptrack.org/affiliates" target="_blank" style="color:var(--green);font-weight:600" data-en="Affiliates" data-fr="Affiliés">Affiliates</a></li>
+    </ul>
+    <div class="nav-cta">
+      <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLang('en',this)">EN</button>
+        <button class="lang-btn" onclick="setLang('fr',this)">FR</button>
+      </div>
+      <a href="https://shoptrack.org" target="_blank" class="btn btn-primary btn-sm" style="margin-left:8px">Try Free — Full Access →</a>
+    </div>
+    <button class="hamburger" onclick="toggleMobile()"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mob">
+    <a href="#" onclick="showPage('product');toggleMobile();return false">Product</a>
+    <a href="#" onclick="showPage('usecases');toggleMobile();return false">Use Cases</a>
+    <a href="#" onclick="showPage('whatsapp');toggleMobile();return false">WhatsApp</a>
+    <a href="#" onclick="showPage('reports');toggleMobile();return false">Reports</a>
+    <a href="#" onclick="showPage('pricing');toggleMobile();return false">Pricing</a>
+    <a href="https://shoptrack.org/affiliates" target="_blank" style="color:var(--green);font-weight:600" data-en="🤝 Affiliates — Earn Commissions" data-fr="🤝 Affiliés — Gagnez des Commissions">🤝 Affiliates — Earn Commissions</a>
+    <a href="https://shoptrack.org" target="_blank" class="btn btn-primary" style="margin-top:16px;justify-content:center">Try Free — Full Access →</a>
+  </div>
+</nav>
+
+<!-- ═══ HOME PAGE ═══ -->
+<div class="page active" id="page-home">
+
+<section class="hero">
+<div class="hero-dots"></div>
+<div class="container">
+<div class="grid-2" style="gap:56px">
+<div style="position:relative;z-index:2">
+  <div class="hero-badge"><div class="hero-badge-dot"></div><span data-en="Available in Africa &amp; the USA" data-fr="Disponible en Afrique &amp; aux USA">Available in Africa &amp; the USA</span></div>
+  <h1 data-en="Run your entire business from your <span>phone.</span>" data-fr="Gérez toute votre entreprise depuis votre <span>téléphone.</span>">Run your entire business from your <span>phone.</span></h1>
+  <p class="lead" style="margin-bottom:32px" data-en="Sales, inventory, rentals, customers, expenses, WhatsApp automation and more — one platform built for small businesses in Africa and the African diaspora in the USA." data-fr="Ventes, stocks, locations, clients, dépenses, automatisation WhatsApp et plus — une plateforme pour les PME africaines et la diaspora africaine aux États-Unis.">Sales, inventory, rentals, customers, expenses, WhatsApp automation and more — one platform built for small businesses in Africa and the African diaspora in the USA.</p>
+  <div class="hero-ctas">
+    <a href="https://shoptrack.org" target="_blank" class="btn btn-primary btn-lg" data-en="Try All Features Free — 30 Days →" data-fr="Toutes les Fonctionnalités Gratuites — 30 Jours →">Try All Features Free — 30 Days →</a>
+    <a href="#" onclick="showPage('product');return false" class="btn btn-outline btn-lg" data-en="See All Features" data-fr="Voir les Fonctionnalités">See All Features</a>
+  </div>
+  <div class="hero-proof">
+    <div class="hero-proof-item"><div class="hpc">✓</div><span data-en="No credit card" data-fr="Sans carte bancaire">No credit card</span></div>
+    <div class="hero-proof-item"><div class="hpc">✓</div><span data-en="No installation" data-fr="Sans installation">No installation</span></div>
+    <div class="hero-proof-item"><div class="hpc">✓</div><span data-en="Full Premium access — every tool unlocked" data-fr="Accès Premium complet — tous les outils débloqués">Full Premium access — every tool unlocked</span></div>
+  </div>
+</div>
+<div style="position:relative;z-index:2" class="reveal reveal-d2">
+  <div class="hero-card">
+    <div class="hc-bar"><div class="hc-dots"><span></span><span></span><span></span></div><div class="hc-title">ShopTrack Dashboard</div></div>
+    <div class="hc-kpis">
+      <div class="hc-kpi"><div class="hc-kpi-lbl" data-en="Today's Revenue" data-fr="CA Aujourd'hui">Today's Revenue</div><div class="hc-kpi-val blue" data-count="847000">0</div><div class="hc-kpi-sub">XAF · ~$14 · 12 sales</div></div>
+      <div class="hc-kpi"><div class="hc-kpi-lbl" data-en="Net Profit" data-fr="Bénéfice Net">Net Profit</div><div class="hc-kpi-val green" data-count="312000">0</div><div class="hc-kpi-sub">XAF · ~$5 · after expenses</div></div>
+      <div class="hc-kpi"><div class="hc-kpi-lbl" data-en="Customers Owe You" data-fr="Dettes Clients">Customers Owe You</div><div class="hc-kpi-val amber" data-count="95000">0</div><div class="hc-kpi-sub">XAF · ~$1.6 · 4 customers</div></div>
+      <div class="hc-kpi"><div class="hc-kpi-lbl" data-en="Stock Value" data-fr="Valeur Stock">Stock Value</div><div class="hc-kpi-val" data-count="2100000">0</div><div class="hc-kpi-sub">XAF · ~$34 · 147 items</div></div>
+    </div>
+    <div class="hc-feats">
+      <div class="hc-feat"><div class="hc-check">✓</div><span data-en="12+ WhatsApp alerts sent automatically" data-fr="12+ alertes WhatsApp envoyées automatiquement">12+ WhatsApp alerts sent automatically</span></div>
+      <div class="hc-feat"><div class="hc-check">✓</div><span data-en="Staff cannot sell below your minimum price" data-fr="Le personnel ne peut pas vendre sous votre prix minimum">Staff cannot sell below your minimum price</span></div>
+      <div class="hc-feat"><div class="hc-check">✓</div><span data-en="Every action logged with staff name &amp; timestamp" data-fr="Chaque action enregistrée avec nom et horodatage">Every action logged with staff name &amp; timestamp</span></div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</section>
+
+<div class="proof-bar">
+<div class="proof-bar-inner">
+  <div class="proof-stat"><div class="proof-stat-num">12<span>+</span></div><div class="proof-stat-lbl" data-en="Business Modules" data-fr="Modules Métier">Business Modules</div></div>
+  <div class="proof-div"></div>
+  <div class="proof-stat"><div class="proof-stat-num">12<span>+</span></div><div class="proof-stat-lbl" data-en="WhatsApp Alerts" data-fr="Alertes WhatsApp">WhatsApp Alerts</div></div>
+  <div class="proof-div"></div>
+  <div class="proof-stat"><div class="proof-stat-num">30<span>d</span></div><div class="proof-stat-lbl" data-en="Full Access Trial" data-fr="Essai Accès Complet">Full Access Trial</div></div>
+  <div class="proof-div"></div>
+  <div class="proof-stat"><div class="proof-stat-num">8<span>,</span>900</div><div class="proof-stat-lbl" data-en="XAF/mo · ~$15 USD" data-fr="XAF/mois · ~15$ USD">XAF/mo · ~$15 USD</div></div>
+  <div class="proof-div"></div>
+  <div class="proof-stat"><div class="proof-stat-num">100<span>%</span></div><div class="proof-stat-lbl" data-en="On Your Phone" data-fr="Sur Votre Téléphone">On Your Phone</div></div>
+</div>
+</div>
+
+<section class="section ps-section">
+<div class="container">
+  <div class="section-hd reveal">
+    <div class="tag" data-en="The Problem" data-fr="Le Problème">The Problem</div>
+    <h2 data-en="Running a business without ShopTrack is expensive." data-fr="Gérer une entreprise sans ShopTrack coûte cher.">Running a business without ShopTrack is expensive.</h2>
+    <p class="lead" data-en="You lose money you don't even know about. Here's what changes." data-fr="Vous perdez de l'argent sans même le savoir. Voici ce qui change.">You lose money you don't even know about. Here's what changes.</p>
+  </div>
+  <div class="ps-table reveal">
+    <div class="ps-hdr">
+      <div class="bad" data-en="❌  Without ShopTrack" data-fr="❌  Sans ShopTrack">❌  Without ShopTrack</div>
+      <div class="mid"></div>
+      <div class="good" data-en="✅  With ShopTrack" data-fr="✅  Avec ShopTrack">✅  With ShopTrack</div>
+    </div>
+    <div class="ps-row"><div class="ps-bad" data-en="Sales written in a notebook — or forgotten entirely" data-fr="Ventes notées dans un carnet — ou complètement oubliées">Sales written in a notebook — or forgotten entirely</div><div class="ps-arr">→</div><div class="ps-good" data-en="Every sale recorded in seconds. Receipt sent to customer instantly." data-fr="Chaque vente enregistrée en quelques secondes. Reçu envoyé instantanément.">Every sale recorded in seconds. Receipt sent to customer instantly.</div></div>
+    <div class="ps-row"><div class="ps-bad" data-en="Customers owe you money and you forget who" data-fr="Des clients vous doivent de l'argent et vous oubliez qui">Customers owe you money and you forget who</div><div class="ps-arr">→</div><div class="ps-good" data-en="Full debt dashboard — who owes what, for how long. WhatsApp reminder in one tap." data-fr="Tableau des dettes — qui doit quoi, depuis combien de temps. Rappel WhatsApp en un tap.">Full debt dashboard — who owes what, for how long. WhatsApp reminder in one tap.</div></div>
+    <div class="ps-row"><div class="ps-bad" data-en="Rentals leave your shop and due dates slip your mind" data-fr="Les locations partent et les dates de retour s'oublient">Rentals leave your shop and due dates slip your mind</div><div class="ps-arr">→</div><div class="ps-good" data-en="Rental calendar with automatic late fees and WhatsApp reminders to customers." data-fr="Calendrier des locations avec frais de retard automatiques et rappels WhatsApp.">Rental calendar with automatic late fees and WhatsApp reminders to customers.</div></div>
+    <div class="ps-row"><div class="ps-bad" data-en="Staff sell below your price — you find out too late" data-fr="Le personnel vend sous votre prix — vous le découvrez trop tard">Staff sell below your price — you find out too late</div><div class="ps-arr">→</div><div class="ps-good" data-en="Set a minimum price per item. Staff cannot go below it. Ever." data-fr="Fixez un prix minimum par article. Le personnel ne peut pas passer en dessous. Jamais.">Set a minimum price per item. Staff cannot go below it. Ever.</div></div>
+    <div class="ps-row"><div class="ps-bad" data-en="No idea whether you made a profit this month" data-fr="Aucune idée si vous avez fait un bénéfice ce mois-ci">No idea whether you made a profit this month</div><div class="ps-arr">→</div><div class="ps-good" data-en="See your exact profit every single day — live, in real time, on your phone." data-fr="Voyez votre bénéfice exact chaque jour — en temps réel, sur votre téléphone.">See your exact profit every single day — live, in real time, on your phone.</div></div>
+    <div class="ps-row"><div class="ps-bad" data-en="No financial records — can't get a bank loan" data-fr="Pas de dossier financier — impossible d'obtenir un prêt">No financial records — can't get a bank loan</div><div class="ps-arr">→</div><div class="ps-good" data-en="Generate a full profit &amp; loss report and cash flow statement in one click." data-fr="Générez un compte de résultat et un tableau de flux de trésorerie en un clic.">Generate a full profit &amp; loss report and cash flow statement in one click.</div></div>
+  </div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+  <div class="section-hd reveal">
+    <div class="tag" data-en="Platform" data-fr="Plateforme">Platform</div>
+    <h2 data-en="Everything your business needs." data-fr="Tout ce dont votre entreprise a besoin.">Everything your business needs.</h2>
+    <p class="lead" data-en="One subscription. All modules included. No add-ons to buy." data-fr="Un abonnement. Tous les modules inclus. Aucun supplément.">One subscription. All modules included. No add-ons to buy.</p>
+  </div>
+  <div class="tile-grid reveal">
+    <div class="tile"><div class="tile-icon">📊</div><h3 data-en="Sales &amp; Dashboard" data-fr="Ventes &amp; Tableau de Bord">Sales &amp; Dashboard</h3><p data-en="Record a sale in 10 seconds. See revenue, profit, and customer debts live on your phone." data-fr="Enregistrez une vente en 10 secondes. Voyez CA, bénéfice et dettes clients en direct.">Record a sale in 10 seconds. See revenue, profit, and customer debts live on your phone.</p></div>
+    <div class="tile"><div class="tile-icon">📦</div><h3 data-en="Inventory &amp; Stock" data-fr="Stocks &amp; Inventaire">Inventory &amp; Stock</h3><p data-en="Track every item, cost prices hidden from staff, and WhatsApp alerts when stock runs low." data-fr="Suivez chaque article, prix de revient cachés du personnel et alertes WhatsApp quand le stock baisse.">Track every item, cost prices hidden from staff, and WhatsApp alerts when stock runs low.</p></div>
+    <div class="tile"><div class="tile-icon">🏠</div><h3 data-en="Rental Management" data-fr="Gestion des Locations">Rental Management</h3><p data-en="Rental calendar, automatic late fees, deposit tracking, and PDF rental contracts." data-fr="Calendrier, frais de retard automatiques, suivi des dépôts et contrats PDF.">Rental calendar, automatic late fees, deposit tracking, and PDF rental contracts.</p></div>
+    <div class="tile"><div class="tile-icon">💬</div><h3 data-en="WhatsApp Automation" data-fr="Automatisation WhatsApp">WhatsApp Automation</h3><p data-en="12+ automatic alerts to you and your customers — sales, stock, rentals, payments, birthdays." data-fr="12+ alertes automatiques pour vous et vos clients — ventes, stocks, locations, paiements.">12+ automatic alerts to you and your customers — sales, stock, rentals, payments, birthdays.</p></div>
+    <div class="tile"><div class="tile-icon">🤖</div><h3 data-en="AI Content Studio" data-fr="Studio IA">AI Content Studio</h3><p data-en="Generate Instagram captions, branded flyers, WhatsApp promos and email campaigns in seconds." data-fr="Générez des légendes Instagram, flyers, promos WhatsApp et campagnes email en quelques secondes.">Generate Instagram captions, branded flyers, WhatsApp promos and email campaigns in seconds.</p></div>
+    <div class="tile"><div class="tile-icon">📈</div><h3 data-en="Reports &amp; Bank Docs" data-fr="Rapports &amp; Dossiers Bancaires">Reports &amp; Bank Docs</h3><p data-en="Profit &amp; loss, cash flow, inventory value, customer debts — ready for banks and tax offices." data-fr="Compte de résultat, flux de trésorerie, valeur stock — prêt pour banques et impôts.">Profit &amp; loss, cash flow, inventory value, customer debts — ready for banks and tax offices.</p></div>
+  </div>
+  <div style="text-align:center;margin-top:36px"><a href="#" onclick="showPage('product');return false" class="btn btn-outline" data-en="Explore All Features →" data-fr="Voir Toutes les Fonctionnalités →">Explore All Features →</a></div>
+</div>
+</section>
+
+<section class="section" style="background:var(--surface);padding:72px 0">
+<div class="container">
+  <div class="section-hd reveal">
+    <div class="tag green" data-en="Who It's For" data-fr="Pour Qui">Who It's For</div>
+    <h2 data-en="Built for small businesses in Africa &amp; the USA." data-fr="Conçu pour les PME en Afrique &amp; aux États-Unis.">Built for small businesses in Africa &amp; the USA.</h2>
+  </div>
+  <div class="uc-grid reveal">
+    <div class="uc-card"><div class="uc-icon">👗</div><h3 data-en="Boutiques &amp; Fashion" data-fr="Boutiques &amp; Mode">Boutiques &amp; Fashion</h3><p data-en="Track sizes, colors, and seasonal stock. Record sales fast. Print receipts. Set minimum prices." data-fr="Suivez les tailles, couleurs et stocks saisonniers. Enregistrez les ventes rapidement.">Track sizes, colors, and seasonal stock. Record sales fast. Print receipts. Set minimum prices.</p><div class="uc-tags"><span class="uc-tag">Sales</span><span class="uc-tag">Inventory</span><span class="uc-tag">Receipts</span></div></div>
+    <div class="uc-card"><div class="uc-icon">💍</div><h3 data-en="Bridal Studios" data-fr="Studios Mariage">Bridal Studios</h3><p data-en="Gown rentals, fittings, customer debts, rental agreements, and appointment booking." data-fr="Location de robes, essayages, créances, contrats de location et rendez-vous.">Gown rentals, fittings, customer debts, rental agreements, and appointment booking.</p><div class="uc-tags"><span class="uc-tag">Rentals</span><span class="uc-tag">Appointments</span><span class="uc-tag">Documents</span></div></div>
+    <div class="uc-card"><div class="uc-icon">✂️</div><h3 data-en="Salons &amp; Spas" data-fr="Salons &amp; Spas">Salons &amp; Spas</h3><p data-en="Online booking page, staff scheduling, automatic appointment reminders, service revenue." data-fr="Page de réservation en ligne, planning du personnel, rappels automatiques.">Online booking page, staff scheduling, automatic appointment reminders, service revenue.</p><div class="uc-tags"><span class="uc-tag">Bookings</span><span class="uc-tag">Staff</span><span class="uc-tag">WhatsApp</span></div></div>
+    <div class="uc-card"><div class="uc-icon">📦</div><h3 data-en="General Retail" data-fr="Commerce Général">General Retail</h3><p data-en="Full POS, inventory management, purchase orders, and supplier tracking." data-fr="Caisse complète, gestion des stocks, bons de commande et suivi des fournisseurs.">Full POS, inventory management, purchase orders, and supplier tracking.</p><div class="uc-tags"><span class="uc-tag">POS</span><span class="uc-tag">Inventory</span><span class="uc-tag">Suppliers</span></div></div>
+    <div class="uc-card"><div class="uc-icon">🏠</div><h3 data-en="Rental Businesses" data-fr="Sociétés de Location">Rental Businesses</h3><p data-en="Equipment, vehicles, event items. Calendar, automatic late fees, overdue alerts." data-fr="Équipements, véhicules, articles événementiels. Calendrier, frais de retard automatiques.">Equipment, vehicles, event items. Calendar, automatic late fees, overdue alerts.</p><div class="uc-tags"><span class="uc-tag">Rentals</span><span class="uc-tag">Late Fees</span><span class="uc-tag">Alerts</span></div></div>
+    <div class="uc-card"><div class="uc-icon">🏗️</div><h3 data-en="Contractors &amp; Services" data-fr="Prestataires &amp; BTP">Contractors &amp; Services</h3><p data-en="Quotes, purchase orders, client invoices, expense tracking, and supplier management." data-fr="Devis, bons de commande, factures clients, suivi des dépenses.">Quotes, purchase orders, client invoices, expense tracking, and supplier management.</p><div class="uc-tags"><span class="uc-tag">Invoices</span><span class="uc-tag">Expenses</span><span class="uc-tag">POs</span></div></div>
+  </div>
+  <div style="text-align:center;margin-top:36px"><a href="#" onclick="showPage('usecases');return false" class="btn btn-outline" data-en="See All Use Cases →" data-fr="Voir Tous les Cas d'Usage →">See All Use Cases →</a></div>
+</div>
+</section>
+
+<section class="section" style="background:var(--white);padding:72px 0">
+<div class="container">
+  <div class="section-hd reveal">
+    <div class="tag amber" data-en="From Real Businesses" data-fr="De Vraies Entreprises">From Real Businesses</div>
+    <h2 data-en="What business owners say." data-fr="Ce que disent les entrepreneurs.">What business owners say.</h2>
+  </div>
+  <div class="test-grid reveal">
+    <div class="test-card"><div class="test-text" data-en="I used to forget 3 or 4 sales every week. Now I record everything in ShopTrack in under 10 seconds. At the end of the month I click Reports and see my exact profit — no calculator, no notebook." data-fr="J'oubliais 3 ou 4 ventes par semaine. Maintenant j'enregistre tout dans ShopTrack en moins de 10 secondes. En fin de mois je clique sur Rapports et vois mon bénéfice exact.">I used to forget 3 or 4 sales every week. Now I record everything in ShopTrack in under 10 seconds. At the end of the month I click Reports and see my exact profit — no calculator, no notebook.</div><div class="test-author"><div class="test-avatar">M</div><div><div class="test-name">Marie K.</div><div class="test-role" data-en="Boutique Owner, Douala" data-fr="Propriétaire Boutique, Douala">Boutique Owner, Douala</div></div></div></div>
+    <div class="test-card"><div class="test-text" data-en="ShopTrack reminds my customers when a rental is due back AND sends me an alert if they're late. Late fees are calculated automatically. I haven't lost a gown since I started." data-fr="ShopTrack rappelle mes clients quand une location est due ET m'envoie une alerte si c'est en retard. Les frais sont calculés automatiquement. Je n'ai plus perdu de robe.">ShopTrack reminds my customers when a rental is due back AND sends me an alert if they're late. Late fees are calculated automatically. I haven't lost a gown since I started.</div><div class="test-author"><div class="test-avatar g">C</div><div><div class="test-name">Céleste A.</div><div class="test-role" data-en="Bridal Studio, Yaoundé" data-fr="Studio Mariage, Yaoundé">Bridal Studio, Yaoundé</div></div></div></div>
+    <div class="test-card"><div class="test-text" data-en="I live in Houston but my boutique is in Douala. My manager records every sale and I watch everything in real time. Every Monday I get a WhatsApp summary — total sales, profit, and stock alerts." data-fr="Je vis à Houston mais ma boutique est à Douala. Ma gérante enregistre chaque vente et je vois tout en temps réel. Chaque lundi je reçois un résumé WhatsApp.">I live in Houston but my boutique is in Douala. My manager records every sale and I watch everything in real time. Every Monday I get a WhatsApp summary — total sales, profit, and stock alerts.</div><div class="test-author"><div class="test-avatar n">D</div><div><div class="test-name">David N.</div><div class="test-role" data-en="Retail Owner, Houston / Douala" data-fr="Commerce, Houston / Douala">Retail Owner, Houston / Douala</div></div></div></div>
+  </div>
+</div>
+</section>
+
+<!-- AFFILIATE SECTION -->
+<section class="section" style="background:var(--navy);padding:72px 0;position:relative;overflow:hidden">
+<div style="position:absolute;top:-120px;right:-120px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(67,97,238,.2) 0%,transparent 70%);pointer-events:none"></div>
+<div style="position:absolute;bottom:-80px;left:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,.12) 0%,transparent 70%);pointer-events:none"></div>
+<div class="container" style="position:relative;z-index:2">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center" class="reveal">
+    <div>
+      <div class="tag" style="background:rgba(16,185,129,.15);color:#6ee7b7" data-en="Earn With ShopTrack" data-fr="Gagnez Avec ShopTrack">Earn With ShopTrack</div>
+      <h2 style="color:#fff;margin-bottom:16px" data-en="Refer businesses. Earn recurring commissions." data-fr="Référencez des entreprises. Gagnez des commissions récurrentes.">Refer businesses. Earn recurring commissions.</h2>
+      <p style="color:rgba(255,255,255,.6);font-size:1rem;line-height:1.7;margin-bottom:28px" data-en="Know accountants, business coaches, or active business owners? Refer them to ShopTrack and earn a commission on every subscription they pay — for as long as they stay." data-fr="Vous connaissez des comptables, coachs d'entreprise, ou propriétaires actifs ? Référencez-les à ShopTrack et gagnez une commission sur chaque abonnement — tant qu'ils restent clients.">Know accountants, business coaches, or active business owners? Refer them to ShopTrack and earn a commission on every subscription they pay — for as long as they stay.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <a href="https://shoptrack.org/affiliates" target="_blank" class="btn btn-primary btn-lg" data-en="Join the Affiliate Program →" data-fr="Rejoindre le Programme d'Affiliation →">Join the Affiliate Program →</a>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:20px 22px;display:flex;gap:16px;align-items:flex-start">
+        <div style="font-size:1.5rem;flex-shrink:0">🔗</div>
+        <div>
+          <div style="font-family:'Syne',sans-serif;font-weight:700;color:#fff;margin-bottom:4px" data-en="Get your unique referral link" data-fr="Obtenez votre lien de parrainage unique">Get your unique referral link</div>
+          <div style="font-size:.83rem;color:rgba(255,255,255,.5);line-height:1.5" data-en="Sign up free, get your personal link instantly. Share it anywhere." data-fr="Inscrivez-vous gratuitement, obtenez votre lien personnel instantanément. Partagez-le partout.">Sign up free, get your personal link instantly. Share it anywhere.</div>
+        </div>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:20px 22px;display:flex;gap:16px;align-items:flex-start">
+        <div style="font-size:1.5rem;flex-shrink:0">💼</div>
+        <div>
+          <div style="font-family:'Syne',sans-serif;font-weight:700;color:#fff;margin-bottom:4px" data-en="Ideal for accountants &amp; coaches" data-fr="Idéal pour comptables &amp; coachs">Ideal for accountants &amp; coaches</div>
+          <div style="font-size:.83rem;color:rgba(255,255,255,.5);line-height:1.5" data-en="If you advise businesses, ShopTrack is a natural recommendation — and you earn every month they use it." data-fr="Si vous conseillez des entreprises, ShopTrack est une recommandation naturelle — et vous gagnez chaque mois.">If you advise businesses, ShopTrack is a natural recommendation — and you earn every month they use it.</div>
+        </div>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:20px 22px;display:flex;gap:16px;align-items:flex-start">
+        <div style="font-size:1.5rem;flex-shrink:0">💰</div>
+        <div>
+          <div style="font-family:'Syne',sans-serif;font-weight:700;color:#6ee7b7;margin-bottom:4px" data-en="Recurring commissions — every month" data-fr="Commissions récurrentes — chaque mois">Recurring commissions — every month</div>
+          <div style="font-size:.83rem;color:rgba(255,255,255,.5);line-height:1.5" data-en="You earn for the lifetime of every customer you bring. The more you refer, the more you earn." data-fr="Vous gagnez pendant toute la durée de vie de chaque client que vous amenez. Plus vous référencez, plus vous gagnez.">You earn for the lifetime of every customer you bring. The more you refer, the more you earn.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="section" style="background:var(--surface);padding:64px 0">
+<div class="container">
+  <div class="section-hd reveal" style="margin-bottom:36px">
+    <div class="tag" data-en="Free Download" data-fr="Téléchargement Gratuit">Free Download</div>
+    <h2 data-en="Learn everything ShopTrack can do." data-fr="Découvrez tout ce que ShopTrack peut faire.">Learn everything ShopTrack can do.</h2>
+    <p class="lead" data-en="Download our full platform presentation — available in English and French." data-fr="Téléchargez notre présentation complète de la plateforme — disponible en anglais et en français.">Download our full platform presentation — available in English and French.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:720px;margin:0 auto" class="reveal">
+    <a href="ShopTrack_Presentation_EN.pdf" download class="pdf-dl-card">
+      <div class="pdf-dl-icon">📄</div>
+      <div>
+        <div class="pdf-dl-title" data-en="Platform Overview" data-fr="Présentation Plateforme">Platform Overview</div>
+        <div class="pdf-dl-lang">English</div>
+        <div class="pdf-dl-hint" data-en="Download PDF →" data-fr="Télécharger PDF →">Download PDF →</div>
+      </div>
+    </a>
+    <a href="ShopTrack_Presentation_FR.pdf" download class="pdf-dl-card">
+      <div class="pdf-dl-icon">📄</div>
+      <div>
+        <div class="pdf-dl-title" data-en="Présentation Plateforme" data-fr="Présentation Plateforme">Présentation Plateforme</div>
+        <div class="pdf-dl-lang">Français</div>
+        <div class="pdf-dl-hint" data-en="Télécharger PDF →" data-fr="Télécharger PDF →">Télécharger PDF →</div>
+      </div>
+    </a>
+  </div>
+</div>
+</section>
+
+<section class="cta-sec">
+<div class="container" style="position:relative;z-index:2">
+  <h2 data-en="Start running your business properly." data-fr="Commencez à gérer votre entreprise correctement.">Start running your business properly.</h2>
+  <p class="lead" data-en="30 days free. Full Premium access from day one. Every module, every tool, no card required." data-fr="30 jours gratuits. Accès Premium complet dès le premier jour. Chaque module, chaque outil, sans carte.">30 days free. Full Premium access from day one. Every module, every tool, no card required.</p>
+  <div class="cta-btns">
+    <a href="https://shoptrack.org" target="_blank" class="btn btn-white btn-lg" data-en="Unlock All Features — Free →" data-fr="Débloquer Tout — Gratuit →">Unlock All Features — Free →</a>
+    <a href="#" onclick="showPage('product');return false" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.3);color:#fff" data-en="Explore the Platform" data-fr="Explorer la Plateforme">Explore the Platform</a>
+  </div>
+  <div class="cta-feats">
+    <div class="cta-feat"><div class="cta-dot"></div><span data-en="All 12+ modules unlocked instantly" data-fr="Tous les 12+ modules débloqués immédiatement">All 12+ modules unlocked instantly</span></div>
+    <div class="cta-feat"><div class="cta-dot"></div><span data-en="No credit card · No installation" data-fr="Sans carte · Sans installation">No credit card · No installation</span></div>
+    <div class="cta-feat"><div class="cta-dot"></div><span data-en="Full premium access for 30 days" data-fr="Accès premium complet pendant 30 jours">Full premium access for 30 days</span></div>
+    <div class="cta-feat"><div class="cta-dot"></div><span data-en="Your data is always kept — forever" data-fr="Vos données conservées pour toujours">Your data is always kept — forever</span></div>
+  </div>
+</div>
+</section>
+</div><!-- end home page -->
+
+<!-- ═══ PRODUCT PAGE ═══ -->
+<div class="page" id="page-product">
+<section class="section" style="background:var(--surface);padding:56px 0 36px">
+<div class="container"><div class="section-hd" style="margin-bottom:16px">
+  <div class="tag">Platform</div>
+  <h2 data-en="Every feature your business needs." data-fr="Toutes les fonctionnalités dont vous avez besoin.">Every feature your business needs.</h2>
+  <p class="lead" data-en="Explore by module — click any tab." data-fr="Explorez par module — cliquez sur un onglet.">Explore by module — click any tab.</p>
+</div></div>
+</section>
+<section class="section" style="padding-top:32px">
+<div class="container">
+<div class="feat-tabs">
+  <div class="feat-tab active" onclick="showFeat(event,'sales')" data-en="💰 Sales" data-fr="💰 Ventes">💰 Sales</div>
+  <div class="feat-tab" onclick="showFeat(event,'inventory')" data-en="📦 Inventory" data-fr="📦 Stocks">📦 Inventory</div>
+  <div class="feat-tab" onclick="showFeat(event,'rentals')" data-en="🏠 Rentals" data-fr="🏠 Locations">🏠 Rentals</div>
+  <div class="feat-tab" onclick="showFeat(event,'customers')" data-en="👥 Customers" data-fr="👥 Clients">👥 Customers</div>
+  <div class="feat-tab" onclick="showFeat(event,'vendors')" data-en="🏢 Vendors" data-fr="🏢 Fournisseurs">🏢 Vendors</div>
+  <div class="feat-tab" onclick="showFeat(event,'expenses')" data-en="💸 Expenses" data-fr="💸 Dépenses">💸 Expenses</div>
+  <div class="feat-tab" onclick="showFeat(event,'appts')" data-en="📅 Appointments" data-fr="📅 Rendez-vous">📅 Appointments</div>
+  <div class="feat-tab" onclick="showFeat(event,'wa')" data-en="💬 WhatsApp" data-fr="💬 WhatsApp">💬 WhatsApp</div>
+  <div class="feat-tab" onclick="showFeat(event,'ai')" data-en="🤖 AI Studio" data-fr="🤖 Studio IA">🤖 AI Studio</div>
+  <div class="feat-tab" onclick="showFeat(event,'rep')" data-en="📈 Reports" data-fr="📈 Rapports">📈 Reports</div>
+</div>
+<div class="feat-panel active" id="fp-sales">
+<div class="feat-items">
+<div class="feat-item"><div class="feat-ico">⚡</div><div><h4 data-en="Record a sale in 10 seconds" data-fr="Vente en 10 secondes">Record a sale in 10 seconds</h4><p data-en="Select customer, add items, choose payment method, tap Save. Receipt sent instantly." data-fr="Sélectionnez le client, ajoutez les articles, appuyez sur Enregistrer. Reçu envoyé instantanément.">Select customer, add items, choose payment method, tap Save. Receipt sent instantly.</p></div></div>
+<div class="feat-item"><div class="feat-ico">🧾</div><div><h4 data-en="Professional PDF receipts" data-fr="Reçus PDF professionnels">Professional PDF receipts</h4><p data-en="Auto-generated with your logo and itemized detail. Sent by WhatsApp or email." data-fr="Générés avec votre logo. Envoyés par WhatsApp ou email.">Auto-generated with your logo and itemized detail. Sent by WhatsApp or email.</p></div></div>
+<div class="feat-item"><div class="feat-ico">💳</div><div><h4 data-en="Partial payments & credit" data-fr="Paiements partiels et crédit">Partial payments & credit</h4><p data-en="Customer pays 50% now, 50% later. ShopTrack tracks the balance automatically." data-fr="Le client paie 50% maintenant, 50% plus tard. ShopTrack suit le solde automatiquement.">Customer pays 50% now, 50% later. ShopTrack tracks the balance automatically.</p></div></div>
+<div class="feat-item"><div class="feat-ico">🔒</div><div><h4 data-en="Minimum price protection" data-fr="Protection du prix minimum">Minimum price protection</h4><p data-en="Staff cannot sell below your floor price — they get blocked. You get a WhatsApp alert." data-fr="Le personnel ne peut pas vendre sous votre prix plancher. Vous recevez une alerte.">Staff cannot sell below your floor price — they get blocked. You get a WhatsApp alert.</p></div></div>
+<div class="feat-item"><div class="feat-ico">📋</div><div><h4 data-en="Full audit trail" data-fr="Journal d'audit complet">Full audit trail</h4><p data-en="Every sale, edit, and deletion logged with the staff member's name and timestamp." data-fr="Chaque vente, modification et suppression enregistrée avec nom et horodatage.">Every sale, edit, and deletion logged with the staff member's name and timestamp.</p></div></div>
+</div>
+<div class="feat-card">
+<div class="feat-card-title">Sales Dashboard</div>
+<div class="feat-card-sub">Live metrics — updated with every sale</div>
+<div class="feat-stats">
+<div class="feat-stat b"><div class="n">847K</div><div class="l" data-en="Revenue Today (XAF)" data-fr="CA Aujourd'hui (XAF)">Revenue Today (XAF)</div></div>
+<div class="feat-stat g"><div class="n">312K</div><div class="l" data-en="Net Profit (XAF)" data-fr="Bénéfice Net (XAF)">Net Profit (XAF)</div></div>
+<div class="feat-stat a"><div class="n">12</div><div class="l" data-en="Sales Today" data-fr="Ventes Aujourd'hui">Sales Today</div></div>
+<div class="feat-stat r"><div class="n">95K</div><div class="l" data-en="Customers Owe" data-fr="Dettes Clients">Customers Owe</div></div>
+</div>
+<div class="feat-checks">
+<div class="feat-check" data-en="Sales by staff, product, customer or period" data-fr="Ventes par personnel, produit, client ou période">Sales by staff, product, customer or period</div>
+<div class="feat-check" data-en="Cost price hidden from staff — only you see margin" data-fr="Prix de revient caché du personnel">Cost price hidden from staff — only you see margin</div>
+<div class="feat-check" data-en="Export all data to Excel or PDF" data-fr="Exportez toutes les données en Excel ou PDF">Export all data to Excel or PDF</div>
+</div>
+</div>
+</div>
+<div class="feat-panel" id="fp-inventory">
+<div class="feat-items">
+<div class="feat-item"><div class="feat-ico">📸</div><div><h4 data-en="Product photos & catalog" data-fr="Photos produits et catalogue">Product photos & catalog</h4><p data-en="Upload photos per item. Generate a full PDF catalog to share with customers." data-fr="Téléchargez des photos. Générez un catalogue PDF complet.">Upload photos per item. Generate a full PDF catalog to share with customers.</p></div></div>
+<div class="feat-item"><div class="feat-ico">🔔</div><div><h4 data-en="Low stock WhatsApp alerts" data-fr="Alertes WhatsApp stock faible">Low stock WhatsApp alerts</h4><p data-en="Set a minimum quantity per item. Automatic WhatsApp message when stock drops below it." data-fr="Fixez une quantité minimale. Message WhatsApp automatique quand le stock descend en dessous.">Set a minimum quantity per item. Automatic WhatsApp message when stock drops below it.</p></div></div>
+<div class="feat-item"><div class="feat-ico">💵</div><div><h4 data-en="Hidden cost prices" data-fr="Prix de revient cachés">Hidden cost prices</h4><p data-en="Staff see only the sale price. Only the owner sees cost price and margin." data-fr="Le personnel voit uniquement le prix de vente. Seul le propriétaire voit la marge.">Staff see only the sale price. Only the owner sees cost price and margin.</p></div></div>
+<div class="feat-item"><div class="feat-ico">📥</div><div><h4 data-en="Bulk import from Excel" data-fr="Import en masse depuis Excel">Bulk import from Excel</h4><p data-en="Upload 1,000 items from a spreadsheet in one click. No manual entry." data-fr="Téléchargez 1 000 articles depuis un tableur en un clic.">Upload 1,000 items from a spreadsheet in one click. No manual entry.</p></div></div>
+</div>
+<div class="feat-card">
+<div class="feat-card-title">Inventory Control</div>
+<div class="feat-card-sub">Know exactly what you have — always</div>
+<div class="feat-stats">
+<div class="feat-stat b"><div class="n">147</div><div class="l" data-en="Items in Stock" data-fr="Articles en Stock">Items in Stock</div></div>
+<div class="feat-stat r"><div class="n">3</div><div class="l" data-en="Low Stock Alerts" data-fr="Alertes Stock Faible">Low Stock Alerts</div></div>
+<div class="feat-stat g"><div class="n">2.1M</div><div class="l" data-en="Stock Value (XAF)" data-fr="Valeur Stock (XAF)">Stock Value (XAF)</div></div>
+<div class="feat-stat a"><div class="n">1.4M</div><div class="l" data-en="Cost Value (XAF)" data-fr="Valeur Coût (XAF)">Cost Value (XAF)</div></div>
+</div>
+<div class="feat-checks">
+<div class="feat-check" data-en="Low stock WhatsApp alert when quantity drops below your minimum" data-fr="Alerte WhatsApp quand le stock descend sous votre minimum">Low stock WhatsApp alert when quantity drops below your minimum</div>
+<div class="feat-check" data-en="Bulk import up to 1,000 items from Excel in one click" data-fr="Import en masse jusqu'à 1 000 articles depuis Excel en un clic">Bulk import up to 1,000 items from Excel in one click</div>
+<div class="feat-check" data-en="Stock auto-updated on every sale and purchase" data-fr="Stock mis à jour automatiquement à chaque vente et achat">Stock auto-updated on every sale and purchase</div>
+</div>
+</div>
+</div>
+<div class="feat-panel" id="fp-rentals">
+<div class="feat-items">
+<div class="feat-item"><div class="feat-ico">📅</div><div><h4 data-en="Rental calendar" data-fr="Calendrier des locations">Rental calendar</h4><p data-en="See all active rentals and due dates at a glance. Color-coded by status." data-fr="Voyez toutes les locations actives et les dates de retour d'un coup d'œil.">See all active rentals and due dates at a glance. Color-coded by status.</p></div></div>
+<div class="feat-item"><div class="feat-ico">💸</div><div><h4 data-en="Automatic late fees" data-fr="Frais de retard automatiques">Automatic late fees</h4><p data-en="Set a daily fee per item. ShopTrack calculates and adds it to the customer's balance automatically." data-fr="Fixez un frais journalier. ShopTrack le calcule et l'ajoute au solde du client automatiquement.">Set a daily fee per item. ShopTrack calculates and adds it to the customer's balance automatically.</p></div></div>
+<div class="feat-item"><div class="feat-ico">📋</div><div><h4 data-en="PDF rental contracts" data-fr="Contrats de location PDF">PDF rental contracts</h4><p data-en="Professional rental agreement generated automatically. Sent by WhatsApp." data-fr="Contrat de location professionnel généré automatiquement. Envoyé par WhatsApp.">Professional rental agreement generated automatically. Sent by WhatsApp.</p></div></div>
+<div class="feat-item"><div class="feat-ico">💳</div><div><h4 data-en="Deposit tracking" data-fr="Suivi des dépôts de garantie">Deposit tracking</h4><p data-en="Record deposits paid. Release them on return. See all deposits held in one place." data-fr="Enregistrez les dépôts versés. Restituez-les au retour.">Record deposits paid. Release them on return. See all deposits held in one place.</p></div></div>
+</div>
+<div class="feat-card">
+<div class="feat-card-title">Rental Management</div>
+<div class="feat-card-sub">Never lose track of an item again</div>
+<div class="feat-checks">
+<div class="feat-check" data-en="WhatsApp reminder sent to customer 1 day before due date" data-fr="Rappel WhatsApp envoyé au client 1 jour avant la date de retour">WhatsApp reminder sent to customer 1 day before due date</div>
+<div class="feat-check" data-en="Owner alert when rental is overdue" data-fr="Alerte propriétaire quand la location est en retard">Owner alert when rental is overdue</div>
+<div class="feat-check" data-en="Full rental history per item and per customer" data-fr="Historique complet par article et par client">Full rental history per item and per customer</div>
+<div class="feat-check" data-en="Rental revenue report by period" data-fr="Rapport de revenus locatifs par période">Rental revenue report by period</div>
+</div>
+</div>
+</div>
+<div class="feat-panel" id="fp-customers">
+<div class="feat-items">
+<div class="feat-item"><div class="feat-ico">👤</div><div><h4 data-en="Complete customer profiles" data-fr="Fiches clients complètes">Complete customer profiles</h4><p data-en="Purchase history, rental history, appointment history, outstanding balance, and private notes." data-fr="Historique des achats, locations, rendez-vous, solde impayé et notes privées.">Purchase history, rental history, appointment history, outstanding balance, and private notes.</p></div></div>
+<div class="feat-item"><div class="feat-ico">💰</div><div><h4 data-en="Accounts receivable dashboard" data-fr="Tableau de bord des créances">Accounts receivable dashboard</h4><p data-en="See every customer debt — 30/60/90-day aging. Collect all balances at once." data-fr="Toutes les dettes clients — tranches 30/60/90 jours.">See every customer debt — 30/60/90-day aging. Collect all balances at once.</p></div></div>
+<div class="feat-item"><div class="feat-ico g">💬</div><div><h4 data-en="One-tap WhatsApp payment reminder" data-fr="Rappel WhatsApp paiement en un tap">One-tap WhatsApp payment reminder</h4><p data-en="Tap the WhatsApp button — a professional reminder with full invoice detail is sent instantly." data-fr="Appuyez sur WhatsApp — un rappel professionnel avec détail de facture est envoyé.">Tap the WhatsApp button — a professional reminder with full invoice detail is sent instantly.</p></div></div>
+<div class="feat-item"><div class="feat-ico a">🎂</div><div><h4 data-en="Automatic birthday messages" data-fr="Messages d'anniversaire automatiques">Automatic birthday messages</h4><p data-en="Add a birthday once. ShopTrack sends a greeting automatically every year." data-fr="Ajoutez un anniversaire une fois. ShopTrack envoie un message automatiquement chaque année.">Add a birthday once. ShopTrack sends a greeting automatically every year.</p></div></div>
+</div>
+<div class="feat-card">
+<div class="feat-card-title">Customer Management</div>
+<div class="feat-card-sub">Know every customer, collect every debt</div>
+<div class="feat-checks">
+<div class="feat-check" data-en="VIP tag awarded automatically by total spend" data-fr="Tag VIP attribué automatiquement selon les dépenses">VIP tag awarded automatically by total spend</div>
+<div class="feat-check" data-en="Customer statement PDF in one click" data-fr="Relevé de compte client PDF en un clic">Customer statement PDF in one click</div>
+<div class="feat-check" data-en="Full spending and loyalty overview per customer" data-fr="Vue complète des dépenses et de la fidélité par client">Full spending and loyalty overview per customer</div>
+</div>
+</div>
+</div>
+<div class="feat-panel" id="fp-vendors">
+<div class="feat-items">
+<div class="feat-item"><div class="feat-ico">🛒</div><div><h4 data-en="Purchase orders (POs)" data-fr="Bons de commande (PO)">Purchase orders (POs)</h4><p data-en="Create and send purchase orders to suppliers directly from ShopTrack. Track their status." data-fr="Créez et envoyez des bons de commande directement depuis ShopTrack.">Create and send purchase orders to suppliers directly from ShopTrack. Track their status.</p></div></div>
+<div class="feat-item"><div class="feat-ico">📬</div><div><h4 data-en="Automatic stock update on receipt" data-fr="Mise à jour automatique à la réception">Automatic stock update on receipt</h4><p data-en="Mark a PO as Received — inventory is updated automatically. No double entry." data-fr="Marquez un PO comme Reçu — le stock est mis à jour automatiquement.">Mark a PO as Received — inventory is updated automatically. No double entry.</p></div></div>
+<div class="feat-item"><div class="feat-ico g">💳</div><div><h4 data-en="Track what you owe suppliers" data-fr="Suivez ce que vous devez aux fournisseurs">Track what you owe suppliers</h4><p data-en="See your full accounts payable — what you owe each supplier, when it's due." data-fr="Voyez vos comptes fournisseurs — ce que vous devez à chaque fournisseur.">See your full accounts payable — what you owe each supplier, when it's due.</p></div></div>
+</div>
+<div class="feat-card">
+<div class="feat-card-title">Vendor & Purchasing</div>
+<div class="feat-card-sub">Your supply chain, fully tracked</div>
+<div class="feat-checks">
+<div class="feat-check" data-en="Full vendor profiles with contact info and order history" data-fr="Fiches fournisseurs complètes avec coordonnées et historique">Full vendor profiles with contact info and order history</div>
+<div class="feat-check" data-en="Accounting ledger with every transaction" data-fr="Grand livre comptable avec chaque transaction">Accounting ledger with every transaction</div>
+<div class="feat-check" data-en="Vendor statement PDF shared by WhatsApp" data-fr="Relevé fournisseur PDF partagé par WhatsApp">Vendor statement PDF shared by WhatsApp</div>
+</div>
+</div>
+</div>
+<div class="feat-panel" id="fp-expenses">
+<div class="feat-items">
+<div class="feat-item"><div class="feat-ico">📊</div><div><h4 data-en="Separate business & personal money" data-fr="Séparez argent professionnel et personnel">Separate business & personal money</h4><p data-en="Record every expense. ShopTrack shows your real profit after all costs — not just sales." data-fr="Enregistrez chaque dépense. ShopTrack affiche votre vrai bénéfice après tous les coûts.">Record every expense. ShopTrack shows your real profit after all costs — not just sales.</p></div></div>
+<div class="feat-item"><div class="feat-ico">🏷️</div><div><h4 data-en="8 expense categories" data-fr="8 catégories de dépenses">8 expense categories</h4><p data-en="Rent, payroll, utilities, goods, marketing, transport, miscellaneous — all tracked separately." data-fr="Loyer, salaires, services, marchandises, marketing, transport — tout suivi séparément.">Rent, payroll, utilities, goods, marketing, transport, miscellaneous — all tracked separately.</p></div></div>
+<div class="feat-item"><div class="feat-ico a">🏦</div><div><h4 data-en="Bank & tax-ready records" data-fr="Dossiers prêts pour banque et impôts">Bank & tax-ready records</h4><p data-en="Banks and tax offices require clean expense records. ShopTrack builds them automatically." data-fr="Les banques et le fisc exigent des relevés propres. ShopTrack les construit automatiquement.">Banks and tax offices require clean expense records. ShopTrack builds them automatically.</p></div></div>
+</div>
+<div class="feat-card">
+<div class="feat-card-title">Expense Tracking</div>
+<div class="feat-card-sub">Know where every franc goes</div>
+<div class="feat-checks">
+<div class="feat-check" data-en="Expense report by category, vendor and period" data-fr="Rapport de dépenses par catégorie, fournisseur et période">Expense report by category, vendor and period</div>
+<div class="feat-check" data-en="Full profit & loss statement — any date range" data-fr="Compte de résultat complet — toute période">Full profit & loss statement — any date range</div>
+<div class="feat-check" data-en="Export to Excel for your accountant" data-fr="Exportez vers Excel pour votre comptable">Export to Excel for your accountant</div>
+</div>
+</div>
+</div>
+<div class="feat-panel" id="fp-appts">
+<div class="feat-items">
+<div class="feat-item"><div class="feat-ico">🌐</div><div><h4 data-en="Online booking page" data-fr="Page de réservation en ligne">Online booking page</h4><p data-en="Share a link. Customers book from their phone 24/7. You get a WhatsApp notification instantly." data-fr="Partagez un lien. Les clients réservent depuis leur téléphone 24h/24.">Share a link. Customers book from their phone 24/7. You get a WhatsApp notification instantly.</p></div></div>
+<div class="feat-item"><div class="feat-ico">👥</div><div><h4 data-en="Staff scheduling" data-fr="Planning du personnel">Staff scheduling</h4><p data-en="Assign appointments to specific staff. Each staff member sees their own calendar." data-fr="Assignez les rendez-vous au personnel. Chacun voit son propre calendrier.">Assign appointments to specific staff. Each staff member sees their own calendar.</p></div></div>
+<div class="feat-item"><div class="feat-ico g">⏰</div><div><h4 data-en="Automatic 24h reminders" data-fr="Rappels automatiques 24h">Automatic 24h reminders</h4><p data-en="Customers get a WhatsApp reminder the day before. Significantly reduces no-shows." data-fr="Les clients reçoivent un rappel WhatsApp la veille. Réduit considérablement les absences.">Customers get a WhatsApp reminder the day before. Significantly reduces no-shows.</p></div></div>
+<div class="feat-item"><div class="feat-ico a">📊</div><div><h4 data-en="Service revenue reports" data-fr="Rapports revenus par prestation">Service revenue reports</h4><p data-en="Revenue per service, per staff member, and per period." data-fr="Revenus par prestation, par employé et par période.">Revenue per service, per staff member, and per period.</p></div></div>
+</div>
+<div class="feat-card">
+<div class="feat-card-title">Appointments & Bookings</div>
+<div class="feat-card-sub">For salons, studios, and service businesses</div>
+<div class="feat-checks">
+<div class="feat-check" data-en="WhatsApp confirmation sent the moment a booking is made" data-fr="Confirmation WhatsApp envoyée dès qu'une réservation est faite">WhatsApp confirmation sent the moment a booking is made</div>
+<div class="feat-check" data-en="Online catalog of services with prices and photos" data-fr="Catalogue en ligne des prestations avec prix et photos">Online catalog of services with prices and photos</div>
+<div class="feat-check" data-en="Checkout converts appointment to sale automatically" data-fr="Le paiement convertit le rendez-vous en vente automatiquement">Checkout converts appointment to sale automatically</div>
+</div>
+</div>
+</div>
+<div class="feat-panel" id="fp-wa">
+<div class="feat-items">
+<div class="feat-item"><div class="feat-ico g">📱</div><div><h4 data-en="12+ automatic alerts — zero setup" data-fr="12+ alertes automatiques — zéro configuration">12+ automatic alerts — zero setup</h4><p data-en="Configure once. ShopTrack sends alerts to you and your customers automatically — for life." data-fr="Configurez une fois. ShopTrack envoie des alertes automatiquement — pour toujours.">Configure once. ShopTrack sends alerts to you and your customers automatically — for life.</p></div></div>
+<div class="feat-item"><div class="feat-ico g">👑</div><div><h4 data-en="6 alerts sent to YOU, the owner" data-fr="6 alertes envoyées À VOUS, le propriétaire">6 alerts sent to YOU, the owner</h4><p data-en="New sale, low stock, rental overdue, price block, new booking, weekly summary." data-fr="Nouvelle vente, stock faible, location en retard, blocage de prix, réservation, résumé.">New sale, low stock, rental overdue, price block, new booking, weekly summary.</p></div></div>
+<div class="feat-item"><div class="feat-ico g">👤</div><div><h4 data-en="6 alerts sent to YOUR CUSTOMERS" data-fr="6 alertes envoyées À VOS CLIENTS">6 alerts sent to YOUR CUSTOMERS</h4><p data-en="Booking confirmation, appointment reminder, rental due soon, payment reminder, birthday." data-fr="Confirmation réservation, rappel rendez-vous, retour location imminent, rappel paiement.">Booking confirmation, appointment reminder, rental due soon, payment reminder, birthday.</p></div></div>
+</div>
+<div class="feat-card">
+<div class="feat-card-title">WhatsApp Automation</div>
+<div class="feat-card-sub">Set it once. Runs forever.</div>
+<div class="feat-checks">
+<div class="feat-check" data-en="Every Monday: weekly sales + profit + stock summary sent to you" data-fr="Chaque lundi : résumé ventes + bénéfice + stock envoyé">Every Monday: weekly sales + profit + stock summary sent to you</div>
+<div class="feat-check" data-en="Instant alert when staff tries to sell below minimum price" data-fr="Alerte immédiate quand le personnel tente de vendre sous le prix minimum">Instant alert when staff tries to sell below minimum price</div>
+<div class="feat-check" data-en="Large order alert — any order above your threshold" data-fr="Alerte grande commande — toute commande au-dessus de votre seuil">Large order alert — any order above your threshold</div>
+<div class="feat-check" data-en="Customer birthday messages — add once, runs every year" data-fr="Messages d'anniversaire clients — ajoutez une fois, fonctionne chaque année">Customer birthday messages — add once, runs every year</div>
+</div>
+</div>
+</div>
+<div class="feat-panel" id="fp-ai">
+<div class="feat-items">
+<div class="feat-item"><div class="feat-ico">📸</div><div><h4 data-en="Instagram & social captions" data-fr="Légendes Instagram et réseaux sociaux">Instagram & social captions</h4><p data-en="Type a product name. AI writes a ready-to-post caption in seconds." data-fr="Tapez un nom de produit. L'IA rédige une légende prête à publier en quelques secondes.">Type a product name. AI writes a ready-to-post caption in seconds.</p></div></div>
+<div class="feat-item"><div class="feat-ico">🖼️</div><div><h4 data-en="Branded flyers" data-fr="Flyers personnalisés">Branded flyers</h4><p data-en="AI generates a complete branded flyer with your colors, logo, and product." data-fr="L'IA génère un flyer complet avec vos couleurs, logo et produit.">AI generates a complete branded flyer with your colors, logo, and product.</p></div></div>
+<div class="feat-item"><div class="feat-ico g">💬</div><div><h4 data-en="WhatsApp promo messages" data-fr="Messages promo WhatsApp">WhatsApp promo messages</h4><p data-en="AI writes a ready-to-send WhatsApp blast for your product or offer." data-fr="L'IA rédige un message WhatsApp prêt à envoyer pour votre produit ou offre.">AI writes a ready-to-send WhatsApp blast for your product or offer.</p></div></div>
+<div class="feat-item"><div class="feat-ico a">🎨</div><div><h4 data-en="AI product photography" data-fr="Photographie produit IA">AI product photography</h4><p data-en="Generate a professional studio-quality product photo from a description." data-fr="Générez une photo produit de qualité studio depuis une description.">Generate a professional studio-quality product photo from a description.</p></div></div>
+</div>
+<div class="feat-card">
+<div class="feat-card-title">AI Content Studio</div>
+<div class="feat-card-sub">Professional marketing content in seconds</div>
+<div class="feat-checks">
+<div class="feat-check" data-en="13 content types including a full campaign planner" data-fr="13 types de contenu dont un planificateur de campagne complet">13 content types including a full campaign planner</div>
+<div class="feat-check" data-en="French and English generation — perfect for Cameroon" data-fr="Génération en français et anglais — parfait pour le Cameroun">French and English generation — perfect for Cameroon</div>
+<div class="feat-check" data-en="Works with your own Claude or OpenAI API key" data-fr="Fonctionne avec votre propre clé Claude ou OpenAI">Works with your own Claude or OpenAI API key</div>
+</div>
+</div>
+</div>
+<div class="feat-panel" id="fp-rep">
+<div class="feat-items">
+<div class="feat-item"><div class="feat-ico">📊</div><div><h4 data-en="Profit & Loss statement" data-fr="Compte de résultat">Profit & Loss statement</h4><p data-en="Revenue, cost of goods, gross profit, all expenses, net profit. Any date range." data-fr="CA, coût des marchandises, bénéfice brut, toutes les dépenses, bénéfice net.">Revenue, cost of goods, gross profit, all expenses, net profit. Any date range.</p></div></div>
+<div class="feat-item"><div class="feat-ico">💰</div><div><h4 data-en="Sales report" data-fr="Rapport de ventes">Sales report</h4><p data-en="Total sales by period, product, customer, or staff member. Export to PDF or Excel." data-fr="Ventes totales par période, produit, client ou employé.">Total sales by period, product, customer, or staff member. Export to PDF or Excel.</p></div></div>
+<div class="feat-item"><div class="feat-ico a">📋</div><div><h4 data-en="AR aging — who owes you" data-fr="Créances — qui vous doit">AR aging — who owes you</h4><p data-en="Customer debts by 0-30, 31-60, 61-90, 90+ days. Know your old debts." data-fr="Dettes clients par tranches 0-30, 31-60, 61-90, 90+ jours.">Customer debts by 0-30, 31-60, 61-90, 90+ days. Know your old debts.</p></div></div>
+<div class="feat-item"><div class="feat-ico g">🏦</div><div><h4 data-en="Bank & loan-ready documents" data-fr="Documents prêts pour banque et prêt">Bank & loan-ready documents</h4><p data-en="Inventory valuation, accounting ledger, and cash flow — what banks ask for." data-fr="Valorisation des stocks, grand livre et flux de trésorerie — ce que demandent les banques.">Inventory valuation, accounting ledger, and cash flow — what banks ask for.</p></div></div>
+</div>
+<div class="feat-card">
+<div class="feat-card-title">Reports & Analytics</div>
+<div class="feat-card-sub">Know your numbers — any time</div>
+<div class="feat-checks">
+<div class="feat-check" data-en="8 report types — all exportable to PDF and Excel" data-fr="8 types de rapports — tous exportables en PDF et Excel">8 report types — all exportable to PDF and Excel</div>
+<div class="feat-check" data-en="Inventory value at cost price AND retail price" data-fr="Valeur des stocks au prix de revient ET au prix de vente">Inventory value at cost price AND retail price</div>
+<div class="feat-check" data-en="Staff performance — sales by employee" data-fr="Performance du personnel — ventes par employé">Staff performance — sales by employee</div>
+<div class="feat-check" data-en="Full audit log — who did what and when" data-fr="Journal d'audit complet — qui a fait quoi et quand">Full audit log — who did what and when</div>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+<section class="cta-sec">
+<div class="container" style="position:relative;z-index:2;text-align:center">
+  <h2 data-en="Every feature. One subscription." data-fr="Toutes les fonctionnalités. Un abonnement.">Every feature. One subscription.</h2>
+  <p class="lead" data-en="8,900 XAF/month after your free 30-day trial." data-fr="8 900 XAF/mois après votre essai gratuit de 30 jours.">8,900 XAF/month after your free 30-day trial.</p>
+  <div class="cta-btns" style="margin-top:24px"><a href="https://shoptrack.org" target="_blank" class="btn btn-white btn-lg" data-en="Start Free Trial →" data-fr="Démarrer l'Essai Gratuit →">Start Free Trial →</a></div>
+</div>
+</section>
+</div><!-- end product page -->
+
+<!-- ═══ USE CASES PAGE ═══ -->
+<div class="page" id="page-usecases">
+<section class="section" style="background:var(--surface);padding:56px 0 32px">
+<div class="container"><div class="section-hd" style="margin-bottom:0">
+  <div class="tag green">Use Cases</div>
+  <h2 data-en="ShopTrack works for your business." data-fr="ShopTrack fonctionne pour votre entreprise.">ShopTrack works for your business.</h2>
+  <p class="lead" data-en="Every business type has different needs. Here's exactly how ShopTrack helps each one." data-fr="Chaque type d'entreprise a des besoins différents. Voici comment ShopTrack aide chacun.">Every business type has different needs. Here's exactly how ShopTrack helps each one.</p>
+</div></div>
+</section>
+<section class="section" style="padding-top:40px">
+<div class="container">
+<div class="uc-grid">
+  <div class="uc-card"><div class="uc-icon">👗</div><h3 data-en="Boutiques &amp; Fashion" data-fr="Boutiques &amp; Mode">Boutiques &amp; Fashion</h3><p data-en="Track stock by size, color and brand. Record sales in seconds. Print receipts. Set minimum prices per item. AI generates Instagram captions for your new arrivals." data-fr="Suivez le stock par taille, couleur et marque. Enregistrez les ventes en secondes. Fixez des prix minimums.">Track stock by size, color and brand. Record sales in seconds. Print receipts. Set minimum prices per item. AI generates Instagram captions for your new arrivals.</p><div class="uc-tags"><span class="uc-tag">Sales</span><span class="uc-tag">Inventory</span><span class="uc-tag">AI Studio</span></div></div>
+  <div class="uc-card"><div class="uc-icon">💍</div><h3 data-en="Bridal Studios" data-fr="Studios Mariage">Bridal Studios</h3><p data-en="Gown rentals with automatic due date reminders and late fees. Deposit tracking. PDF rental agreements. Appointment scheduling with WhatsApp confirmations." data-fr="Location de robes avec rappels et frais de retard automatiques. Suivi des dépôts. Contrats PDF. Rendez-vous avec confirmations WhatsApp.">Gown rentals with automatic due date reminders and late fees. Deposit tracking. PDF rental agreements. Appointment scheduling with WhatsApp confirmations.</p><div class="uc-tags"><span class="uc-tag">Rentals</span><span class="uc-tag">Appointments</span><span class="uc-tag">Documents</span></div></div>
+  <div class="uc-card"><div class="uc-icon">✂️</div><h3 data-en="Salons &amp; Spas" data-fr="Salons &amp; Spas">Salons &amp; Spas</h3><p data-en="Online booking page to share on Instagram. Staff scheduling. 24h appointment reminders. Product sales. Service revenue reports. Customers book 24/7 without calling." data-fr="Page de réservation en ligne. Planning du personnel. Rappels 24h. Ventes produits. Les clients réservent 24h/24.">Online booking page to share on Instagram. Staff scheduling. 24h appointment reminders. Product sales. Service revenue reports. Customers book 24/7 without calling.</p><div class="uc-tags"><span class="uc-tag">Bookings</span><span class="uc-tag">Staff</span><span class="uc-tag">WhatsApp</span></div></div>
+  <div class="uc-card"><div class="uc-icon">📦</div><h3 data-en="General Retail" data-fr="Commerce Général">General Retail</h3><p data-en="Full point of sale, inventory management, purchase orders, and supplier tracking. Import 1,000 items from Excel. Low stock WhatsApp alerts. Generate a PDF catalog of your products." data-fr="Caisse complète, gestion des stocks, bons de commande et suivi fournisseurs. Import 1 000 articles depuis Excel.">Full point of sale, inventory management, purchase orders, and supplier tracking. Import 1,000 items from Excel. Low stock WhatsApp alerts. Generate a PDF catalog of your products.</p><div class="uc-tags"><span class="uc-tag">POS</span><span class="uc-tag">Inventory</span><span class="uc-tag">Suppliers</span></div></div>
+  <div class="uc-card"><div class="uc-icon">🏠</div><h3 data-en="Rental Businesses" data-fr="Sociétés de Location">Rental Businesses</h3><p data-en="Equipment, vehicles, event items — any rentable asset. Calendar view, automatic late fees calculated daily, deposit tracking, and overdue WhatsApp alerts to you and the customer." data-fr="Équipements, véhicules, articles événementiels. Calendrier, frais de retard automatiques, suivi des dépôts.">Equipment, vehicles, event items — any rentable asset. Calendar view, automatic late fees calculated daily, deposit tracking, and overdue WhatsApp alerts to you and the customer.</p><div class="uc-tags"><span class="uc-tag">Rentals</span><span class="uc-tag">Late Fees</span><span class="uc-tag">Alerts</span></div></div>
+  <div class="uc-card"><div class="uc-icon">📸</div><h3 data-en="Photographers &amp; Creatives" data-fr="Photographes &amp; Créatifs">Photographers &amp; Creatives</h3><p data-en="Appointment booking, equipment rental tracking, client invoices and statements, customer notes, and AI-generated marketing content for social media." data-fr="Réservations, suivi de location d'équipements, factures clients, notes et contenu marketing IA.">Appointment booking, equipment rental tracking, client invoices and statements, customer notes, and AI-generated marketing content for social media.</p><div class="uc-tags"><span class="uc-tag">Bookings</span><span class="uc-tag">Rentals</span><span class="uc-tag">AI Studio</span></div></div>
+  <div class="uc-card"><div class="uc-icon">🏗️</div><h3 data-en="Contractors &amp; BTP" data-fr="Prestataires &amp; BTP">Contractors &amp; BTP</h3><p data-en="Quotes and invoices to clients. Purchase orders to suppliers. Track project expenses. Record partial payments. Build a full financial record for bank loan applications." data-fr="Devis et factures clients. Bons de commande fournisseurs. Suivez les dépenses de projet.">Quotes and invoices to clients. Purchase orders to suppliers. Track project expenses. Record partial payments. Build a full financial record for bank loan applications.</p><div class="uc-tags"><span class="uc-tag">Invoices</span><span class="uc-tag">Expenses</span><span class="uc-tag">POs</span></div></div>
+  <div class="uc-card"><div class="uc-icon">💊</div><h3 data-en="Pharmacies" data-fr="Pharmacies">Pharmacies</h3><p data-en="Stock management with low stock alerts. Daily sales recording and receipts. Purchase orders from suppliers. End-of-day sales reports. P&amp;L for tax and compliance." data-fr="Gestion des stocks avec alertes. Enregistrement des ventes. Bons de commande. Rapports de ventes. Compte de résultat.">Stock management with low stock alerts. Daily sales recording and receipts. Purchase orders from suppliers. End-of-day sales reports. P&amp;L for tax and compliance.</p><div class="uc-tags"><span class="uc-tag">Inventory</span><span class="uc-tag">Sales</span><span class="uc-tag">Reports</span></div></div>
+  <div class="uc-card"><div class="uc-icon">🍽️</div><h3 data-en="Restaurants &amp; Catering" data-fr="Restaurants &amp; Traiteurs">Restaurants &amp; Catering</h3><p data-en="Menu items as inventory, daily sales recording and receipts, expense tracking for ingredients and staff, supplier order management, and end-of-day revenue reports." data-fr="Articles du menu comme inventaire, enregistrement des ventes, dépenses pour ingrédients et personnel.">Menu items as inventory, daily sales recording and receipts, expense tracking for ingredients and staff, supplier order management, and end-of-day revenue reports.</p><div class="uc-tags"><span class="uc-tag">Sales</span><span class="uc-tag">Expenses</span><span class="uc-tag">Suppliers</span></div></div>
+</div>
+</div>
+</section>
+<section class="cta-sec">
+<div class="container" style="position:relative;z-index:2;text-align:center">
+  <h2 data-en="Your business is on the list." data-fr="Votre entreprise est sur la liste.">Your business is on the list.</h2>
+  <p class="lead" data-en="Start your free trial today. No card, full access, all features." data-fr="Démarrez votre essai gratuit aujourd'hui. Sans carte, accès complet.">Start your free trial today. No card, full access, all features.</p>
+  <div class="cta-btns" style="margin-top:24px"><a href="https://shoptrack.org" target="_blank" class="btn btn-white btn-lg" data-en="Start Free Trial →" data-fr="Démarrer l'Essai Gratuit →">Start Free Trial →</a></div>
+</div>
+</section>
+</div>
+
+<!-- ═══ WHATSAPP PAGE ═══ -->
+<div class="page" id="page-whatsapp">
+<section class="wa-sec">
+<div class="container" style="position:relative;z-index:2">
+<div class="section-hd" style="margin-bottom:24px">
+  <div class="tag green" data-en="WhatsApp Automation" data-fr="Automatisation WhatsApp">WhatsApp Automation</div>
+  <h2 data-en="ShopTrack runs your business on WhatsApp." data-fr="ShopTrack gère votre entreprise sur WhatsApp.">ShopTrack runs your business on WhatsApp.</h2>
+  <p class="lead" data-en="12+ automatic alerts — to you and your customers. Configure once. It runs forever." data-fr="12+ alertes automatiques — pour vous et vos clients. Configurez une fois. Ça fonctionne pour toujours.">12+ automatic alerts — to you and your customers. Configure once. It runs forever.</p>
+</div>
+<div class="wa-grid">
+  <div class="wa-card"><div class="wa-type ow" data-en="→ Sent to YOU" data-fr="→ Envoyé À VOUS">→ Sent to YOU</div><h4 data-en="New sale recorded" data-fr="Nouvelle vente enregistrée">New sale recorded</h4><p data-en="Every time a staff member makes a sale, you get a WhatsApp message instantly with full details." data-fr="Chaque fois qu'un employé fait une vente, vous recevez un WhatsApp instantanément.">Every time a staff member makes a sale, you get a WhatsApp message instantly with full details.</p></div>
+  <div class="wa-card"><div class="wa-type ow" data-en="→ Sent to YOU" data-fr="→ Envoyé À VOUS">→ Sent to YOU</div><h4 data-en="Low stock warning" data-fr="Alerte stock faible">Low stock warning</h4><p data-en="An item drops below your minimum stock level — you're notified before you run out." data-fr="Un article descend sous votre niveau minimum — vous êtes notifié avant d'être à court.">An item drops below your minimum stock level — you're notified before you run out.</p></div>
+  <div class="wa-card"><div class="wa-type ow" data-en="→ Sent to YOU" data-fr="→ Envoyé À VOUS">→ Sent to YOU</div><h4 data-en="Rental overdue" data-fr="Location en retard">Rental overdue</h4><p data-en="A rental item was not returned on time. You get an alert and late fees are added automatically." data-fr="Un article n'a pas été rendu à temps. Vous recevez une alerte et les frais s'ajoutent.">A rental item was not returned on time. You get an alert and late fees are added automatically.</p></div>
+  <div class="wa-card"><div class="wa-type ow" data-en="→ Sent to YOU" data-fr="→ Envoyé À VOUS">→ Sent to YOU</div><h4 data-en="Price block alert" data-fr="Alerte blocage de prix">Price block alert</h4><p data-en="A staff member tried to sell below your minimum price — blocked and you're notified immediately." data-fr="Un employé a essayé de vendre sous votre prix minimum — bloqué et vous êtes notifié immédiatement.">A staff member tried to sell below your minimum price — blocked and you're notified immediately.</p></div>
+  <div class="wa-card"><div class="wa-type ow" data-en="→ Sent to YOU" data-fr="→ Envoyé À VOUS">→ Sent to YOU</div><h4 data-en="Weekly summary" data-fr="Résumé hebdomadaire">Weekly summary</h4><p data-en="Every Monday — total sales, profit, customer debts, and stock alerts for the week." data-fr="Chaque lundi — ventes totales, bénéfice, dettes clients et alertes stock de la semaine.">Every Monday — total sales, profit, customer debts, and stock alerts for the week.</p></div>
+  <div class="wa-card"><div class="wa-type ow" data-en="→ Sent to YOU" data-fr="→ Envoyé À VOUS">→ Sent to YOU</div><h4 data-en="New booking made" data-fr="Nouvelle réservation">New booking made</h4><p data-en="A customer books online — you're notified instantly with their name, date, and service." data-fr="Un client réserve en ligne — vous êtes notifié instantanément avec ses coordonnées.">A customer books online — you're notified instantly with their name, date, and service.</p></div>
+  <div class="wa-card"><div class="wa-type cu" data-en="→ Sent to CUSTOMERS" data-fr="→ Envoyé AUX CLIENTS">→ Sent to CUSTOMERS</div><h4 data-en="Booking confirmation" data-fr="Confirmation de réservation">Booking confirmation</h4><p data-en="Sent the moment they book — date, time, service, and staff member confirmed." data-fr="Envoyé dès qu'ils réservent — date, heure, prestation et employé confirmés.">Sent the moment they book — date, time, service, and staff member confirmed.</p></div>
+  <div class="wa-card"><div class="wa-type cu" data-en="→ Sent to CUSTOMERS" data-fr="→ Envoyé AUX CLIENTS">→ Sent to CUSTOMERS</div><h4 data-en="Appointment reminder" data-fr="Rappel de rendez-vous">Appointment reminder</h4><p data-en="Sent 24 hours before their appointment. Significantly reduces no-shows." data-fr="Envoyé 24 heures avant leur rendez-vous. Réduit considérablement les absences.">Sent 24 hours before their appointment. Significantly reduces no-shows.</p></div>
+  <div class="wa-card"><div class="wa-type cu" data-en="→ Sent to CUSTOMERS" data-fr="→ Envoyé AUX CLIENTS">→ Sent to CUSTOMERS</div><h4 data-en="Rental due soon" data-fr="Retour de location imminent">Rental due soon</h4><p data-en="Sent 1 day before their rental item is due back. Customers return on time." data-fr="Envoyé 1 jour avant la date de retour. Les clients rendent à temps.">Sent 1 day before their rental item is due back. Customers return on time.</p></div>
+  <div class="wa-card"><div class="wa-type cu" data-en="→ Sent to CUSTOMERS" data-fr="→ Envoyé AUX CLIENTS">→ Sent to CUSTOMERS</div><h4 data-en="Payment reminder" data-fr="Rappel de paiement">Payment reminder</h4><p data-en="Manually triggered from the customer's profile — includes full invoice breakdown." data-fr="Déclenché manuellement depuis la fiche client — inclut le détail complet de la facture.">Manually triggered from the customer's profile — includes full invoice breakdown.</p></div>
+  <div class="wa-card"><div class="wa-type cu" data-en="→ Sent to CUSTOMERS" data-fr="→ Envoyé AUX CLIENTS">→ Sent to CUSTOMERS</div><h4 data-en="Birthday message" data-fr="Message d'anniversaire">Birthday message</h4><p data-en="Automatic birthday greeting to build loyalty. Add the date once — it runs forever." data-fr="Message d'anniversaire automatique pour fidéliser. Ajoutez la date une fois.">Automatic birthday greeting to build loyalty. Add the date once — it runs forever.</p></div>
+  <div class="wa-card"><div class="wa-type ow" data-en="→ Sent to YOU" data-fr="→ Envoyé À VOUS">→ Sent to YOU</div><h4 data-en="Large order alert" data-fr="Alerte grande commande">Large order alert</h4><p data-en="Any order above your set threshold — you're notified so you can follow up personally." data-fr="Toute commande au-dessus de votre seuil fixé — vous êtes notifié pour un suivi personnel.">Any order above your set threshold — you're notified so you can follow up personally.</p></div>
+</div>
+</div>
+</section>
+<section class="cta-sec">
+<div class="container" style="position:relative;z-index:2;text-align:center">
+  <h2 data-en="Your business runs on WhatsApp anyway." data-fr="Votre entreprise fonctionne déjà sur WhatsApp.">Your business runs on WhatsApp anyway.</h2>
+  <p class="lead" data-en="ShopTrack plugs into that. Zero extra apps. Zero extra work." data-fr="ShopTrack s'y connecte. Zéro application supplémentaire. Zéro travail supplémentaire.">ShopTrack plugs into that. Zero extra apps. Zero extra work.</p>
+  <div class="cta-btns" style="margin-top:24px"><a href="https://shoptrack.org" target="_blank" class="btn btn-white btn-lg" data-en="Start Free Trial →" data-fr="Démarrer l'Essai Gratuit →">Start Free Trial →</a></div>
+</div>
+</section>
+</div>
+
+<!-- ═══ REPORTS PAGE ═══ -->
+<div class="page" id="page-reports">
+<section class="section">
+<div class="container">
+<div class="section-hd reveal">
+  <div class="tag amber" data-en="Reports &amp; Documents" data-fr="Rapports &amp; Documents">Reports &amp; Documents</div>
+  <h2 data-en="Know your numbers. Own your business." data-fr="Connaissez vos chiffres. Maîtrisez votre entreprise.">Know your numbers. Own your business.</h2>
+  <p class="lead" data-en="8 business reports, all exportable. Your complete financial picture — any date, one click." data-fr="8 rapports métier, tous exportables. Votre tableau financier complet — toute date, un clic.">8 business reports, all exportable. Your complete financial picture — any date, one click.</p>
+</div>
+<div class="rep-grid reveal">
+  <div class="rep-card"><div class="rep-icon">📊</div><h4 data-en="Profit &amp; Loss" data-fr="Compte de Résultat">Profit &amp; Loss</h4><p data-en="Revenue, cost of goods, gross profit, all expenses, net profit. Any date range." data-fr="CA, coût des marchandises, bénéfice brut, toutes les dépenses, bénéfice net.">Revenue, cost of goods, gross profit, all expenses, net profit. Any date range.</p></div>
+  <div class="rep-card"><div class="rep-icon">💰</div><h4 data-en="Sales Report" data-fr="Rapport de Ventes">Sales Report</h4><p data-en="Total sales by period, product, customer, or staff member. Export to PDF or Excel." data-fr="Ventes totales par période, produit, client ou employé.">Total sales by period, product, customer, or staff member. Export to PDF or Excel.</p></div>
+  <div class="rep-card"><div class="rep-icon">📦</div><h4 data-en="Inventory Valuation" data-fr="Valorisation des Stocks">Inventory Valuation</h4><p data-en="Current stock value at cost price AND retail price. Know what you own." data-fr="Valeur actuelle des stocks au prix de revient ET au prix de vente.">Current stock value at cost price AND retail price. Know what you own.</p></div>
+  <div class="rep-card"><div class="rep-icon">👥</div><h4 data-en="Customer Report" data-fr="Rapport Clients">Customer Report</h4><p data-en="Top customers, spending history, debt aging, loyalty overview." data-fr="Meilleurs clients, historique des dépenses, vieillissement des dettes.">Top customers, spending history, debt aging, loyalty overview.</p></div>
+  <div class="rep-card"><div class="rep-icon">📋</div><h4 data-en="AR Aging — Who Owes You" data-fr="Créances — Qui Vous Doit">AR Aging — Who Owes You</h4><p data-en="Customer debts by 0-30, 31-60, 61-90, 90+ days. Know the old debts." data-fr="Dettes clients par tranches 0-30, 31-60, 61-90, 90+ jours.">Customer debts by 0-30, 31-60, 61-90, 90+ days. Know the old debts.</p></div>
+  <div class="rep-card"><div class="rep-icon">💸</div><h4 data-en="Expense Report" data-fr="Rapport de Dépenses">Expense Report</h4><p data-en="Spending by category, vendor, and period. See exactly where money goes." data-fr="Dépenses par catégorie, fournisseur et période.">Spending by category, vendor, and period. See exactly where money goes.</p></div>
+  <div class="rep-card"><div class="rep-icon">🏠</div><h4 data-en="Rental Report" data-fr="Rapport de Locations">Rental Report</h4><p data-en="Utilization rate, rental revenue, and late fees collected by period." data-fr="Taux d'utilisation, revenus locatifs et frais de retard par période.">Utilization rate, rental revenue, and late fees collected by period.</p></div>
+  <div class="rep-card"><div class="rep-icon">🔍</div><h4 data-en="Audit Log" data-fr="Journal d'Audit">Audit Log</h4><p data-en="Every action recorded — who did what, and when. Filter by date, user, or action type." data-fr="Chaque action enregistrée — qui a fait quoi et quand.">Every action recorded — who did what, and when. Filter by date, user, or action type.</p></div>
+  <div class="rep-card"><div class="rep-icon">📅</div><h4 data-en="Appointment Report" data-fr="Rapport Rendez-vous">Appointment Report</h4><p data-en="Booking rates, no-shows, revenue per service, staff performance." data-fr="Taux de réservation, absences, revenus par prestation, performance du personnel.">Booking rates, no-shows, revenue per service, staff performance.</p></div>
+</div>
+<div class="bank-box reveal" style="margin-top:48px">
+  <div>
+    <div class="tag amber" style="margin-bottom:14px" data-en="For Loans, Tax &amp; Growth" data-fr="Pour Prêts, Impôts &amp; Croissance">For Loans, Tax &amp; Growth</div>
+    <h3 data-en="A business with clean records gets the loan." data-fr="Une entreprise avec des comptes clairs obtient le prêt.">A business with clean records gets the loan.</h3>
+    <p data-en="Banks, tax offices, and investors all ask for the same documents. ShopTrack generates them automatically — every day, for as many years as you've been using it." data-fr="Les banques, le fisc et les investisseurs demandent tous les mêmes documents. ShopTrack les génère automatiquement.">Banks, tax offices, and investors all ask for the same documents. ShopTrack generates them automatically — every day, for as many years as you've been using it.</p>
+    <a href="https://shoptrack.org" target="_blank" class="btn btn-white btn-sm" data-en="Start Building Your Records" data-fr="Commencez à Construire Vos Dossiers">Start Building Your Records</a>
+  </div>
+  <div>
+    <div class="bank-list">
+      <div class="bank-item"><span class="bank-q" data-en="Proof of monthly revenue" data-fr="Preuve de revenus mensuels">Proof of monthly revenue</span><span class="bank-a" data-en="✓ Monthly revenue report" data-fr="✓ Rapport de revenus mensuel">✓ Monthly revenue report</span></div>
+      <div class="bank-item"><span class="bank-q" data-en="Profit &amp; Loss statement" data-fr="Compte de résultat">Profit &amp; Loss statement</span><span class="bank-a" data-en="✓ Full P&amp;L — any date range" data-fr="✓ P&amp;L complet — toute période">✓ Full P&amp;L — any date range</span></div>
+      <div class="bank-item"><span class="bank-q" data-en="List of assets (inventory)" data-fr="Liste des actifs (inventaire)">List of assets (inventory)</span><span class="bank-a" data-en="✓ Inventory valuation report" data-fr="✓ Rapport de valorisation">✓ Inventory valuation report</span></div>
+      <div class="bank-item"><span class="bank-q" data-en="Cash flow history" data-fr="Historique des flux de trésorerie">Cash flow history</span><span class="bank-a" data-en="✓ Accounting ledger" data-fr="✓ Grand livre comptable">✓ Accounting ledger</span></div>
+      <div class="bank-item"><span class="bank-q" data-en="Expense records" data-fr="Relevé des dépenses">Expense records</span><span class="bank-a" data-en="✓ Full expenses by category" data-fr="✓ Dépenses complètes par catégorie">✓ Full expenses by category</span></div>
+      <div class="bank-item"><span class="bank-q" data-en="Customer base evidence" data-fr="Preuve d'une base de clients">Customer base evidence</span><span class="bank-a" data-en="✓ Customer list with history" data-fr="✓ Liste clients avec historique">✓ Customer list with history</span></div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<section class="cta-sec">
+<div class="container" style="position:relative;z-index:2;text-align:center">
+  <h2 data-en="Start building your financial records today." data-fr="Commencez à construire vos dossiers financiers aujourd'hui.">Start building your financial records today.</h2>
+  <p class="lead" data-en="Every day you wait is a day without records." data-fr="Chaque jour d'attente est un jour sans dossiers.">Every day you wait is a day without records.</p>
+  <div class="cta-btns" style="margin-top:24px"><a href="https://shoptrack.org" target="_blank" class="btn btn-white btn-lg" data-en="Start Free Trial →" data-fr="Démarrer l'Essai Gratuit →">Start Free Trial →</a></div>
+</div>
+</section>
+</div>
+
+<!-- ═══ PRICING PAGE ═══ -->
+<div class="page" id="page-pricing">
+<section class="section">
+<div class="container">
+<div class="section-hd reveal">
+  <div class="tag" data-en="Pricing" data-fr="Tarifs">Pricing</div>
+  <h2 data-en="Simple, honest pricing." data-fr="Tarifs simples et honnêtes.">Simple, honest pricing.</h2>
+  <p class="lead" data-en="Start free. Upgrade when you're ready. All features included in Premium." data-fr="Commencez gratuitement. Passez à Premium quand vous êtes prêt.">Start free. Upgrade when you're ready. All features included in Premium.</p>
+</div>
+
+<div style="max-width:640px;margin:0 auto 36px;background:linear-gradient(135deg,#0f1f5c,#1e3a8a);border-radius:16px;padding:24px 32px;display:flex;align-items:center;gap:22px;flex-wrap:wrap" class="reveal">
+  <div style="font-size:2rem;flex-shrink:0">🎁</div>
+  <div style="flex:1;min-width:200px">
+    <p style="font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:5px" data-en="Your 30-day trial is full Premium — zero limitations." data-fr="Votre essai 30 jours est Premium complet — zéro limitation.">Your 30-day trial is full Premium — zero limitations.</p>
+    <p style="font-size:.83rem;color:rgba(255,255,255,.6);line-height:1.55" data-en="Every module below, every tool, every report — all unlocked from the moment you sign up. No card, no tricks." data-fr="Chaque module ci-dessous, chaque outil, chaque rapport — tout débloqué dès l'inscription. Sans carte, sans condition.">Every module below, every tool, every report — all unlocked from the moment you sign up. No card, no tricks.</p>
+  </div>
+  <a href="https://shoptrack.org" target="_blank" class="btn btn-white btn-sm" style="white-space:nowrap;flex-shrink:0" data-en="Start Free →" data-fr="Commencer →">Start Free →</a>
+</div>
+<div class="price-wrap reveal">
+  <div class="price-card">
+    <div class="price-name" data-en="Free" data-fr="Gratuit">Free</div>
+    <div class="price-amt">0 <span>XAF</span></div>
+    <div class="price-per" data-en="Forever · no card needed" data-fr="Pour toujours · sans carte">Forever · no card needed</div>
+    <div class="price-div"></div>
+    <ul class="price-feats">
+      <li><span class="chk">✓</span><span data-en="1 user account" data-fr="1 compte utilisateur">1 user account</span></li>
+      <li><span class="chk">✓</span><span data-en="30 products in inventory" data-fr="30 produits en inventaire">30 products in inventory</span></li>
+      <li><span class="chk">✓</span><span data-en="30 customers · 10 vendors" data-fr="30 clients · 10 fournisseurs">30 customers · 10 vendors</span></li>
+      <li><span class="chk">✓</span><span data-en="Unlimited sales &amp; expenses" data-fr="Ventes &amp; dépenses illimitées">Unlimited sales &amp; expenses</span></li>
+      <li><span class="chk">✓</span><span data-en="WhatsApp document sharing" data-fr="Partage documents WhatsApp">WhatsApp document sharing</span></li>
+      <li><span class="chk">✓</span><span data-en="Monthly PDF reports" data-fr="Rapports PDF mensuels">Monthly PDF reports</span></li>
+      <li><span class="no">–</span><span style="color:var(--muted)" data-en="Appointments &amp; Bookings" data-fr="Rendez-vous &amp; Réservations">Appointments &amp; Bookings</span></li>
+      <li><span class="no">–</span><span style="color:var(--muted)" data-en="Rental Management" data-fr="Gestion des Locations">Rental Management</span></li>
+      <li><span class="no">–</span><span style="color:var(--muted)" data-en="AI Studio" data-fr="Studio IA">AI Studio</span></li>
+      <li><span class="no">–</span><span style="color:var(--muted)" data-en="WhatsApp full automation" data-fr="Automatisation WhatsApp complète">WhatsApp full automation</span></li>
+    </ul>
+    <a href="https://shoptrack.org" target="_blank" class="btn btn-outline" style="width:100%;justify-content:center" data-en="Get Started Free" data-fr="Commencer Gratuitement">Get Started Free</a>
+  </div>
+  <div class="price-card feat">
+    <div class="price-badge" data-en="Most Popular" data-fr="Le Plus Populaire">Most Popular</div>
+    <div class="price-name" style="color:var(--blue)" data-en="Premium" data-fr="Premium">Premium</div>
+    <div class="price-amt">8,900 <span>XAF</span></div>
+    <div style="font-size:.78rem;color:var(--muted);margin-bottom:2px">≈ $15 USD / month</div>
+    <div class="price-per" data-en="/month · cancel anytime · 30-day free trial" data-fr="/mois · résiliez à tout moment · 30 jours gratuits">/month · cancel anytime · 30-day free trial</div>
+    <div class="price-div"></div>
+    <ul class="price-feats">
+      <li><span class="chk">✓</span><span data-en="Up to 5 user accounts" data-fr="Jusqu'à 5 comptes utilisateurs">Up to 5 user accounts</span></li>
+      <li><span class="chk">✓</span><span data-en="Unlimited products, customers &amp; vendors" data-fr="Produits, clients &amp; fournisseurs illimités">Unlimited products, customers &amp; vendors</span></li>
+      <li><span class="chk">✓</span><span data-en="Unlimited invoices · No watermark" data-fr="Factures illimitées · Sans filigrane">Unlimited invoices · No watermark</span></li>
+      <li><span class="chk">✓</span><span data-en="Custom business branding" data-fr="Personnalisation marque propre">Custom business branding</span></li>
+      <li><span class="chk">✓</span><span data-en="WhatsApp full automation (12+ alerts)" data-fr="Automatisation WhatsApp complète (12+ alertes)">WhatsApp full automation (12+ alerts)</span></li>
+      <li><span class="chk">✓</span><span data-en="Appointments &amp; Bookings — unlimited" data-fr="Rendez-vous &amp; Réservations — illimités">Appointments &amp; Bookings — unlimited</span></li>
+      <li><span class="chk">✓</span><span data-en="Rental Management — included" data-fr="Gestion des Locations — incluse">Rental Management — included</span></li>
+      <li><span class="chk">✓</span><span data-en="AI Studio — included" data-fr="Studio IA — inclus">AI Studio — inclus</span></li>
+      <li><span class="chk">✓</span><span data-en="Real-time reports + CSV &amp; PDF export" data-fr="Rapports temps réel + export CSV &amp; PDF">Real-time reports + CSV &amp; PDF export</span></li>
+      <li><span class="chk">✓</span><span data-en="Multi-staff scheduling" data-fr="Planning multi-personnel">Multi-staff scheduling</span></li>
+    </ul>
+    <a href="https://shoptrack.org" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center" data-en="Start Free Trial →" data-fr="Démarrer l'Essai Gratuit →">Start Free Trial →</a>
+    <div style="margin-top:16px;background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:1.5px solid #6ee7b7;border-radius:10px;padding:14px 16px;text-align:center">
+      <p style="font-size:.82rem;font-weight:700;color:#065f46;margin-bottom:4px" data-en="🔓 30-day trial = full Premium access" data-fr="🔓 Essai 30 jours = accès Premium complet">🔓 30-day trial = full Premium access</p>
+      <p style="font-size:.78rem;color:#047857;line-height:1.5" data-en="Every module, every tool, every report — unlocked from day one. No limits, no card required." data-fr="Chaque module, chaque outil, chaque rapport — débloqué dès le premier jour. Sans limites ni carte.">Every module, every tool, every report — unlocked from day one. No limits, no card required.</p>
+    </div>
+    <p class="price-note" style="margin-top:10px" data-en="After 30 days, account reverts to Free plan — your data is always kept." data-fr="Après 30 jours, le compte passe au plan Gratuit — vos données sont toujours conservées.">After 30 days, account reverts to Free plan — your data is always kept.</p>
+  </div>
+</div>
+<div style="text-align:center;margin-top:36px">
+  <p style="font-size:.88rem;color:var(--muted);margin-bottom:14px" data-en="Accepted payment methods:" data-fr="Méthodes de paiement acceptées :">Accepted payment methods:</p>
+  <div class="pay-methods"><div class="pay-badge">📱 Mobile Money</div><div class="pay-badge">🟠 Orange Money</div><div class="pay-badge">🏦 Bank Transfer</div><div class="pay-badge">💳 Card</div></div>
+</div>
+
+<div style="margin-top:48px;background:linear-gradient(135deg,#0f1f5c,#1a3060);border-radius:18px;padding:32px 40px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap" class="reveal">
+  <div style="display:flex;align-items:center;gap:18px">
+    <div style="font-size:2.2rem;flex-shrink:0">🤝</div>
+    <div>
+      <p style="font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:5px" data-en="Know businesses that need this? Earn commissions." data-fr="Vous connaissez des entreprises qui ont besoin de ça ? Gagnez des commissions.">Know businesses that need this? Earn commissions.</p>
+      <p style="font-size:.84rem;color:rgba(255,255,255,.55);line-height:1.5" data-en="Join the ShopTrack affiliate program. Refer a business, earn a recurring commission every month they subscribe." data-fr="Rejoignez le programme d'affiliation ShopTrack. Référencez une entreprise, gagnez une commission récurrente chaque mois.">Join the ShopTrack affiliate program. Refer a business, earn a recurring commission every month they subscribe.</p>
+    </div>
+  </div>
+  <a href="https://shoptrack.org/affiliates" target="_blank" class="btn btn-white" style="flex-shrink:0" data-en="Learn About Affiliates →" data-fr="En Savoir Plus →">Learn About Affiliates →</a>
+</div>
+</div>
+</section>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+<div class="container">
+<div class="foot-grid">
+  <div>
+    <div class="foot-brand">ShopTrack</div>
+    <p class="foot-desc" data-en="The complete business management platform for small businesses in Africa and the African diaspora in the USA. Sales, inventory, rentals, WhatsApp automation, AI Studio and more." data-fr="La plateforme de gestion complète pour les PME africaines et la diaspora aux États-Unis. Ventes, stocks, locations, automatisation WhatsApp, Studio IA et plus.">The complete business management platform for small businesses in Africa and the African diaspora in the USA. Sales, inventory, rentals, WhatsApp automation, AI Studio and more.</p>
+  </div>
+  <div>
+    <div class="foot-col-ttl" data-en="Product" data-fr="Produit">Product</div>
+    <ul class="foot-links">
+      <li><a href="#" onclick="showPage('product');return false" data-en="All Features" data-fr="Toutes les Fonctionnalités">All Features</a></li>
+      <li><a href="#" onclick="showPage('whatsapp');return false" data-en="WhatsApp Automation" data-fr="Automatisation WhatsApp">WhatsApp Automation</a></li>
+      <li><a href="#" onclick="showPage('reports');return false" data-en="Reports &amp; Documents" data-fr="Rapports &amp; Documents">Reports &amp; Documents</a></li>
+      <li><a href="#" onclick="showPage('pricing');return false" data-en="Pricing" data-fr="Tarifs">Pricing</a></li>
+    </ul>
+  </div>
+  <div>
+    <div class="foot-col-ttl" data-en="For Businesses" data-fr="Pour Entreprises">For Businesses</div>
+    <ul class="foot-links">
+      <li><a href="#" onclick="showPage('usecases');return false" data-en="Use Cases" data-fr="Cas d'Usage">Use Cases</a></li>
+      <li><a href="https://shoptrack.org/affiliates" target="_blank" style="color:#6ee7b7;font-weight:600" data-en="🤝 Affiliate Program" data-fr="🤝 Programme d'Affiliation">🤝 Affiliate Program</a></li>
+      <li><a href="https://shoptrack.org" target="_blank" data-en="Sign In" data-fr="Connexion">Sign In</a></li>
+    </ul>
+  </div>
+  <div>
+    <div class="foot-col-ttl" data-en="Resources" data-fr="Ressources">Resources</div>
+    <ul class="foot-links">
+      <li><a href="ShopTrack_Presentation_EN.pdf" download data-en="Presentation (English)" data-fr="Présentation (Anglais)">Presentation (English)</a></li>
+      <li><a href="ShopTrack_Presentation_FR.pdf" download data-en="Présentation (Français)" data-fr="Présentation (Français)">Présentation (Français)</a></li>
+    </ul>
+  </div>
+  <div>
+    <div class="foot-col-ttl" data-en="Contact" data-fr="Contact">Contact</div>
+    <ul class="foot-links">
+      <li><a href="mailto:info@shoptrack.work">info@shoptrack.work</a></li>
+      <li><a href="https://shoptrack.org" target="_blank" data-en="Open the App" data-fr="Ouvrir l'Application">Open the App</a></li>
+      <li><a href="https://shoptrack.work">shoptrack.work</a></li>
+    </ul>
+  </div>
+</div>
+<div class="foot-bot">
+  <div class="foot-bot-l">© 2026 ShopTrack · shoptrack.work · shoptrack.org</div>
+  <div class="foot-bot-r"><a href="#" data-en="Privacy" data-fr="Confidentialité">Privacy</a><a href="#" data-en="Terms" data-fr="Conditions">Terms</a></div>
+</div>
+</div>
+</footer>
+
+<script>
+function showPage(name){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  var pg = document.getElementById('page-'+name);
+  if(pg) pg.classList.add('active');
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.toggle('active',a.dataset.page===name));
+  window.scrollTo({top:0,behavior:'smooth'});
+  setTimeout(initReveal,80);
+}
+function showFeat(e,id){
+  document.querySelectorAll('.feat-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.feat-tab').forEach(t=>t.classList.remove('active'));
+  var pn=document.getElementById('fp-'+id);
+  if(pn) pn.classList.add('active');
+  e.currentTarget.classList.add('active');
+}
+function toggleMobile(){
+  var m=document.getElementById('mob');
+  m.style.display=m.style.display==='flex'?'none':'flex';
+}
+function setLang(lang,btn){
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  document.querySelectorAll('[data-'+lang+']').forEach(el=>{
+    var v=el.getAttribute('data-'+lang);
+    if(v) el.innerHTML=v;
+  });
+}
+function animateCounters(){
+  document.querySelectorAll('[data-count]').forEach(el=>{
+    var target=parseInt(el.dataset.count);
+    if(isNaN(target)) return;
+    var duration=1200,startTime=null;
+    function step(ts){
+      if(!startTime) startTime=ts;
+      var p=Math.min((ts-startTime)/duration,1);
+      el.textContent=Math.floor(p*target).toLocaleString();
+      if(p<1) requestAnimationFrame(step);
+      else el.textContent=target.toLocaleString();
+    }
+    requestAnimationFrame(step);
+  });
+}
+function initReveal(){
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        if(e.target.querySelector('[data-count]')) animateCounters();
+      }
+    });
+  },{threshold:0.1});
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el=>obs.observe(el));
+}
+document.addEventListener('DOMContentLoaded',function(){
+  initReveal();
+  setTimeout(animateCounters,500);
+});
+</script>
+</body>
+</html>
