@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>How to Track Inventory Without Losing Money | ShopTrack Blog</title>
+<meta name="description" content="Poor inventory management is one of the top reasons small businesses lose money without realising it. Here's how to do it right."/>
+<meta property="og:title" content="How to Track Inventory Without Losing Money"/>
+<meta property="og:description" content="Poor inventory management is one of the top reasons small businesses lose money without realising it. Here's how to do it right."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://shoptrack.live/blog/how-to-track-inventory-without-losing-money.html"/>
+<link rel="canonical" href="https://shoptrack.live/blog/how-to-track-inventory-without-losing-money.html"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#0f1f5c;--blue:#4361ee;--blue-lt:#eef1fd;--green:#10b981;--green-lt:#ecfdf5;--amber:#f59e0b;--amber-lt:#fffbeb;--ink:#0f172a;--body:#374151;--muted:#6b7280;--border:#e5e7eb;--surface:#f9fafb;--white:#ffffff;--sans:'DM Sans',sans-serif;--shadow:0 4px 24px rgba(15,31,92,.09);--shadow-lg:0 16px 60px rgba(15,31,92,.14)}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--body);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.container{max-width:1160px;margin:0 auto;padding:0 24px}
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 24px}
+.nav-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{display:flex;align-items:center}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links a{font-size:.88rem;font-weight:500;color:var(--muted);transition:color .15s}
+.nav-links a:hover,.nav-links a.active{color:var(--ink);font-weight:600}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:10px;font-family:var(--sans);font-size:.88rem;font-weight:600;cursor:pointer;border:none;transition:all .2s;white-space:nowrap}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 4px 16px rgba(67,97,238,.3)}
+.btn-primary:hover{background:#3451d1;transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--border)}
+.btn-outline:hover{border-color:var(--blue);color:var(--blue)}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.8px;text-transform:uppercase;padding:4px 12px;border-radius:20px}
+.tag-blue{background:var(--blue-lt);color:var(--blue)}
+.tag-green{background:var(--green-lt);color:var(--green)}
+.tag-amber{background:var(--amber-lt);color:#92400e}
+.footer{background:var(--ink);padding:48px 0 24px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:36px;margin-bottom:36px}
+.foot-desc{font-size:.82rem;color:rgba(255,255,255,.35);line-height:1.65;max-width:260px;margin-top:10px}
+.foot-col-ttl{font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:12px}
+.foot-links{list-style:none;display:flex;flex-direction:column;gap:8px}
+.foot-links a{font-size:.84rem;color:rgba(255,255,255,.45);transition:color .15s}
+.foot-links a:hover{color:#fff}
+.foot-bot{border-top:1px solid rgba(255,255,255,.07);padding-top:20px;font-size:.78rem;color:rgba(255,255,255,.25)}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .foot-grid{grid-template-columns:1fr}
+}
+</style>
+<style>
+.post-hero{background:linear-gradient(160deg,#f0f4ff 0%,#fff 60%);padding:64px 0 48px;border-bottom:1px solid var(--border)}
+.post-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+.post-date{font-size:.8rem;color:var(--muted);font-weight:500}
+.post-read{font-size:.8rem;color:var(--muted)}
+.post-title{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:var(--ink);line-height:1.15;margin-bottom:16px;letter-spacing:-.02em}
+.post-desc{font-size:1.05rem;color:var(--muted);line-height:1.7;max-width:640px}
+.post-body{max-width:740px;margin:0 auto;padding:56px 24px 80px}
+.post-body h2{font-size:1.45rem;font-weight:700;color:var(--ink);margin:40px 0 14px;letter-spacing:-.01em}
+.post-body h3{font-size:1.1rem;font-weight:700;color:var(--ink);margin:28px 0 10px}
+.post-body p{margin-bottom:18px;font-size:1rem;line-height:1.8;color:var(--body)}
+.post-body ul{margin-bottom:18px}
+.post-body hr{margin:36px 0}
+.post-body strong{color:var(--ink);font-weight:700}
+.cta-box{background:linear-gradient(135deg,var(--navy),#1e3a8a);border-radius:18px;padding:36px 40px;text-align:center;margin:48px 0 0}
+.cta-box h3{color:#fff;font-size:1.3rem;font-weight:700;margin-bottom:10px}
+.cta-box p{color:rgba(255,255,255,.6);font-size:.9rem;margin-bottom:22px}
+.back-link{display:inline-flex;align-items:center;gap:6px;font-size:.85rem;font-weight:600;color:var(--blue);margin-bottom:32px}
+.back-link:hover{text-decoration:underline}
+.lang-badge{display:inline-flex;align-items:center;gap:5px;background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:3px 10px;font-size:.75rem;font-weight:600;color:var(--muted)}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-logo"><svg width="160" height="38" viewBox="0 0 180 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block">
+  <rect width="44" height="44" rx="12" fill="#4361ee"/>
+  <path d="M12 20h20v11a1 1 0 01-1 1H13a1 1 0 01-1-1V20z" fill="rgba(255,255,255,0.25)"/>
+  <path d="M12 20h20v11a1 1 0 01-1 1H13a1 1 0 01-1-1V20z" stroke="#fff" stroke-width="1.5" fill="none"/>
+  <path d="M18 32v-5h8v5" stroke="#fff" stroke-width="1.5" stroke-linejoin="round" fill="none"/>
+  <path d="M10 20l3.5-8h17l3.5 8" stroke="#fff" stroke-width="1.5" stroke-linejoin="round" fill="none"/>
+  <path d="M12 20c0 2.21 1.12 4 2.5 4S17 22.21 17 20" stroke="#fff" stroke-width="1.5" fill="none"/>
+  <path d="M17 20c0 2.21 1.12 4 2.5 4S22 22.21 22 20" stroke="#fff" stroke-width="1.5" fill="none"/>
+  <path d="M22 20c0 2.21 1.12 4 2.5 4S27 22.21 27 20" stroke="#fff" stroke-width="1.5" fill="none"/>
+  <path d="M27 20c0 2.21 1.12 4 2.5 4S32 22.21 32 20" stroke="#fff" stroke-width="1.5" fill="none"/>
+  <circle cx="38" cy="10" r="5" fill="#10b981"/>
+  <text x="54" y="17" font-family="DM Sans,sans-serif" font-size="12" font-weight="500" fill="#6b7280" letter-spacing="0.3">Shop</text>
+  <text x="54" y="35" font-family="DM Sans,sans-serif" font-size="17" font-weight="800" fill="#0f1f5c" letter-spacing="-0.3">Track</text>
+</svg></a>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../blog/index.html" class="active">Blog</a></li>
+    </ul>
+    <a href="https://shoptrack.org" target="_blank" class="btn btn-primary">Try Free →</a>
+  </div>
+</nav>
+<div class="post-hero">
+  <div class="container">
+    <a href="index.html" class="back-link">← Back to Blog</a>
+    <div class="post-meta">
+      <span class="tag tag-blue">Inventory</span>
+      <span class="lang-badge">🇬🇧 English</span>
+      <span class="post-date">April 3, 2026</span>
+      <span class="post-read">· 5 min read</span>
+    </div>
+    <h1 class="post-title">How to Track Inventory Without Losing Money</h1>
+    <p class="post-desc">Poor inventory management is one of the top reasons small businesses lose money without realising it. Here's how to do it right.</p>
+  </div>
+</div>
+<div class="post-body">
+  
+<p>Inventory is the heartbeat of most small businesses in Cameroon. Whether you run a boutique, a pharmacy, a general store, or a food business — your stock is your money. When inventory is managed poorly, money leaks out in ways that are hard to see until it's too late.</p>
+
+<h2>The most common inventory mistakes</h2>
+
+<h3>1. Not knowing your real stock value</h3>
+<p>Most business owners know roughly what they have. But "roughly" means you don't know your real assets. If you walked into a bank today, could you produce a document showing the exact value of your inventory at cost price and retail price? With a proper system, this report is generated automatically.</p>
+
+<h3>2. Running out of stock without warning</h3>
+<p>You've lost a sale because an item was finished and you didn't know. It happens to every business that doesn't have low stock alerts. Set a minimum quantity per item, and get a WhatsApp notification before you run out — not after.</p>
+
+<h3>3. Staff selling at the wrong price</h3>
+<p>Without a system, there's nothing stopping staff from selling an item below your intended price — whether by mistake or on purpose. ShopTrack lets you set a minimum price per item. If a staff member tries to sell below it, the sale is blocked and you get an alert immediately.</p>
+
+<h3>4. Cost prices visible to staff</h3>
+<p>Your cost price is your margin. If staff can see what you paid for an item, they can calculate your profit — and that information has no business being visible to them. ShopTrack hides cost prices from all staff accounts. Only the owner sees margin data.</p>
+
+<h3>5. No link between purchases and stock</h3>
+<p>When you receive goods from a supplier, your stock should update automatically. When you make a sale, stock should decrease automatically. In a notebook system, these are manual steps that get skipped. In ShopTrack, they happen automatically with every transaction.</p>
+
+<h2>Building a stock management habit</h2>
+<p>Good inventory management isn't complicated — it's consistent. Record every purchase when goods arrive. Every sale updates stock. Run a stock count once a month and reconcile. ShopTrack makes all of this simple enough to do from your phone, even offline.</p>
+
+<hr style="border:none;border-top:1px solid var(--border);margin:36px 0"/>
+<p>ShopTrack's inventory module includes low stock alerts, hidden cost prices, bulk Excel import, and auto-updated stock on every sale and purchase. Start your free trial at shoptrack.org.</p>
+
+  <div class="cta-box">
+    <h3>Start your free 30-day trial</h3>
+    <p>Full Premium access. No credit card. Works offline.</p>
+    <a href="https://shoptrack.org" target="_blank" class="btn btn-primary" style="font-size:1rem;padding:14px 32px">Try ShopTrack Free →</a>
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div><svg width="140" height="38" viewBox="0 0 180 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;margin-bottom:8px">
+  <rect width="44" height="44" rx="12" fill="rgba(255,255,255,0.15)"/>
+  <path d="M12 20h20v11a1 1 0 01-1 1H13a1 1 0 01-1-1V20z" stroke="#fff" stroke-width="1.5" fill="rgba(255,255,255,0.1)"/>
+  <path d="M18 32v-5h8v5" stroke="#fff" stroke-width="1.5" stroke-linejoin="round" fill="none"/>
+  <path d="M10 20l3.5-8h17l3.5 8" stroke="#fff" stroke-width="1.5" stroke-linejoin="round" fill="none"/>
+  <path d="M12 20c0 2.21 1.12 4 2.5 4S17 22.21 17 20" stroke="#fff" stroke-width="1.5" fill="none"/>
+  <path d="M17 20c0 2.21 1.12 4 2.5 4S22 22.21 22 20" stroke="#fff" stroke-width="1.5" fill="none"/>
+  <path d="M22 20c0 2.21 1.12 4 2.5 4S27 22.21 27 20" stroke="#fff" stroke-width="1.5" fill="none"/>
+  <path d="M27 20c0 2.21 1.12 4 2.5 4S32 22.21 32 20" stroke="#fff" stroke-width="1.5" fill="none"/>
+  <circle cx="38" cy="10" r="5" fill="#10b981"/>
+  <text x="54" y="17" font-family="DM Sans,sans-serif" font-size="12" font-weight="500" fill="rgba(255,255,255,0.55)" letter-spacing="0.3">Shop</text>
+  <text x="54" y="35" font-family="DM Sans,sans-serif" font-size="17" font-weight="800" fill="#fff" letter-spacing="-0.3">Track</text>
+</svg><p class="foot-desc">The bilingual business platform built for Cameroon — expanding across Africa. Works offline.</p></div>
+      <div>
+        <div class="foot-col-ttl">Platform</div>
+        <ul class="foot-links">
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../blog/index.html">Blog</a></li>
+          <li><a href="https://shoptrack.org" target="_blank">Open App</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="foot-col-ttl">Contact</div>
+        <ul class="foot-links">
+          <li><a href="mailto:info@shoptrack.work">info@shoptrack.work</a></li>
+          <li><a href="https://shoptrack.org/affiliates" target="_blank">Affiliates</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">© 2026 ShopTrack · shoptrack.live · shoptrack.org</div>
+  </div>
+</footer>
+</body>
+</html>
