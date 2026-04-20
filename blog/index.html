@@ -1,1 +1,264 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>ShopTrack Blog — Business Tips for Cameroon</title>
+<meta name="description" content="Practical business advice for small business owners in Cameroon. Available in English and French."/>
+<link rel="canonical" href="https://shoptrack.live/blog/"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#0f1f5c;--blue:#4361ee;--blue-lt:#eef1fd;--green:#10b981;--green-lt:#ecfdf5;--amber:#f59e0b;--amber-lt:#fffbeb;--ink:#0f172a;--body:#374151;--muted:#6b7280;--border:#e5e7eb;--surface:#f9fafb;--white:#ffffff;--sans:'DM Sans',sans-serif;--shadow:0 4px 24px rgba(15,31,92,.09);--shadow-lg:0 16px 60px rgba(15,31,92,.14)}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--body);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.container{max-width:1160px;margin:0 auto;padding:0 24px}
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 24px}
+.nav-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{display:flex;align-items:center}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links a{font-size:.88rem;font-weight:500;color:var(--muted);transition:color .15s}
+.nav-links a:hover,.nav-links a.active{color:var(--ink);font-weight:600}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:10px;font-family:var(--sans);font-size:.88rem;font-weight:600;cursor:pointer;border:none;transition:all .2s;white-space:nowrap}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 4px 16px rgba(67,97,238,.3)}
+.btn-primary:hover{background:#3451d1;transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--border)}
+.btn-outline:hover{border-color:var(--blue);color:var(--blue)}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.8px;text-transform:uppercase;padding:4px 12px;border-radius:20px}
+.tag-blue{background:var(--blue-lt);color:var(--blue)}
+.tag-green{background:var(--green-lt);color:var(--green)}
+.tag-amber{background:var(--amber-lt);color:#92400e}
+.footer{background:var(--ink);padding:48px 0 24px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:36px;margin-bottom:36px}
+.foot-desc{font-size:.82rem;color:rgba(255,255,255,.35);line-height:1.65;max-width:260px;margin-top:10px}
+.foot-col-ttl{font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:12px}
+.foot-links{list-style:none;display:flex;flex-direction:column;gap:8px}
+.foot-links a{font-size:.84rem;color:rgba(255,255,255,.45);transition:color .15s}
+.foot-links a:hover{color:#fff}
+.foot-bot{border-top:1px solid rgba(255,255,255,.07);padding-top:20px;font-size:.78rem;color:rgba(255,255,255,.25)}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .foot-grid{grid-template-columns:1fr}
+}
+</style>
+<style>
+.blog-hero{background:linear-gradient(160deg,#f0f4ff 0%,#fff 60%);padding:72px 0 56px;text-align:center}
+.blog-hero h1{font-size:clamp(2rem,4vw,3rem);font-weight:800;color:var(--ink);margin-bottom:14px;letter-spacing:-.02em}
+.blog-hero p{font-size:1.05rem;color:var(--muted);max-width:520px;margin:0 auto}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:56px 0 80px}
+.post-card{background:var(--white);border:1.5px solid var(--border);border-radius:16px;padding:28px 24px;display:flex;flex-direction:column;gap:12px;transition:all .2s;cursor:pointer}
+.post-card:hover{border-color:var(--blue);box-shadow:var(--shadow);transform:translateY(-3px)}
+.pc-top{display:flex;align-items:center;justify-content:space-between}
+.pc-lang{font-size:.75rem;font-weight:600;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:3px 9px}
+.pc-title{font-size:1.05rem;font-weight:700;color:var(--ink);line-height:1.35}
+.pc-desc{font-size:.84rem;color:var(--muted);line-height:1.6;flex:1}
+.pc-foot{display:flex;align-items:center;justify-content:space-between;margin-top:4px}
+.pc-date{font-size:.75rem;color:var(--muted)}
+.pc-read{font-size:.8rem;font-weight:600;color:var(--blue)}
+.section-divider{border:none;border-top:1px solid var(--border);margin:0 0 48px}
+.section-label{font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:24px}
+@media(max-width:900px){.blog-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.blog-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><svg width="160" height="38" viewBox="0 0 180 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block">
+  <rect width="44" height="44" rx="12" fill="#4361ee"/>
+  <path d="M12 20h20v11a1 1 0 01-1 1H13a1 1 0 01-1-1V20z" fill="rgba(255,255,255,0.25)"/>
+  <path d="M12 20h20v11a1 1 0 01-1 1H13a1 1 0 01-1-1V20z" stroke="#fff" stroke-width="1.5" fill="none"/>
+  <path d="M18 32v-5h8v5" stroke="#fff" stroke-width="1.5" stroke-linejoin="round" fill="none"/>
+  <path d="M10 20l3.5-8h17l3.5 8" stroke="#fff" stroke-width="1.5" stroke-linejoin="round" fill="none"/>
+  <path d="M12 20c0 2.21 1.12 4 2.5 4S17 22.21 17 20" stroke="#fff" stroke-width="1.5" fill="none"/>
+  <path d="M17 20c0 2.21 1.12 4 2.5 4S22 22.21 22 20" stroke="#fff" stroke-width="1.5" fill="none"/>
+  <path d="M22 20c0 2.21 1.12 4 2.5 4S27 22.21 27 20" stroke="#fff" stroke-width="1.5" fill="none"/>
+  <path d="M27 20c0 2.21 1.12 4 2.5 4S32 22.21 32 20" stroke="#fff" stroke-width="1.5" fill="none"/>
+  <circle cx="38" cy="10" r="5" fill="#10b981"/>
+  <text x="54" y="17" font-family="DM Sans,sans-serif" font-size="12" font-weight="500" fill="#6b7280" letter-spacing="0.3">Shop</text>
+  <text x="54" y="35" font-family="DM Sans,sans-serif" font-size="17" font-weight="800" fill="#0f1f5c" letter-spacing="-0.3">Track</text>
+</svg></a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../blog/index.html" class="active">Blog</a></li>
+    </ul>
+    <a href="https://shoptrack.org" target="_blank" class="btn btn-primary">Try Free →</a>
+  </div>
+</nav>
+<div class="blog-hero">
+  <h1>ShopTrack Blog</h1>
+  <p>Practical business advice for small business owners in Cameroon — in English and French.</p>
+</div>
+<div class="container">
+  <div style="padding-top:56px">
+    <div class="section-label">🇬🇧 English Articles</div>
+    <div class="blog-grid" style="padding-top:0">
+      <a href="5-signs-your-business-needs-a-management-app.html" class="post-card">
+  <div class="pc-top">
+    <span class="tag tag-green">Business Tips</span>
+    <span class="pc-lang">🇬🇧 EN</span>
+  </div>
+  <h2 class="pc-title">5 Signs Your Business Needs a Management App</h2>
+  <p class="pc-desc">Still using a notebook to track your sales? Here are 5 clear signs it's time to switch to a proper business management platform.</p>
+  <div class="pc-foot">
+    <span class="pc-date">April 14, 2026 · 5 min read</span>
+    <span class="pc-read">Read article →</span>
+  </div>
+</a>
+<a href="how-to-get-a-bank-loan-for-your-small-business-in-cameroon.html" class="post-card">
+  <div class="pc-top">
+    <span class="tag tag-amber">Finance</span>
+    <span class="pc-lang">🇬🇧 EN</span>
+  </div>
+  <h2 class="pc-title">How to Get a Bank Loan for Your Small Business in Cameroon</h2>
+  <p class="pc-desc">Banks don't say no because your business isn't profitable. They say no because you can't prove it. Here's exactly what you need.</p>
+  <div class="pc-foot">
+    <span class="pc-date">April 10, 2026 · 6 min read</span>
+    <span class="pc-read">Read article →</span>
+  </div>
+</a>
+<a href="whatsapp-business-automation-cameroon.html" class="post-card">
+  <div class="pc-top">
+    <span class="tag tag-green">WhatsApp</span>
+    <span class="pc-lang">🇬🇧 EN</span>
+  </div>
+  <h2 class="pc-title">Why WhatsApp Is the Best Business Tool in Cameroon — And How to Automate It</h2>
+  <p class="pc-desc">WhatsApp isn't just for chatting. For Cameroonian small businesses, it's the primary channel for receipts, reminders, and customer relationships. Here's how to make it work harder.</p>
+  <div class="pc-foot">
+    <span class="pc-date">April 7, 2026 · 4 min read</span>
+    <span class="pc-read">Read article →</span>
+  </div>
+</a>
+<a href="how-to-track-inventory-without-losing-money.html" class="post-card">
+  <div class="pc-top">
+    <span class="tag tag-blue">Inventory</span>
+    <span class="pc-lang">🇬🇧 EN</span>
+  </div>
+  <h2 class="pc-title">How to Track Inventory Without Losing Money</h2>
+  <p class="pc-desc">Poor inventory management is one of the top reasons small businesses lose money without realising it. Here's how to do it right.</p>
+  <div class="pc-foot">
+    <span class="pc-date">April 3, 2026 · 5 min read</span>
+    <span class="pc-read">Read article →</span>
+  </div>
+</a>
+<a href="real-cost-of-managing-business-with-notebook.html" class="post-card">
+  <div class="pc-top">
+    <span class="tag tag-green">Business Tips</span>
+    <span class="pc-lang">🇬🇧 EN</span>
+  </div>
+  <h2 class="pc-title">The Real Cost of Managing Your Business With a Notebook</h2>
+  <p class="pc-desc">A notebook seems free. But the hidden costs — forgotten sales, missed debts, staff theft, and lost loan opportunities — add up to far more than any software subscription.</p>
+  <div class="pc-foot">
+    <span class="pc-date">March 28, 2026 · 5 min read</span>
+    <span class="pc-read">Read article →</span>
+  </div>
+</a>
+    </div>
+  </div>
+  <hr class="section-divider"/>
+  <div>
+    <div class="section-label">🇫🇷 Articles en Français</div>
+    <div class="blog-grid" style="padding-top:0;padding-bottom:80px">
+      <a href="5-signes-que-votre-entreprise-a-besoin-dune-application-de-gestion.html" class="post-card">
+  <div class="pc-top">
+    <span class="tag tag-green">Conseils Business</span>
+    <span class="pc-lang">🇫🇷 FR</span>
+  </div>
+  <h2 class="pc-title">5 signes que votre entreprise a besoin d'une application de gestion</h2>
+  <p class="pc-desc">Vous utilisez encore un carnet pour suivre vos ventes ? Voici 5 signes clairs qu'il est temps de passer à une vraie plateforme de gestion.</p>
+  <div class="pc-foot">
+    <span class="pc-date">14 avril 2026 · 5 min de lecture</span>
+    <span class="pc-read">Lire l'article →</span>
+  </div>
+</a>
+<a href="obtenir-pret-bancaire-pme-cameroun.html" class="post-card">
+  <div class="pc-top">
+    <span class="tag tag-amber">Finance</span>
+    <span class="pc-lang">🇫🇷 FR</span>
+  </div>
+  <h2 class="pc-title">Comment obtenir un prêt bancaire pour votre PME au Cameroun</h2>
+  <p class="pc-desc">Les banques ne disent pas non parce que votre entreprise n'est pas rentable. Elles disent non parce que vous ne pouvez pas le prouver. Voici exactement ce qu'il vous faut.</p>
+  <div class="pc-foot">
+    <span class="pc-date">10 avril 2026 · 6 min de lecture</span>
+    <span class="pc-read">Lire l'article →</span>
+  </div>
+</a>
+<a href="whatsapp-automatisation-business-cameroun.html" class="post-card">
+  <div class="pc-top">
+    <span class="tag tag-green">WhatsApp</span>
+    <span class="pc-lang">🇫🇷 FR</span>
+  </div>
+  <h2 class="pc-title">Pourquoi WhatsApp est le meilleur outil business au Cameroun — et comment l'automatiser</h2>
+  <p class="pc-desc">WhatsApp n'est pas juste pour discuter. Pour les PME camerounaises, c'est le canal principal pour les reçus, les rappels et la relation client. Voici comment lui faire faire plus de travail.</p>
+  <div class="pc-foot">
+    <span class="pc-date">7 avril 2026 · 4 min de lecture</span>
+    <span class="pc-read">Lire l'article →</span>
+  </div>
+</a>
+<a href="gestion-stocks-sans-perdre-argent.html" class="post-card">
+  <div class="pc-top">
+    <span class="tag tag-blue">Stocks</span>
+    <span class="pc-lang">🇫🇷 FR</span>
+  </div>
+  <h2 class="pc-title">Comment gérer vos stocks sans perdre d'argent</h2>
+  <p class="pc-desc">Une mauvaise gestion des stocks est l'une des principales raisons pour lesquelles les PME perdent de l'argent sans s'en rendre compte. Voici comment bien faire.</p>
+  <div class="pc-foot">
+    <span class="pc-date">3 avril 2026 · 5 min de lecture</span>
+    <span class="pc-read">Lire l'article →</span>
+  </div>
+</a>
+<a href="vrai-cout-gerer-entreprise-avec-carnet.html" class="post-card">
+  <div class="pc-top">
+    <span class="tag tag-green">Conseils Business</span>
+    <span class="pc-lang">🇫🇷 FR</span>
+  </div>
+  <h2 class="pc-title">Le vrai coût de gérer son entreprise avec un carnet</h2>
+  <p class="pc-desc">Un carnet semble gratuit. Mais les coûts cachés — ventes oubliées, dettes non recouvrées, vols du personnel et opportunités de crédit manquées — sont bien plus élevés que n'importe quel abonnement logiciel.</p>
+  <div class="pc-foot">
+    <span class="pc-date">28 mars 2026 · 5 min de lecture</span>
+    <span class="pc-read">Lire l'article →</span>
+  </div>
+</a>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div><svg width="140" height="38" viewBox="0 0 180 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;margin-bottom:8px">
+  <rect width="44" height="44" rx="12" fill="rgba(255,255,255,0.15)"/>
+  <path d="M12 20h20v11a1 1 0 01-1 1H13a1 1 0 01-1-1V20z" stroke="#fff" stroke-width="1.5" fill="rgba(255,255,255,0.1)"/>
+  <path d="M18 32v-5h8v5" stroke="#fff" stroke-width="1.5" stroke-linejoin="round" fill="none"/>
+  <path d="M10 20l3.5-8h17l3.5 8" stroke="#fff" stroke-width="1.5" stroke-linejoin="round" fill="none"/>
+  <path d="M12 20c0 2.21 1.12 4 2.5 4S17 22.21 17 20" stroke="#fff" stroke-width="1.5" fill="none"/>
+  <path d="M17 20c0 2.21 1.12 4 2.5 4S22 22.21 22 20" stroke="#fff" stroke-width="1.5" fill="none"/>
+  <path d="M22 20c0 2.21 1.12 4 2.5 4S27 22.21 27 20" stroke="#fff" stroke-width="1.5" fill="none"/>
+  <path d="M27 20c0 2.21 1.12 4 2.5 4S32 22.21 32 20" stroke="#fff" stroke-width="1.5" fill="none"/>
+  <circle cx="38" cy="10" r="5" fill="#10b981"/>
+  <text x="54" y="17" font-family="DM Sans,sans-serif" font-size="12" font-weight="500" fill="rgba(255,255,255,0.55)" letter-spacing="0.3">Shop</text>
+  <text x="54" y="35" font-family="DM Sans,sans-serif" font-size="17" font-weight="800" fill="#fff" letter-spacing="-0.3">Track</text>
+</svg><p class="foot-desc">The bilingual business platform built for Cameroon — expanding across Africa. Works offline.</p></div>
+      <div>
+        <div class="foot-col-ttl">Platform</div>
+        <ul class="foot-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../blog/index.html">Blog</a></li>
+          <li><a href="https://shoptrack.org" target="_blank">Open App</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="foot-col-ttl">Contact</div>
+        <ul class="foot-links">
+          <li><a href="mailto:info@shoptrack.work">info@shoptrack.work</a></li>
+          <li><a href="https://shoptrack.org/affiliates" target="_blank">Affiliates</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">© 2026 ShopTrack · shoptrack.live · shoptrack.org</div>
+  </div>
+</footer>
+</body>
+</html>
