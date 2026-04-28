@@ -10,11 +10,10 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--navy:#0f1f5c;--blue:#4361ee;--blue-lt:#eef1fd;--green:#10b981;--green-lt:#ecfdf5;--amber:#f59e0b;--amber-lt:#fffbeb;--ink:#0f172a;--body:#374151;--muted:#6b7280;--border:#e5e7eb;--surface:#f9fafb;--white:#ffffff;--sans:'DM Sans',sans-serif;--shadow:0 4px 24px rgba(15,31,92,.09);--shadow-lg:0 16px 60px rgba(15,31,92,.14)}
+:root{--navy:#0f1f5c;--blue:#4361ee;--blue-lt:#eef1fd;--green:#10b981;--green-lt:#ecfdf5;--amber:#f59e0b;--amber-lt:#fffbeb;--ink:#0f172a;--body:#374151;--muted:#6b7280;--border:#e5e7eb;--surface:#f9fafb;--white:#ffffff;--sans:'DM Sans',sans-serif;--shadow:0 4px 24px rgba(15,31,92,.09)}
 html{scroll-behavior:smooth}
 body{font-family:var(--sans);color:var(--body);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-img{max-width:100%}
 .container{max-width:1160px;margin:0 auto;padding:0 24px}
 .nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 24px}
 .nav-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
@@ -25,8 +24,6 @@ img{max-width:100%}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:10px;font-family:var(--sans);font-size:.88rem;font-weight:600;cursor:pointer;border:none;transition:all .2s;white-space:nowrap}
 .btn-primary{background:var(--blue);color:#fff;box-shadow:0 4px 16px rgba(67,97,238,.3)}
 .btn-primary:hover{background:#3451d1;transform:translateY(-1px)}
-.btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--border)}
-.btn-outline:hover{border-color:var(--blue);color:var(--blue)}
 .tag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.8px;text-transform:uppercase;padding:4px 12px;border-radius:20px}
 .tag-blue{background:var(--blue-lt);color:var(--blue)}
 .tag-green{background:var(--green-lt);color:var(--green)}
@@ -39,12 +36,6 @@ img{max-width:100%}
 .foot-links a{font-size:.84rem;color:rgba(255,255,255,.45);transition:color .15s}
 .foot-links a:hover{color:#fff}
 .foot-bot{border-top:1px solid rgba(255,255,255,.07);padding-top:20px;font-size:.78rem;color:rgba(255,255,255,.25)}
-@media(max-width:768px){
-  .nav-links{display:none}
-  .foot-grid{grid-template-columns:1fr}
-}
-</style>
-<style>
 .blog-hero{background:linear-gradient(160deg,#f0f4ff 0%,#fff 60%);padding:72px 0 56px;text-align:center}
 .blog-hero h1{font-size:clamp(2rem,4vw,3rem);font-weight:800;color:var(--ink);margin-bottom:14px;letter-spacing:-.02em}
 .blog-hero p{font-size:1.05rem;color:var(--muted);max-width:520px;margin:0 auto}
@@ -67,7 +58,7 @@ img{max-width:100%}
 <body>
 <nav class="nav">
   <div class="nav-inner">
-    <a href="../index.html" class="nav-logo"><svg width="160" height="38" viewBox="0 0 180 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block">
+    <a href="../index.html" class="nav-logo"><svg width="180" height="44" viewBox="0 0 180 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block">
   <rect width="44" height="44" rx="12" fill="#4361ee"/>
   <path d="M12 20h20v11a1 1 0 01-1 1H13a1 1 0 01-1-1V20z" fill="rgba(255,255,255,0.25)"/>
   <path d="M12 20h20v11a1 1 0 01-1 1H13a1 1 0 01-1-1V20z" stroke="#fff" stroke-width="1.5" fill="none"/>
@@ -81,10 +72,7 @@ img{max-width:100%}
   <text x="54" y="17" font-family="DM Sans,sans-serif" font-size="12" font-weight="500" fill="#6b7280" letter-spacing="0.3">Shop</text>
   <text x="54" y="35" font-family="DM Sans,sans-serif" font-size="17" font-weight="800" fill="#0f1f5c" letter-spacing="-0.3">Track</text>
 </svg></a>
-    <ul class="nav-links">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../blog/index.html" class="active">Blog</a></li>
-    </ul>
+    <ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="index.html" class="active">Blog</a></li></ul>
     <a href="https://shoptrack.org" target="_blank" class="btn btn-primary">Try Free →</a>
   </div>
 </nav>
@@ -95,7 +83,25 @@ img{max-width:100%}
 <div class="container">
   <div style="padding-top:56px">
     <div class="section-label">🇬🇧 English Articles</div>
-    <div class="blog-grid" style="padding-top:0"><a href="why-your-business-needs-an-online-booking-page.html" class="post-card">
+    <div class="blog-grid" style="padding-top:0"><a href="how-to-price-your-products-to-make-a-real-profit.html" class="post-card">
+  <div class="pc-top"><span class="tag tag-amber">Business Tips</span><span class="pc-lang">🇬🇧 EN</span></div>
+  <h2 class="pc-title">How to Price Your Products to Make a Real Profit</h2>
+  <p class="pc-desc">Most small business owners in Cameroon price by feel. Without calculating your real cost, you can be busy every day and still lose money.</p>
+  <div class="pc-foot"><span class="pc-date">April 28, 2026 · 6 min read</span><span class="pc-read">Read article →</span></div>
+</a>
+<a href="mobile-money-cameroon-business-how-to-track-it.html" class="post-card">
+  <div class="pc-top"><span class="tag tag-green">Payments</span><span class="pc-lang">🇬🇧 EN</span></div>
+  <h2 class="pc-title">How Mobile Money Is Changing Business in Cameroon — And How to Track It</h2>
+  <p class="pc-desc">Orange Money and MTN MoMo have transformed how Cameroonians pay. Every Mobile Money payment that isn't properly recorded is money that disappears.</p>
+  <div class="pc-foot"><span class="pc-date">April 28, 2026 · 5 min read</span><span class="pc-read">Read article →</span></div>
+</a>
+<a href="how-to-build-a-customer-base-that-keeps-coming-back.html" class="post-card">
+  <div class="pc-top"><span class="tag tag-blue">Customers</span><span class="pc-lang">🇬🇧 EN</span></div>
+  <h2 class="pc-title">How to Build a Customer Base That Keeps Coming Back</h2>
+  <p class="pc-desc">Getting a new customer is expensive. Keeping an existing one is almost free. Here's how small businesses in Cameroon build loyal customer relationships.</p>
+  <div class="pc-foot"><span class="pc-date">April 28, 2026 · 5 min read</span><span class="pc-read">Read article →</span></div>
+</a>
+<a href="why-your-business-needs-an-online-booking-page.html" class="post-card">
   <div class="pc-top"><span class="tag tag-blue">Appointments</span><span class="pc-lang">🇬🇧 EN</span></div>
   <h2 class="pc-title">Why Your Business Needs an Online Booking Page</h2>
   <p class="pc-desc">If your customers still book by calling or texting you directly, you're losing appointments you never even knew about.</p>
@@ -104,19 +110,19 @@ img{max-width:100%}
 <a href="5-signs-your-business-needs-a-management-app.html" class="post-card">
   <div class="pc-top"><span class="tag tag-green">Business Tips</span><span class="pc-lang">🇬🇧 EN</span></div>
   <h2 class="pc-title">5 Signs Your Business Needs a Management App</h2>
-  <p class="pc-desc">Still using a notebook to track your sales? Here are 5 clear signs it's time to switch to a proper business management platform.</p>
+  <p class="pc-desc">Still using a notebook to track your sales? Here are 5 clear signs it's time to switch.</p>
   <div class="pc-foot"><span class="pc-date">April 14, 2026 · 5 min read</span><span class="pc-read">Read article →</span></div>
 </a>
 <a href="how-to-get-a-bank-loan-for-your-small-business-in-cameroon.html" class="post-card">
   <div class="pc-top"><span class="tag tag-amber">Finance</span><span class="pc-lang">🇬🇧 EN</span></div>
   <h2 class="pc-title">How to Get a Bank Loan for Your Small Business in Cameroon</h2>
-  <p class="pc-desc">Banks don't say no because your business isn't profitable. They say no because you can't prove it.</p>
+  <p class="pc-desc">Banks don't say no because you're not profitable. They say no because you can't prove it.</p>
   <div class="pc-foot"><span class="pc-date">April 10, 2026 · 6 min read</span><span class="pc-read">Read article →</span></div>
 </a>
 <a href="whatsapp-business-automation-cameroon.html" class="post-card">
   <div class="pc-top"><span class="tag tag-green">WhatsApp</span><span class="pc-lang">🇬🇧 EN</span></div>
   <h2 class="pc-title">Why WhatsApp Is the Best Business Tool in Cameroon — And How to Automate It</h2>
-  <p class="pc-desc">WhatsApp isn't just for chatting. For Cameroonian small businesses, it's the primary channel for receipts, reminders, and customer relationships.</p>
+  <p class="pc-desc">WhatsApp isn't just for chatting. It's the primary channel for receipts, reminders, and customer relationships.</p>
   <div class="pc-foot"><span class="pc-date">April 7, 2026 · 4 min read</span><span class="pc-read">Read article →</span></div>
 </a>
 <a href="how-to-track-inventory-without-losing-money.html" class="post-card">
@@ -135,34 +141,52 @@ img{max-width:100%}
   <hr class="section-divider"/>
   <div>
     <div class="section-label">🇫🇷 Articles en Français</div>
-    <div class="blog-grid" style="padding-top:0;padding-bottom:80px"><a href="pourquoi-votre-entreprise-a-besoin-dune-page-de-reservation-en-ligne.html" class="post-card">
+    <div class="blog-grid" style="padding-top:0;padding-bottom:80px"><a href="comment-fixer-prix-produits-pour-faire-vrai-benefice.html" class="post-card">
+  <div class="pc-top"><span class="tag tag-amber">Conseils Business</span><span class="pc-lang">🇫🇷 FR</span></div>
+  <h2 class="pc-title">Comment fixer les prix de vos produits pour faire un vrai bénéfice</h2>
+  <p class="pc-desc">La plupart des gérants fixent leurs prix à l'instinct. Sans calculer votre coût réel, vous pouvez être occupé toute la journée et quand même perdre de l'argent.</p>
+  <div class="pc-foot"><span class="pc-date">28 avril 2026 · 6 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
+</a>
+<a href="mobile-money-cameroun-business-comment-le-suivre.html" class="post-card">
+  <div class="pc-top"><span class="tag tag-green">Paiements</span><span class="pc-lang">🇫🇷 FR</span></div>
+  <h2 class="pc-title">Comment le Mobile Money change les affaires au Cameroun — et comment le suivre</h2>
+  <p class="pc-desc">Orange Money et MTN MoMo ont transformé la façon dont les Camerounais paient. Chaque paiement non enregistré est de l'argent qui disparaît.</p>
+  <div class="pc-foot"><span class="pc-date">28 avril 2026 · 5 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
+</a>
+<a href="comment-construire-base-clients-qui-revient-toujours.html" class="post-card">
+  <div class="pc-top"><span class="tag tag-blue">Clients</span><span class="pc-lang">🇫🇷 FR</span></div>
+  <h2 class="pc-title">Comment construire une base de clients qui revient toujours</h2>
+  <p class="pc-desc">Acquérir un nouveau client coûte cher. Fidéliser un client existant est presque gratuit. Voici comment les PME camerounaises construisent la fidélité.</p>
+  <div class="pc-foot"><span class="pc-date">28 avril 2026 · 5 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
+</a>
+<a href="pourquoi-votre-entreprise-a-besoin-dune-page-de-reservation-en-ligne.html" class="post-card">
   <div class="pc-top"><span class="tag tag-blue">Rendez-vous</span><span class="pc-lang">🇫🇷 FR</span></div>
   <h2 class="pc-title">Pourquoi votre entreprise a besoin d'une page de réservation en ligne</h2>
-  <p class="pc-desc">Si vos clients réservent encore en vous appelant ou en vous envoyant un message, vous perdez des rendez-vous sans même le savoir.</p>
+  <p class="pc-desc">Si vos clients réservent encore en vous appelant, vous perdez des rendez-vous sans même le savoir.</p>
   <div class="pc-foot"><span class="pc-date">20 avril 2026 · 5 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
 </a>
 <a href="5-signes-que-votre-entreprise-a-besoin-dune-application-de-gestion.html" class="post-card">
   <div class="pc-top"><span class="tag tag-green">Conseils Business</span><span class="pc-lang">🇫🇷 FR</span></div>
   <h2 class="pc-title">5 signes que votre entreprise a besoin d'une application de gestion</h2>
-  <p class="pc-desc">Vous utilisez encore un carnet pour suivre vos ventes ? Voici 5 signes clairs qu'il est temps de passer à une vraie plateforme de gestion.</p>
+  <p class="pc-desc">Vous utilisez encore un carnet ? Voici 5 signes clairs qu'il est temps de passer à une vraie plateforme.</p>
   <div class="pc-foot"><span class="pc-date">14 avril 2026 · 5 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
 </a>
 <a href="obtenir-pret-bancaire-pme-cameroun.html" class="post-card">
   <div class="pc-top"><span class="tag tag-amber">Finance</span><span class="pc-lang">🇫🇷 FR</span></div>
   <h2 class="pc-title">Comment obtenir un prêt bancaire pour votre PME au Cameroun</h2>
-  <p class="pc-desc">Les banques ne disent pas non parce que votre entreprise n'est pas rentable. Elles disent non parce que vous ne pouvez pas le prouver.</p>
+  <p class="pc-desc">Les banques ne disent pas non car vous n'êtes pas rentable. Elles disent non car vous ne pouvez pas le prouver.</p>
   <div class="pc-foot"><span class="pc-date">10 avril 2026 · 6 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
 </a>
 <a href="whatsapp-automatisation-business-cameroun.html" class="post-card">
   <div class="pc-top"><span class="tag tag-green">WhatsApp</span><span class="pc-lang">🇫🇷 FR</span></div>
   <h2 class="pc-title">Pourquoi WhatsApp est le meilleur outil business au Cameroun — et comment l'automatiser</h2>
-  <p class="pc-desc">WhatsApp n'est pas juste pour discuter. Pour les PME camerounaises, c'est le canal principal pour les reçus, les rappels et la relation client.</p>
+  <p class="pc-desc">WhatsApp n'est pas juste pour discuter. C'est le canal principal pour les reçus, rappels et relation client.</p>
   <div class="pc-foot"><span class="pc-date">7 avril 2026 · 4 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
 </a>
 <a href="gestion-stocks-sans-perdre-argent.html" class="post-card">
   <div class="pc-top"><span class="tag tag-blue">Stocks</span><span class="pc-lang">🇫🇷 FR</span></div>
   <h2 class="pc-title">Comment gérer vos stocks sans perdre d'argent</h2>
-  <p class="pc-desc">Une mauvaise gestion des stocks est l'une des principales raisons pour lesquelles les PME perdent de l'argent sans s'en rendre compte.</p>
+  <p class="pc-desc">Une mauvaise gestion des stocks est l'une des principales raisons pour lesquelles les PME perdent de l'argent.</p>
   <div class="pc-foot"><span class="pc-date">3 avril 2026 · 5 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
 </a>
 <a href="vrai-cout-gerer-entreprise-avec-carnet.html" class="post-card">
@@ -176,7 +200,7 @@ img{max-width:100%}
 <footer class="footer">
   <div class="container">
     <div class="foot-grid">
-      <div><svg width="140" height="38" viewBox="0 0 180 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;margin-bottom:8px">
+      <div><svg width="160" height="44" viewBox="0 0 180 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;margin-bottom:8px">
   <rect width="44" height="44" rx="12" fill="rgba(255,255,255,0.15)"/>
   <path d="M12 20h20v11a1 1 0 01-1 1H13a1 1 0 01-1-1V20z" stroke="#fff" stroke-width="1.5" fill="rgba(255,255,255,0.1)"/>
   <path d="M18 32v-5h8v5" stroke="#fff" stroke-width="1.5" stroke-linejoin="round" fill="none"/>
@@ -189,21 +213,8 @@ img{max-width:100%}
   <text x="54" y="17" font-family="DM Sans,sans-serif" font-size="12" font-weight="500" fill="rgba(255,255,255,0.55)" letter-spacing="0.3">Shop</text>
   <text x="54" y="35" font-family="DM Sans,sans-serif" font-size="17" font-weight="800" fill="#fff" letter-spacing="-0.3">Track</text>
 </svg><p class="foot-desc">The bilingual business platform built for Cameroon — expanding across Africa. Works offline.</p></div>
-      <div>
-        <div class="foot-col-ttl">Platform</div>
-        <ul class="foot-links">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../blog/index.html">Blog</a></li>
-          <li><a href="https://shoptrack.org" target="_blank">Open App</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="foot-col-ttl">Contact</div>
-        <ul class="foot-links">
-          <li><a href="mailto:info@shoptrack.work">info@shoptrack.work</a></li>
-          <li><a href="https://shoptrack.org/affiliates" target="_blank">Affiliates</a></li>
-        </ul>
-      </div>
+      <div><div class="foot-col-ttl">Platform</div><ul class="foot-links"><li><a href="../index.html">Home</a></li><li><a href="index.html">Blog</a></li><li><a href="https://shoptrack.org" target="_blank">Open App</a></li></ul></div>
+      <div><div class="foot-col-ttl">Contact</div><ul class="foot-links"><li><a href="mailto:info@shoptrack.work">info@shoptrack.work</a></li><li><a href="https://shoptrack.org/affiliates" target="_blank">Affiliates</a></li></ul></div>
     </div>
     <div class="foot-bot">© 2026 ShopTrack · shoptrack.live · shoptrack.org</div>
   </div>
