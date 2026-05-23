@@ -98,18 +98,19 @@ a{color:inherit;text-decoration:none}
     </div>
     <div class="filter-row">
       <span class="filter-label">Filter:</span>
-      <button class="filter-btn active" data-filter="all" onclick="setFilter('all',this)">All (30)</button>
-      <button class="filter-btn lang-btn" data-filter="lang-en" onclick="setFilter('lang-en',this)">🇬🇧 English</button>
-      <button class="filter-btn lang-btn" data-filter="lang-fr" onclick="setFilter('lang-fr',this)">🇫🇷 Français</button>
+      <button class="filter-btn active" id="btn-all" onclick="clearAllFilters()">All (32)</button>
+      <button class="filter-btn lang-btn" onclick="toggleLang('en',this)">🇬🇧 English</button>
+      <button class="filter-btn lang-btn" onclick="toggleLang('fr',this)">🇫🇷 Français</button>
       <div class="filter-divider"></div>
-      <button class="filter-btn" data-filter="Finance" onclick="setFilter('Finance',this)">Finance</button>
-      <button class="filter-btn" data-filter="Marketing" onclick="setFilter('Marketing',this)">Marketing</button>
-      <button class="filter-btn" data-filter="Staff" onclick="setFilter('Staff',this)">Staff</button>
-      <button class="filter-btn" data-filter="Rental" onclick="setFilter('Rental',this)">Rental</button>
-      <button class="filter-btn" data-filter="Business" onclick="setFilter('Business',this)">Business Tips</button>
-      <button class="filter-btn" data-filter="Payments" onclick="setFilter('Payments',this)">Payments</button>
-      <button class="filter-btn" data-filter="Appointments" onclick="setFilter('Appointments',this)">Appointments</button>
-      <button class="filter-btn" data-filter="Customers" onclick="setFilter('Customers',this)">Customers</button>
+      <button class="filter-btn" onclick="toggleCat('finance',this)">Finance</button>
+      <button class="filter-btn" onclick="toggleCat('marketing',this)">Marketing</button>
+      <button class="filter-btn" onclick="toggleCat('staff',this)">Staff</button>
+      <button class="filter-btn" onclick="toggleCat('rental',this)">Rental</button>
+      <button class="filter-btn" onclick="toggleCat('business',this)">Business Tips</button>
+      <button class="filter-btn" onclick="toggleCat('payments',this)">Payments</button>
+      <button class="filter-btn" onclick="toggleCat('appointments',this)">Appointments</button>
+      <button class="filter-btn" onclick="toggleCat('customers',this)">Customers</button>
+      <button class="filter-btn" onclick="toggleCat('gestion',this)">Stocks</button>
     </div>
   </div>
 </div>
@@ -485,7 +486,22 @@ function applyFilters() {
     const langMatch = activeLang === null || lang === activeLang;
 
     // Category filter — empty set means all pass; multiple = any match (OR logic)
-    const catMatch = activeCats.size === 0 || [...activeCats].some(cat => tag.includes(cat));
+    // Category aliases: map filter keywords to what may appear in FR tags
+    const catAliases = {
+      'rental': ['rental','location'],
+      'payments': ['payments','paiements'],
+      'appointments': ['appointments','rendez-vous'],
+      'customers': ['customers','clients'],
+      'business': ['business','conseils'],
+      'staff': ['staff','gestion du personnel'],
+      'gestion': ['gestion des stocks','stock'],
+      'marketing': ['marketing'],
+      'finance': ['finance']
+    };
+    const catMatch = activeCats.size === 0 || [...activeCats].some(cat => {
+      const aliases = catAliases[cat] || [cat];
+      return aliases.some(alias => tag.includes(alias));
+    });
 
     // Search filter
     const searchMatch = !searchTerm || title.includes(searchTerm) || desc.includes(searchTerm) || tag.includes(searchTerm);
