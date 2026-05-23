@@ -24,37 +24,24 @@ a{color:inherit;text-decoration:none}
 .btn-primary{background:var(--blue);color:#fff;box-shadow:0 4px 16px rgba(67,97,238,.3)}
 .btn-primary:hover{background:#3451d1;transform:translateY(-1px)}
 .tag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.8px;text-transform:uppercase;padding:4px 12px;border-radius:20px}
-.tag-blue{background:var(--blue-lt);color:var(--blue)}
-.tag-green{background:var(--green-lt);color:var(--green)}
-.tag-amber{background:var(--amber-lt);color:#92400e}
-.tag-red{background:var(--red-lt);color:#b91c1c}
+.tag-blue{background:var(--blue-lt);color:var(--blue)}.tag-green{background:var(--green-lt);color:var(--green)}.tag-amber{background:var(--amber-lt);color:#92400e}.tag-red{background:var(--red-lt);color:#b91c1c}
 .footer{background:var(--ink);padding:48px 0 24px}
 .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:36px;margin-bottom:36px}
 .foot-desc{font-size:.82rem;color:rgba(255,255,255,.35);line-height:1.65;max-width:260px;margin-top:10px}
 .foot-col-ttl{font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:12px}
-.foot-links{list-style:none;display:flex;flex-direction:column;gap:8px}
-.foot-links a{font-size:.84rem;color:rgba(255,255,255,.45);transition:color .15s}
-.foot-links a:hover{color:#fff}
+.foot-links{list-style:none;display:flex;flex-direction:column;gap:8px}.foot-links a{font-size:.84rem;color:rgba(255,255,255,.45);transition:color .15s}.foot-links a:hover{color:#fff}
 .foot-bot{border-top:1px solid rgba(255,255,255,.07);padding-top:20px;font-size:.78rem;color:rgba(255,255,255,.25)}
-
-/* ── BLOG HERO ── */
 .blog-hero{background:linear-gradient(160deg,#f0f4ff 0%,#fff 60%);padding:64px 0 48px;text-align:center;border-bottom:1px solid var(--border)}
 .blog-hero h1{font-size:clamp(2rem,4vw,2.8rem);font-weight:800;color:var(--ink);margin-bottom:12px;letter-spacing:-.02em}
 .blog-hero p{font-size:1.05rem;color:var(--muted);max-width:520px;margin:0 auto 28px}
 .blog-count{display:inline-block;background:var(--blue-lt);color:var(--blue);border-radius:20px;padding:4px 14px;font-size:.82rem;font-weight:700}
-
-/* ── SEARCH & FILTER BAR ── */
 .filter-bar{background:#fff;border-bottom:1px solid var(--border);padding:20px 0;position:sticky;top:64px;z-index:99;box-shadow:0 2px 12px rgba(15,31,92,.06)}
 .filter-inner{max-width:1160px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:14px}
-
-/* Search box */
 .search-wrap{position:relative}
 .search-wrap svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted)}
 #search-input{width:100%;padding:11px 16px 11px 42px;border:1.5px solid var(--border);border-radius:10px;font-family:var(--sans);font-size:.95rem;color:var(--ink);outline:none;transition:border-color .2s;background:#fff}
 #search-input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(67,97,238,.1)}
 #search-input::placeholder{color:var(--muted)}
-
-/* Filter row */
 .filter-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .filter-label{font-size:.78rem;font-weight:700;color:var(--muted);letter-spacing:.5px;text-transform:uppercase;white-space:nowrap;margin-right:4px}
 .filter-btn{padding:6px 14px;border-radius:20px;border:1.5px solid var(--border);background:#fff;font-family:var(--sans);font-size:.8rem;font-weight:600;color:var(--muted);cursor:pointer;transition:all .18s;white-space:nowrap}
@@ -63,50 +50,32 @@ a{color:inherit;text-decoration:none}
 .filter-btn.lang-btn.active-en{background:var(--navy);border-color:var(--navy);color:#fff}
 .filter-btn.lang-btn.active-fr{background:var(--green);border-color:var(--green);color:#fff}
 .filter-divider{width:1px;height:20px;background:var(--border);margin:0 4px}
-
-/* ── RESULTS INFO ── */
 .results-info{padding:24px 0 0}
 .results-count{font-size:.85rem;color:var(--muted);font-weight:500}
 .results-count span{color:var(--ink);font-weight:700}
-
-/* ── BLOG GRID ── */
 .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:20px 0 80px}
-.post-card{background:var(--white);border:1.5px solid var(--border);border-radius:16px;padding:28px 24px;display:flex;flex-direction:column;gap:12px;transition:all .2s;cursor:pointer;text-decoration:none}
+.post-card{background:var(--white);border:1.5px solid var(--border);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:all .2s;cursor:pointer;text-decoration:none}
 .post-card:hover{border-color:var(--blue);box-shadow:var(--shadow);transform:translateY(-3px)}
 .post-card.hidden{display:none}
+.pc-img{width:100%;height:180px;object-fit:cover;display:block;background:var(--surface)}
+.pc-body{padding:20px 20px 16px;display:flex;flex-direction:column;gap:10px;flex:1}
 .pc-top{display:flex;align-items:center;justify-content:space-between}
 .pc-lang{font-size:.75rem;font-weight:600;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:3px 9px}
-.pc-title{font-size:1.05rem;font-weight:700;color:var(--ink);line-height:1.35}
-.pc-desc{font-size:.84rem;color:var(--muted);line-height:1.6;flex:1}
+.pc-title{font-size:.98rem;font-weight:700;color:var(--ink);line-height:1.35}
+.pc-desc{font-size:.82rem;color:var(--muted);line-height:1.6;flex:1}
 .pc-foot{display:flex;align-items:center;justify-content:space-between;margin-top:4px}
 .pc-date{font-size:.75rem;color:var(--muted)}
 .pc-read{font-size:.8rem;font-weight:600;color:var(--blue)}
-
-/* Empty state */
 .empty-state{grid-column:1/-1;text-align:center;padding:80px 24px;color:var(--muted)}
 .empty-state h3{font-size:1.2rem;font-weight:700;color:var(--ink);margin-bottom:8px}
-.empty-state p{font-size:.95rem}
-
 @media(max-width:900px){.blog-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.blog-grid{grid-template-columns:1fr}.nav-links{display:none}.filter-row{gap:6px}}
+@media(max-width:600px){.blog-grid{grid-template-columns:1fr}.nav-links{display:none}.filter-row{gap:6px}.foot-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-
 <nav class="nav">
   <div class="nav-inner">
-    <a href="../index.html" style="display:flex;align-items:center">
-      <svg width="160" height="40" viewBox="0 0 180 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="44" height="44" rx="12" fill="#4361ee"/>
-        <path d="M12 20h20v11a1 1 0 01-1 1H13a1 1 0 01-1-1V20z" fill="rgba(255,255,255,0.25)"/>
-        <path d="M12 20h20v11a1 1 0 01-1 1H13a1 1 0 01-1-1V20z" stroke="#fff" stroke-width="1.5" fill="none"/>
-        <path d="M18 32v-5h8v5" stroke="#fff" stroke-width="1.5" stroke-linejoin="round" fill="none"/>
-        <path d="M10 20l3.5-8h17l3.5 8" stroke="#fff" stroke-width="1.5" stroke-linejoin="round" fill="none"/>
-        <circle cx="38" cy="10" r="5" fill="#10b981"/>
-        <text x="54" y="17" font-family="DM Sans,sans-serif" font-size="12" font-weight="500" fill="#6b7280">Shop</text>
-        <text x="54" y="35" font-family="DM Sans,sans-serif" font-size="17" font-weight="800" fill="#0f1f5c">Track</text>
-      </svg>
-    </a>
+    <a href="../index.html"><svg width="180" height="44" viewBox="0 0 180 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect width="44" height="44" rx="12" fill="#4361ee"/><path d="M12 20h20v11a1 1 0 01-1 1H13a1 1 0 01-1-1V20z" fill="rgba(255,255,255,0.25)"/><path d="M12 20h20v11a1 1 0 01-1 1H13a1 1 0 01-1-1V20z" stroke="#fff" stroke-width="1.5" fill="none"/><path d="M18 32v-5h8v5" stroke="#fff" stroke-width="1.5" stroke-linejoin="round" fill="none"/><path d="M10 20l3.5-8h17l3.5 8" stroke="#fff" stroke-width="1.5" stroke-linejoin="round" fill="none"/><circle cx="38" cy="10" r="5" fill="#10b981"/><text x="54" y="17" font-family="DM Sans,sans-serif" font-size="12" font-weight="500" fill="#6b7280">Shop</text><text x="54" y="35" font-family="DM Sans,sans-serif" font-size="17" font-weight="800" fill="#0f1f5c">Track</text></svg></a>
     <ul class="nav-links">
       <li><a href="../index.html">Home</a></li>
       <li><a href="index.html" class="active">Blog</a></li>
@@ -114,8 +83,6 @@ a{color:inherit;text-decoration:none}
     <a href="https://shoptrack.org" target="_blank" class="btn btn-primary">Try Free →</a>
   </div>
 </nav>
-
-<!-- HERO -->
 <div class="blog-hero">
   <div class="container">
     <h1>ShopTrack Blog</h1>
@@ -123,20 +90,12 @@ a{color:inherit;text-decoration:none}
     <span class="blog-count" id="total-count">30 articles</span>
   </div>
 </div>
-
-<!-- FILTER BAR -->
 <div class="filter-bar">
   <div class="filter-inner">
-
-    <!-- Search -->
     <div class="search-wrap">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-      </svg>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       <input type="text" id="search-input" placeholder="Search articles... / Rechercher des articles..."/>
     </div>
-
-    <!-- Filters -->
     <div class="filter-row">
       <span class="filter-label">Filter:</span>
       <button class="filter-btn active" data-filter="all" onclick="setFilter('all',this)">All (30)</button>
@@ -152,196 +111,282 @@ a{color:inherit;text-decoration:none}
       <button class="filter-btn" data-filter="Appointments" onclick="setFilter('Appointments',this)">Appointments</button>
       <button class="filter-btn" data-filter="Customers" onclick="setFilter('Customers',this)">Customers</button>
     </div>
-
   </div>
 </div>
-
-<!-- CONTENT -->
 <div class="container">
   <div class="results-info">
-    <p class="results-count" id="results-count">Showing <span id="showing-num">30</span> of <span>30</span> articles</p>
+    <p class="results-count">Showing <span id="showing-num">30</span> of <span>30</span> articles</p>
   </div>
-
   <div class="blog-grid" id="blog-grid">
     <a href="how-to-manage-business-with-multiple-employees-cameroon.html" class="post-card" data-lang="en" data-tag="staff management" data-title="how to manage a business with multiple employees in cameroon" data-desc="adding staff is supposed to help your business grow. but without the right systems, more employees means more risk.">
-      <div class="pc-top"><span class="tag tag-red">Staff Management</span><span class="pc-lang">🇬🇧 EN</span></div>
-      <h2 class="pc-title">How to Manage a Business With Multiple Employees in Cameroon</h2>
-      <p class="pc-desc">Adding staff is supposed to help your business grow. But without the right systems, more employees means more risk.</p>
-      <div class="pc-foot"><span class="pc-date">May 18, 2026 · 6 min read</span><span class="pc-read">Read article →</span></div>
+      <img src="multiple-employees.png" alt="How to Manage a Business With Multiple Employees in Cameroon" class="pc-img" loading="lazy"/>
+      <div class="pc-body">
+        <div class="pc-top"><span class="tag tag-red">Staff Management</span><span class="pc-lang">🇬🇧 EN</span></div>
+        <h2 class="pc-title">How to Manage a Business With Multiple Employees in Cameroon</h2>
+        <p class="pc-desc">Adding staff is supposed to help your business grow. But without the right systems, more employees means more risk.</p>
+        <div class="pc-foot"><span class="pc-date">May 18, 2026 · 6 min read</span><span class="pc-read">Read article →</span></div>
+      </div>
     </a>
     <a href="comment-gerer-entreprise-plusieurs-employes-cameroun.html" class="post-card" data-lang="fr" data-tag="gestion du personnel" data-title="comment gérer une entreprise avec plusieurs employés au cameroun" data-desc="recruter du personnel est censé aider votre entreprise à croître. mais sans les bons systèmes, plus d'employés signifie plus de risques.">
-      <div class="pc-top"><span class="tag tag-red">Gestion du Personnel</span><span class="pc-lang">🇫🇷 FR</span></div>
-      <h2 class="pc-title">Comment gérer une entreprise avec plusieurs employés au Cameroun</h2>
-      <p class="pc-desc">Recruter du personnel est censé aider votre entreprise à croître. Mais sans les bons systèmes, plus d'employés signifie plus de risques.</p>
-      <div class="pc-foot"><span class="pc-date">18 mai 2026 · 6 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
+      <img src="multiple-employees.png" alt="Comment gérer une entreprise avec plusieurs employés au Cameroun" class="pc-img" loading="lazy"/>
+      <div class="pc-body">
+        <div class="pc-top"><span class="tag tag-red">Gestion du Personnel</span><span class="pc-lang">🇫🇷 FR</span></div>
+        <h2 class="pc-title">Comment gérer une entreprise avec plusieurs employés au Cameroun</h2>
+        <p class="pc-desc">Recruter du personnel est censé aider votre entreprise à croître. Mais sans les bons systèmes, plus d'employés signifie plus de risques.</p>
+        <div class="pc-foot"><span class="pc-date">18 mai 2026 · 6 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
+      </div>
     </a>
     <a href="how-to-separate-personal-and-business-finances-cameroon.html" class="post-card" data-lang="en" data-tag="finance" data-title="how to separate your personal and business finances in cameroon" data-desc="mixing personal and business money is the most common financial mistake small business owners in cameroon make.">
-      <div class="pc-top"><span class="tag tag-blue">Finance</span><span class="pc-lang">🇬🇧 EN</span></div>
-      <h2 class="pc-title">How to Separate Your Personal and Business Finances in Cameroon</h2>
-      <p class="pc-desc">Mixing personal and business money is the most common financial mistake small business owners in Cameroon make.</p>
-      <div class="pc-foot"><span class="pc-date">May 18, 2026 · 5 min read</span><span class="pc-read">Read article →</span></div>
+      <img src="separate-finances.png" alt="How to Separate Your Personal and Business Finances in Cameroon" class="pc-img" loading="lazy"/>
+      <div class="pc-body">
+        <div class="pc-top"><span class="tag tag-blue">Finance</span><span class="pc-lang">🇬🇧 EN</span></div>
+        <h2 class="pc-title">How to Separate Your Personal and Business Finances in Cameroon</h2>
+        <p class="pc-desc">Mixing personal and business money is the most common financial mistake small business owners in Cameroon make.</p>
+        <div class="pc-foot"><span class="pc-date">May 18, 2026 · 5 min read</span><span class="pc-read">Read article →</span></div>
+      </div>
     </a>
     <a href="comment-separer-finances-personnelles-professionnelles-cameroun.html" class="post-card" data-lang="fr" data-tag="finance" data-title="comment séparer vos finances personnelles et professionnelles au cameroun" data-desc="mélanger l'argent personnel et professionnel est l'erreur financière la plus courante des gérants de pme au cameroun.">
-      <div class="pc-top"><span class="tag tag-blue">Finance</span><span class="pc-lang">🇫🇷 FR</span></div>
-      <h2 class="pc-title">Comment séparer vos finances personnelles et professionnelles au Cameroun</h2>
-      <p class="pc-desc">Mélanger l'argent personnel et professionnel est l'erreur financière la plus courante des gérants de PME au Cameroun.</p>
-      <div class="pc-foot"><span class="pc-date">18 mai 2026 · 5 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
+      <img src="separate-finances.png" alt="Comment séparer vos finances personnelles et professionnelles au Cameroun" class="pc-img" loading="lazy"/>
+      <div class="pc-body">
+        <div class="pc-top"><span class="tag tag-blue">Finance</span><span class="pc-lang">🇫🇷 FR</span></div>
+        <h2 class="pc-title">Comment séparer vos finances personnelles et professionnelles au Cameroun</h2>
+        <p class="pc-desc">Mélanger l'argent personnel et professionnel est l'erreur financière la plus courante des gérants de PME au Cameroun.</p>
+        <div class="pc-foot"><span class="pc-date">18 mai 2026 · 5 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
+      </div>
     </a>
     <a href="how-to-use-service-catalogue-grow-business-cameroon.html" class="post-card" data-lang="en" data-tag="marketing" data-title="how to use a service catalogue to grow your business in cameroon" data-desc="a service catalogue is one of the most underused growth tools for small businesses in cameroon.">
-      <div class="pc-top"><span class="tag tag-green">Marketing</span><span class="pc-lang">🇬🇧 EN</span></div>
-      <h2 class="pc-title">How to Use a Service Catalogue to Grow Your Business in Cameroon</h2>
-      <p class="pc-desc">A service catalogue is one of the most underused growth tools for small businesses in Cameroon.</p>
-      <div class="pc-foot"><span class="pc-date">May 18, 2026 · 5 min read</span><span class="pc-read">Read article →</span></div>
+      <img src="service-catalogue.png" alt="How to Use a Service Catalogue to Grow Your Business in Cameroon" class="pc-img" loading="lazy"/>
+      <div class="pc-body">
+        <div class="pc-top"><span class="tag tag-green">Marketing</span><span class="pc-lang">🇬🇧 EN</span></div>
+        <h2 class="pc-title">How to Use a Service Catalogue to Grow Your Business in Cameroon</h2>
+        <p class="pc-desc">A service catalogue is one of the most underused growth tools for small businesses in Cameroon.</p>
+        <div class="pc-foot"><span class="pc-date">May 18, 2026 · 5 min read</span><span class="pc-read">Read article →</span></div>
+      </div>
     </a>
     <a href="comment-utiliser-catalogue-prestations-developper-entreprise-cameroun.html" class="post-card" data-lang="fr" data-tag="marketing" data-title="comment utiliser un catalogue de prestations pour développer votre entreprise au cameroun" data-desc="un catalogue de prestations est l'un des outils de croissance les plus sous-utilisés par les pme camerounaises.">
-      <div class="pc-top"><span class="tag tag-green">Marketing</span><span class="pc-lang">🇫🇷 FR</span></div>
-      <h2 class="pc-title">Comment utiliser un catalogue de prestations pour développer votre entreprise au Cameroun</h2>
-      <p class="pc-desc">Un catalogue de prestations est l'un des outils de croissance les plus sous-utilisés par les PME camerounaises.</p>
-      <div class="pc-foot"><span class="pc-date">18 mai 2026 · 5 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
+      <img src="service-catalogue.png" alt="Comment utiliser un catalogue de prestations pour développer votre entreprise au Cameroun" class="pc-img" loading="lazy"/>
+      <div class="pc-body">
+        <div class="pc-top"><span class="tag tag-green">Marketing</span><span class="pc-lang">🇫🇷 FR</span></div>
+        <h2 class="pc-title">Comment utiliser un catalogue de prestations pour développer votre entreprise au Cameroun</h2>
+        <p class="pc-desc">Un catalogue de prestations est l'un des outils de croissance les plus sous-utilisés par les PME camerounaises.</p>
+        <div class="pc-foot"><span class="pc-date">18 mai 2026 · 5 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
+      </div>
     </a>
     <a href="how-to-track-customer-debts-and-get-paid-faster-cameroon.html" class="post-card" data-lang="en" data-tag="finance" data-title="how to track customer debts and get paid faster in cameroon" data-desc="selling on credit is unavoidable in cameroon. but untracked credit destroys cash flow silently.">
-      <div class="pc-top"><span class="tag tag-red">Finance</span><span class="pc-lang">🇬🇧 EN</span></div>
-      <h2 class="pc-title">How to Track Customer Debts and Get Paid Faster in Cameroon</h2>
-      <p class="pc-desc">Selling on credit is unavoidable in Cameroon. But untracked credit destroys cash flow silently.</p>
-      <div class="pc-foot"><span class="pc-date">May 12, 2026 · 6 min read</span><span class="pc-read">Read article →</span></div>
+      <img src="customer-debts.png" alt="How to Track Customer Debts and Get Paid Faster in Cameroon" class="pc-img" loading="lazy"/>
+      <div class="pc-body">
+        <div class="pc-top"><span class="tag tag-red">Finance</span><span class="pc-lang">🇬🇧 EN</span></div>
+        <h2 class="pc-title">How to Track Customer Debts and Get Paid Faster in Cameroon</h2>
+        <p class="pc-desc">Selling on credit is unavoidable in Cameroon. But untracked credit destroys cash flow silently.</p>
+        <div class="pc-foot"><span class="pc-date">May 12, 2026 · 6 min read</span><span class="pc-read">Read article →</span></div>
+      </div>
     </a>
     <a href="comment-suivre-dettes-clients-etre-paye-plus-vite-cameroun.html" class="post-card" data-lang="fr" data-tag="finance" data-title="comment suivre les dettes clients et être payé plus vite au cameroun" data-desc="vendre à crédit est inévitable au cameroun. mais un crédit non suivi détruit la trésorerie en silence.">
-      <div class="pc-top"><span class="tag tag-red">Finance</span><span class="pc-lang">🇫🇷 FR</span></div>
-      <h2 class="pc-title">Comment suivre les dettes clients et être payé plus vite au Cameroun</h2>
-      <p class="pc-desc">Vendre à crédit est inévitable au Cameroun. Mais un crédit non suivi détruit la trésorerie en silence.</p>
-      <div class="pc-foot"><span class="pc-date">12 mai 2026 · 6 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
+      <img src="customer-debts.png" alt="Comment suivre les dettes clients et être payé plus vite au Cameroun" class="pc-img" loading="lazy"/>
+      <div class="pc-body">
+        <div class="pc-top"><span class="tag tag-red">Finance</span><span class="pc-lang">🇫🇷 FR</span></div>
+        <h2 class="pc-title">Comment suivre les dettes clients et être payé plus vite au Cameroun</h2>
+        <p class="pc-desc">Vendre à crédit est inévitable au Cameroun. Mais un crédit non suivi détruit la trésorerie en silence.</p>
+        <div class="pc-foot"><span class="pc-date">12 mai 2026 · 6 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
+      </div>
     </a>
     <a href="how-to-create-professional-receipt-business-cameroon.html" class="post-card" data-lang="en" data-tag="business tips" data-title="how to create a professional receipt for your business in cameroon" data-desc="a professional receipt builds customer trust, reduces disputes, and makes your business look serious.">
-      <div class="pc-top"><span class="tag tag-blue">Business Tips</span><span class="pc-lang">🇬🇧 EN</span></div>
-      <h2 class="pc-title">How to Create a Professional Receipt for Your Business in Cameroon</h2>
-      <p class="pc-desc">A professional receipt builds customer trust, reduces disputes, and makes your business look serious.</p>
-      <div class="pc-foot"><span class="pc-date">May 12, 2026 · 5 min read</span><span class="pc-read">Read article →</span></div>
+      <img src="professional-receipt.png" alt="How to Create a Professional Receipt for Your Business in Cameroon" class="pc-img" loading="lazy"/>
+      <div class="pc-body">
+        <div class="pc-top"><span class="tag tag-blue">Business Tips</span><span class="pc-lang">🇬🇧 EN</span></div>
+        <h2 class="pc-title">How to Create a Professional Receipt for Your Business in Cameroon</h2>
+        <p class="pc-desc">A professional receipt builds customer trust, reduces disputes, and makes your business look serious.</p>
+        <div class="pc-foot"><span class="pc-date">May 12, 2026 · 5 min read</span><span class="pc-read">Read article →</span></div>
+      </div>
     </a>
     <a href="comment-creer-recu-professionnel-entreprise-cameroun.html" class="post-card" data-lang="fr" data-tag="conseils business" data-title="comment créer un reçu professionnel pour votre entreprise au cameroun" data-desc="un reçu professionnel renforce la confiance client, réduit les litiges et donne une image sérieuse à votre entreprise.">
-      <div class="pc-top"><span class="tag tag-blue">Conseils Business</span><span class="pc-lang">🇫🇷 FR</span></div>
-      <h2 class="pc-title">Comment créer un reçu professionnel pour votre entreprise au Cameroun</h2>
-      <p class="pc-desc">Un reçu professionnel renforce la confiance client, réduit les litiges et donne une image sérieuse à votre entreprise.</p>
-      <div class="pc-foot"><span class="pc-date">12 mai 2026 · 5 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
+      <img src="professional-receipt.png" alt="Comment créer un reçu professionnel pour votre entreprise au Cameroun" class="pc-img" loading="lazy"/>
+      <div class="pc-body">
+        <div class="pc-top"><span class="tag tag-blue">Conseils Business</span><span class="pc-lang">🇫🇷 FR</span></div>
+        <h2 class="pc-title">Comment créer un reçu professionnel pour votre entreprise au Cameroun</h2>
+        <p class="pc-desc">Un reçu professionnel renforce la confiance client, réduit les litiges et donne une image sérieuse à votre entreprise.</p>
+        <div class="pc-foot"><span class="pc-date">12 mai 2026 · 5 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
+      </div>
     </a>
     <a href="how-to-run-rental-business-cameroon-complete-guide.html" class="post-card" data-lang="en" data-tag="rental" data-title="how to run a rental business in cameroon — a complete guide" data-desc="rental businesses are growing fast in cameroon. without the right systems, rentals become a cash flow nightmare.">
-      <div class="pc-top"><span class="tag tag-amber">Rental</span><span class="pc-lang">🇬🇧 EN</span></div>
-      <h2 class="pc-title">How to Run a Rental Business in Cameroon — A Complete Guide</h2>
-      <p class="pc-desc">Rental businesses are growing fast in Cameroon. Without the right systems, rentals become a cash flow nightmare.</p>
-      <div class="pc-foot"><span class="pc-date">May 12, 2026 · 7 min read</span><span class="pc-read">Read article →</span></div>
+      <img src="rental-business.png" alt="How to Run a Rental Business in Cameroon — A Complete Guide" class="pc-img" loading="lazy"/>
+      <div class="pc-body">
+        <div class="pc-top"><span class="tag tag-amber">Rental</span><span class="pc-lang">🇬🇧 EN</span></div>
+        <h2 class="pc-title">How to Run a Rental Business in Cameroon — A Complete Guide</h2>
+        <p class="pc-desc">Rental businesses are growing fast in Cameroon. Without the right systems, rentals become a cash flow nightmare.</p>
+        <div class="pc-foot"><span class="pc-date">May 12, 2026 · 7 min read</span><span class="pc-read">Read article →</span></div>
+      </div>
     </a>
     <a href="comment-gerer-entreprise-location-cameroun-guide-complet.html" class="post-card" data-lang="fr" data-tag="location" data-title="comment gérer une entreprise de location au cameroun — guide complet" data-desc="les entreprises de location croissent rapidement au cameroun. sans systèmes adaptés, la location devient un cauchemar de trésorerie.">
-      <div class="pc-top"><span class="tag tag-amber">Location</span><span class="pc-lang">🇫🇷 FR</span></div>
-      <h2 class="pc-title">Comment gérer une entreprise de location au Cameroun — Guide complet</h2>
-      <p class="pc-desc">Les entreprises de location croissent rapidement au Cameroun. Sans systèmes adaptés, la location devient un cauchemar de trésorerie.</p>
-      <div class="pc-foot"><span class="pc-date">12 mai 2026 · 7 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
+      <img src="rental-business.png" alt="Comment gérer une entreprise de location au Cameroun — Guide complet" class="pc-img" loading="lazy"/>
+      <div class="pc-body">
+        <div class="pc-top"><span class="tag tag-amber">Location</span><span class="pc-lang">🇫🇷 FR</span></div>
+        <h2 class="pc-title">Comment gérer une entreprise de location au Cameroun — Guide complet</h2>
+        <p class="pc-desc">Les entreprises de location croissent rapidement au Cameroun. Sans systèmes adaptés, la location devient un cauchemar de trésorerie.</p>
+        <div class="pc-foot"><span class="pc-date">12 mai 2026 · 7 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
+      </div>
     </a>
     <a href="how-to-manage-staff-and-protect-your-business-from-theft.html" class="post-card" data-lang="en" data-tag="staff management" data-title="how to manage staff and protect your business from theft" data-desc="most small business theft in cameroon happens quietly — unrecorded sales, below-price selling, stock that disappears.">
-      <div class="pc-top"><span class="tag tag-red">Staff Management</span><span class="pc-lang">🇬🇧 EN</span></div>
-      <h2 class="pc-title">How to Manage Staff and Protect Your Business From Theft</h2>
-      <p class="pc-desc">Most small business theft in Cameroon happens quietly — unrecorded sales, below-price selling, stock that disappears.</p>
-      <div class="pc-foot"><span class="pc-date">May 4, 2026 · 6 min read</span><span class="pc-read">Read article →</span></div>
+      <img src="staff-theft.png" alt="How to Manage Staff and Protect Your Business From Theft" class="pc-img" loading="lazy"/>
+      <div class="pc-body">
+        <div class="pc-top"><span class="tag tag-red">Staff Management</span><span class="pc-lang">🇬🇧 EN</span></div>
+        <h2 class="pc-title">How to Manage Staff and Protect Your Business From Theft</h2>
+        <p class="pc-desc">Most small business theft in Cameroon happens quietly — unrecorded sales, below-price selling, stock that disappears.</p>
+        <div class="pc-foot"><span class="pc-date">May 4, 2026 · 6 min read</span><span class="pc-read">Read article →</span></div>
+      </div>
     </a>
     <a href="comment-gerer-personnel-proteger-entreprise-vols.html" class="post-card" data-lang="fr" data-tag="gestion du personnel" data-title="comment gérer votre personnel et protéger votre entreprise contre les vols" data-desc="la plupart des pertes dans les pme camerounaises viennent des ventes non enregistrées et des prix bradés.">
-      <div class="pc-top"><span class="tag tag-red">Gestion du Personnel</span><span class="pc-lang">🇫🇷 FR</span></div>
-      <h2 class="pc-title">Comment gérer votre personnel et protéger votre entreprise contre les vols</h2>
-      <p class="pc-desc">La plupart des pertes dans les PME camerounaises viennent des ventes non enregistrées et des prix bradés.</p>
-      <div class="pc-foot"><span class="pc-date">4 mai 2026 · 6 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
+      <img src="staff-theft.png" alt="Comment gérer votre personnel et protéger votre entreprise contre les vols" class="pc-img" loading="lazy"/>
+      <div class="pc-body">
+        <div class="pc-top"><span class="tag tag-red">Gestion du Personnel</span><span class="pc-lang">🇫🇷 FR</span></div>
+        <h2 class="pc-title">Comment gérer votre personnel et protéger votre entreprise contre les vols</h2>
+        <p class="pc-desc">La plupart des pertes dans les PME camerounaises viennent des ventes non enregistrées et des prix bradés.</p>
+        <div class="pc-foot"><span class="pc-date">4 mai 2026 · 6 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
+      </div>
     </a>
     <a href="how-to-get-more-customers-through-whatsapp-cameroon.html" class="post-card" data-lang="en" data-tag="marketing" data-title="how to get more customers through whatsapp in cameroon" data-desc="whatsapp is the most used business communication tool in cameroon. the businesses that grow use it proactively.">
-      <div class="pc-top"><span class="tag tag-green">Marketing</span><span class="pc-lang">🇬🇧 EN</span></div>
-      <h2 class="pc-title">How to Get More Customers Through WhatsApp in Cameroon</h2>
-      <p class="pc-desc">WhatsApp is the most used business communication tool in Cameroon. The businesses that grow use it proactively.</p>
-      <div class="pc-foot"><span class="pc-date">May 4, 2026 · 5 min read</span><span class="pc-read">Read article →</span></div>
+      <img src="whatsapp-customers.png" alt="How to Get More Customers Through WhatsApp in Cameroon" class="pc-img" loading="lazy"/>
+      <div class="pc-body">
+        <div class="pc-top"><span class="tag tag-green">Marketing</span><span class="pc-lang">🇬🇧 EN</span></div>
+        <h2 class="pc-title">How to Get More Customers Through WhatsApp in Cameroon</h2>
+        <p class="pc-desc">WhatsApp is the most used business communication tool in Cameroon. The businesses that grow use it proactively.</p>
+        <div class="pc-foot"><span class="pc-date">May 4, 2026 · 5 min read</span><span class="pc-read">Read article →</span></div>
+      </div>
     </a>
     <a href="comment-obtenir-plus-clients-whatsapp-cameroun.html" class="post-card" data-lang="fr" data-tag="marketing" data-title="comment obtenir plus de clients grâce à whatsapp au cameroun" data-desc="whatsapp est le principal outil de communication commerciale au cameroun.">
-      <div class="pc-top"><span class="tag tag-green">Marketing</span><span class="pc-lang">🇫🇷 FR</span></div>
-      <h2 class="pc-title">Comment obtenir plus de clients grâce à WhatsApp au Cameroun</h2>
-      <p class="pc-desc">WhatsApp est le principal outil de communication commerciale au Cameroun.</p>
-      <div class="pc-foot"><span class="pc-date">4 mai 2026 · 5 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
+      <img src="whatsapp-customers.png" alt="Comment obtenir plus de clients grâce à WhatsApp au Cameroun" class="pc-img" loading="lazy"/>
+      <div class="pc-body">
+        <div class="pc-top"><span class="tag tag-green">Marketing</span><span class="pc-lang">🇫🇷 FR</span></div>
+        <h2 class="pc-title">Comment obtenir plus de clients grâce à WhatsApp au Cameroun</h2>
+        <p class="pc-desc">WhatsApp est le principal outil de communication commerciale au Cameroun.</p>
+        <div class="pc-foot"><span class="pc-date">4 mai 2026 · 5 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
+      </div>
     </a>
     <a href="how-to-know-if-your-business-is-actually-making-money.html" class="post-card" data-lang="en" data-tag="finance" data-title="how to know if your business is actually making money" data-desc="many business owners in cameroon confuse being busy with being profitable.">
-      <div class="pc-top"><span class="tag tag-amber">Finance</span><span class="pc-lang">🇬🇧 EN</span></div>
-      <h2 class="pc-title">How to Know If Your Business Is Actually Making Money</h2>
-      <p class="pc-desc">Many business owners in Cameroon confuse being busy with being profitable.</p>
-      <div class="pc-foot"><span class="pc-date">May 4, 2026 · 5 min read</span><span class="pc-read">Read article →</span></div>
+      <img src="business-profit.png" alt="How to Know If Your Business Is Actually Making Money" class="pc-img" loading="lazy"/>
+      <div class="pc-body">
+        <div class="pc-top"><span class="tag tag-amber">Finance</span><span class="pc-lang">🇬🇧 EN</span></div>
+        <h2 class="pc-title">How to Know If Your Business Is Actually Making Money</h2>
+        <p class="pc-desc">Many business owners in Cameroon confuse being busy with being profitable.</p>
+        <div class="pc-foot"><span class="pc-date">May 4, 2026 · 5 min read</span><span class="pc-read">Read article →</span></div>
+      </div>
     </a>
     <a href="comment-savoir-si-votre-entreprise-gagne-vraiment-de-largent.html" class="post-card" data-lang="fr" data-tag="finance" data-title="comment savoir si votre entreprise gagne vraiment de l'argent" data-desc="beaucoup de gérants au cameroun confondent être occupé avec être rentable.">
-      <div class="pc-top"><span class="tag tag-amber">Finance</span><span class="pc-lang">🇫🇷 FR</span></div>
-      <h2 class="pc-title">Comment savoir si votre entreprise gagne vraiment de l'argent</h2>
-      <p class="pc-desc">Beaucoup de gérants au Cameroun confondent être occupé avec être rentable.</p>
-      <div class="pc-foot"><span class="pc-date">4 mai 2026 · 5 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
+      <img src="business-profit.png" alt="Comment savoir si votre entreprise gagne vraiment de l'argent" class="pc-img" loading="lazy"/>
+      <div class="pc-body">
+        <div class="pc-top"><span class="tag tag-amber">Finance</span><span class="pc-lang">🇫🇷 FR</span></div>
+        <h2 class="pc-title">Comment savoir si votre entreprise gagne vraiment de l'argent</h2>
+        <p class="pc-desc">Beaucoup de gérants au Cameroun confondent être occupé avec être rentable.</p>
+        <div class="pc-foot"><span class="pc-date">4 mai 2026 · 5 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
+      </div>
     </a>
     <a href="how-to-price-your-products-to-make-a-real-profit.html" class="post-card" data-lang="en" data-tag="business tips" data-title="how to price your products to make a real profit" data-desc="most small business owners in cameroon price by feel. without calculating your real cost, you can lose money.">
-      <div class="pc-top"><span class="tag tag-amber">Business Tips</span><span class="pc-lang">🇬🇧 EN</span></div>
-      <h2 class="pc-title">How to Price Your Products to Make a Real Profit</h2>
-      <p class="pc-desc">Most small business owners in Cameroon price by feel. Without calculating your real cost, you can lose money.</p>
-      <div class="pc-foot"><span class="pc-date">April 28, 2026 · 6 min read</span><span class="pc-read">Read article →</span></div>
+      <img src="product-pricing.png" alt="How to Price Your Products to Make a Real Profit" class="pc-img" loading="lazy"/>
+      <div class="pc-body">
+        <div class="pc-top"><span class="tag tag-amber">Business Tips</span><span class="pc-lang">🇬🇧 EN</span></div>
+        <h2 class="pc-title">How to Price Your Products to Make a Real Profit</h2>
+        <p class="pc-desc">Most small business owners in Cameroon price by feel. Without calculating your real cost, you can lose money.</p>
+        <div class="pc-foot"><span class="pc-date">April 28, 2026 · 6 min read</span><span class="pc-read">Read article →</span></div>
+      </div>
     </a>
     <a href="comment-fixer-prix-produits-pour-faire-vrai-benefice.html" class="post-card" data-lang="fr" data-tag="conseils business" data-title="comment fixer les prix de vos produits pour faire un vrai bénéfice" data-desc="la plupart des gérants fixent leurs prix à l'instinct. sans calculer votre coût réel, vous pouvez perdre de l'argent.">
-      <div class="pc-top"><span class="tag tag-amber">Conseils Business</span><span class="pc-lang">🇫🇷 FR</span></div>
-      <h2 class="pc-title">Comment fixer les prix de vos produits pour faire un vrai bénéfice</h2>
-      <p class="pc-desc">La plupart des gérants fixent leurs prix à l'instinct. Sans calculer votre coût réel, vous pouvez perdre de l'argent.</p>
-      <div class="pc-foot"><span class="pc-date">28 avril 2026 · 6 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
+      <img src="product-pricing.png" alt="Comment fixer les prix de vos produits pour faire un vrai bénéfice" class="pc-img" loading="lazy"/>
+      <div class="pc-body">
+        <div class="pc-top"><span class="tag tag-amber">Conseils Business</span><span class="pc-lang">🇫🇷 FR</span></div>
+        <h2 class="pc-title">Comment fixer les prix de vos produits pour faire un vrai bénéfice</h2>
+        <p class="pc-desc">La plupart des gérants fixent leurs prix à l'instinct. Sans calculer votre coût réel, vous pouvez perdre de l'argent.</p>
+        <div class="pc-foot"><span class="pc-date">28 avril 2026 · 6 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
+      </div>
     </a>
     <a href="mobile-money-cameroon-business-how-to-track-it.html" class="post-card" data-lang="en" data-tag="payments" data-title="how mobile money is changing business in cameroon — and how to track it" data-desc="orange money and mtn momo have transformed how cameroonians pay. every unrecorded payment is money that disappears.">
-      <div class="pc-top"><span class="tag tag-green">Payments</span><span class="pc-lang">🇬🇧 EN</span></div>
-      <h2 class="pc-title">How Mobile Money Is Changing Business in Cameroon — And How to Track It</h2>
-      <p class="pc-desc">Orange Money and MTN MoMo have transformed how Cameroonians pay. Every unrecorded payment is money that disappears.</p>
-      <div class="pc-foot"><span class="pc-date">April 28, 2026 · 5 min read</span><span class="pc-read">Read article →</span></div>
+      <img src="mobile-money.png" alt="How Mobile Money Is Changing Business in Cameroon — And How to Track It" class="pc-img" loading="lazy"/>
+      <div class="pc-body">
+        <div class="pc-top"><span class="tag tag-green">Payments</span><span class="pc-lang">🇬🇧 EN</span></div>
+        <h2 class="pc-title">How Mobile Money Is Changing Business in Cameroon — And How to Track It</h2>
+        <p class="pc-desc">Orange Money and MTN MoMo have transformed how Cameroonians pay. Every unrecorded payment is money that disappears.</p>
+        <div class="pc-foot"><span class="pc-date">April 28, 2026 · 5 min read</span><span class="pc-read">Read article →</span></div>
+      </div>
     </a>
     <a href="mobile-money-cameroun-business-comment-le-suivre.html" class="post-card" data-lang="fr" data-tag="paiements" data-title="comment le mobile money change les affaires au cameroun — et comment le suivre" data-desc="orange money et mtn momo ont transformé la façon dont les camerounais paient.">
-      <div class="pc-top"><span class="tag tag-green">Paiements</span><span class="pc-lang">🇫🇷 FR</span></div>
-      <h2 class="pc-title">Comment le Mobile Money change les affaires au Cameroun — et comment le suivre</h2>
-      <p class="pc-desc">Orange Money et MTN MoMo ont transformé la façon dont les Camerounais paient.</p>
-      <div class="pc-foot"><span class="pc-date">28 avril 2026 · 5 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
+      <img src="mobile-money.png" alt="Comment le Mobile Money change les affaires au Cameroun — et comment le suivre" class="pc-img" loading="lazy"/>
+      <div class="pc-body">
+        <div class="pc-top"><span class="tag tag-green">Paiements</span><span class="pc-lang">🇫🇷 FR</span></div>
+        <h2 class="pc-title">Comment le Mobile Money change les affaires au Cameroun — et comment le suivre</h2>
+        <p class="pc-desc">Orange Money et MTN MoMo ont transformé la façon dont les Camerounais paient.</p>
+        <div class="pc-foot"><span class="pc-date">28 avril 2026 · 5 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
+      </div>
     </a>
     <a href="how-to-build-a-customer-base-that-keeps-coming-back.html" class="post-card" data-lang="en" data-tag="customers" data-title="how to build a customer base that keeps coming back" data-desc="getting a new customer is expensive. keeping an existing one is almost free.">
-      <div class="pc-top"><span class="tag tag-blue">Customers</span><span class="pc-lang">🇬🇧 EN</span></div>
-      <h2 class="pc-title">How to Build a Customer Base That Keeps Coming Back</h2>
-      <p class="pc-desc">Getting a new customer is expensive. Keeping an existing one is almost free.</p>
-      <div class="pc-foot"><span class="pc-date">April 28, 2026 · 5 min read</span><span class="pc-read">Read article →</span></div>
+      <img src="customer-base.png" alt="How to Build a Customer Base That Keeps Coming Back" class="pc-img" loading="lazy"/>
+      <div class="pc-body">
+        <div class="pc-top"><span class="tag tag-blue">Customers</span><span class="pc-lang">🇬🇧 EN</span></div>
+        <h2 class="pc-title">How to Build a Customer Base That Keeps Coming Back</h2>
+        <p class="pc-desc">Getting a new customer is expensive. Keeping an existing one is almost free.</p>
+        <div class="pc-foot"><span class="pc-date">April 28, 2026 · 5 min read</span><span class="pc-read">Read article →</span></div>
+      </div>
     </a>
     <a href="comment-construire-base-clients-qui-revient-toujours.html" class="post-card" data-lang="fr" data-tag="clients" data-title="comment construire une base de clients qui revient toujours" data-desc="acquérir un nouveau client coûte cher. fidéliser un client existant est presque gratuit.">
-      <div class="pc-top"><span class="tag tag-blue">Clients</span><span class="pc-lang">🇫🇷 FR</span></div>
-      <h2 class="pc-title">Comment construire une base de clients qui revient toujours</h2>
-      <p class="pc-desc">Acquérir un nouveau client coûte cher. Fidéliser un client existant est presque gratuit.</p>
-      <div class="pc-foot"><span class="pc-date">28 avril 2026 · 5 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
+      <img src="customer-base.png" alt="Comment construire une base de clients qui revient toujours" class="pc-img" loading="lazy"/>
+      <div class="pc-body">
+        <div class="pc-top"><span class="tag tag-blue">Clients</span><span class="pc-lang">🇫🇷 FR</span></div>
+        <h2 class="pc-title">Comment construire une base de clients qui revient toujours</h2>
+        <p class="pc-desc">Acquérir un nouveau client coûte cher. Fidéliser un client existant est presque gratuit.</p>
+        <div class="pc-foot"><span class="pc-date">28 avril 2026 · 5 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
+      </div>
     </a>
-    <a href="why-your-business-needs-an-online-booking-page.html" class="post-card" data-lang="en" data-tag="appointments" data-title="why your business needs an online booking page" data-desc="if your customers still book by calling you directly, you're losing appointments you never knew about.">
-      <div class="pc-top"><span class="tag tag-blue">Appointments</span><span class="pc-lang">🇬🇧 EN</span></div>
-      <h2 class="pc-title">Why Your Business Needs an Online Booking Page</h2>
-      <p class="pc-desc">If your customers still book by calling you directly, you're losing appointments you never knew about.</p>
-      <div class="pc-foot"><span class="pc-date">April 20, 2026 · 5 min read</span><span class="pc-read">Read article →</span></div>
+    <a href="why-your-business-needs-an-online-booking-page.html" class="post-card" data-lang="en" data-tag="appointments" data-title="why your business needs an online booking page" data-desc="if your customers still book by calling you directly, you are losing appointments you never knew about.">
+      <img src="online-booking.png" alt="Why Your Business Needs an Online Booking Page" class="pc-img" loading="lazy"/>
+      <div class="pc-body">
+        <div class="pc-top"><span class="tag tag-blue">Appointments</span><span class="pc-lang">🇬🇧 EN</span></div>
+        <h2 class="pc-title">Why Your Business Needs an Online Booking Page</h2>
+        <p class="pc-desc">If your customers still book by calling you directly, you are losing appointments you never knew about.</p>
+        <div class="pc-foot"><span class="pc-date">April 20, 2026 · 5 min read</span><span class="pc-read">Read article →</span></div>
+      </div>
     </a>
     <a href="pourquoi-votre-entreprise-a-besoin-dune-page-de-reservation-en-ligne.html" class="post-card" data-lang="fr" data-tag="rendez-vous" data-title="pourquoi votre entreprise a besoin d'une page de réservation en ligne" data-desc="si vos clients réservent encore en vous appelant, vous perdez des rendez-vous sans même le savoir.">
-      <div class="pc-top"><span class="tag tag-blue">Rendez-vous</span><span class="pc-lang">🇫🇷 FR</span></div>
-      <h2 class="pc-title">Pourquoi votre entreprise a besoin d'une page de réservation en ligne</h2>
-      <p class="pc-desc">Si vos clients réservent encore en vous appelant, vous perdez des rendez-vous sans même le savoir.</p>
-      <div class="pc-foot"><span class="pc-date">20 avril 2026 · 5 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
+      <img src="online-booking.png" alt="Pourquoi votre entreprise a besoin d'une page de réservation en ligne" class="pc-img" loading="lazy"/>
+      <div class="pc-body">
+        <div class="pc-top"><span class="tag tag-blue">Rendez-vous</span><span class="pc-lang">🇫🇷 FR</span></div>
+        <h2 class="pc-title">Pourquoi votre entreprise a besoin d'une page de réservation en ligne</h2>
+        <p class="pc-desc">Si vos clients réservent encore en vous appelant, vous perdez des rendez-vous sans même le savoir.</p>
+        <div class="pc-foot"><span class="pc-date">20 avril 2026 · 5 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
+      </div>
     </a>
     <a href="how-to-get-a-bank-loan-for-your-small-business-in-cameroon.html" class="post-card" data-lang="en" data-tag="finance" data-title="how to get a bank loan for your small business in cameroon" data-desc="banks don't say no because you're not profitable. they say no because you can't prove it.">
-      <div class="pc-top"><span class="tag tag-amber">Finance</span><span class="pc-lang">🇬🇧 EN</span></div>
-      <h2 class="pc-title">How to Get a Bank Loan for Your Small Business in Cameroon</h2>
-      <p class="pc-desc">Banks don't say no because you're not profitable. They say no because you can't prove it.</p>
-      <div class="pc-foot"><span class="pc-date">April 10, 2026 · 6 min read</span><span class="pc-read">Read article →</span></div>
+      <img src="bank-loan.png" alt="How to Get a Bank Loan for Your Small Business in Cameroon" class="pc-img" loading="lazy"/>
+      <div class="pc-body">
+        <div class="pc-top"><span class="tag tag-amber">Finance</span><span class="pc-lang">🇬🇧 EN</span></div>
+        <h2 class="pc-title">How to Get a Bank Loan for Your Small Business in Cameroon</h2>
+        <p class="pc-desc">Banks don't say no because you're not profitable. They say no because you can't prove it.</p>
+        <div class="pc-foot"><span class="pc-date">April 10, 2026 · 6 min read</span><span class="pc-read">Read article →</span></div>
+      </div>
     </a>
     <a href="obtenir-pret-bancaire-pme-cameroun.html" class="post-card" data-lang="fr" data-tag="finance" data-title="comment obtenir un prêt bancaire pour votre pme au cameroun" data-desc="les banques ne disent pas non car vous n'êtes pas rentable. elles disent non car vous ne pouvez pas le prouver.">
-      <div class="pc-top"><span class="tag tag-amber">Finance</span><span class="pc-lang">🇫🇷 FR</span></div>
-      <h2 class="pc-title">Comment obtenir un prêt bancaire pour votre PME au Cameroun</h2>
-      <p class="pc-desc">Les banques ne disent pas non car vous n'êtes pas rentable. Elles disent non car vous ne pouvez pas le prouver.</p>
-      <div class="pc-foot"><span class="pc-date">10 avril 2026 · 6 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
+      <img src="bank-loan.png" alt="Comment obtenir un prêt bancaire pour votre PME au Cameroun" class="pc-img" loading="lazy"/>
+      <div class="pc-body">
+        <div class="pc-top"><span class="tag tag-amber">Finance</span><span class="pc-lang">🇫🇷 FR</span></div>
+        <h2 class="pc-title">Comment obtenir un prêt bancaire pour votre PME au Cameroun</h2>
+        <p class="pc-desc">Les banques ne disent pas non car vous n'êtes pas rentable. Elles disent non car vous ne pouvez pas le prouver.</p>
+        <div class="pc-foot"><span class="pc-date">10 avril 2026 · 6 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
+      </div>
     </a>
-    <a href="real-cost-of-managing-business-with-notebook.html" class="post-card" data-lang="en" data-tag="business tips" data-title="the real cost of managing your business with a notebook" data-desc="a notebook seems free. but the hidden costs add up to far more than any software subscription.">
-      <div class="pc-top"><span class="tag tag-green">Business Tips</span><span class="pc-lang">🇬🇧 EN</span></div>
-      <h2 class="pc-title">The Real Cost of Managing Your Business With a Notebook</h2>
-      <p class="pc-desc">A notebook seems free. But the hidden costs add up to far more than any software subscription.</p>
-      <div class="pc-foot"><span class="pc-date">March 28, 2026 · 5 min read</span><span class="pc-read">Read article →</span></div>
+    <a href="real-cost-of-managing-business-with-notebook.html" class="post-card" data-lang="en" data-tag="business tips" data-title="the real cost of managing your business with a notebook" data-desc="a notebook seems free. but the hidden costs of running your business without a proper system add up to far more than any software subscription.">
+      <img src="notebook-cost.png" alt="The Real Cost of Managing Your Business With a Notebook" class="pc-img" loading="lazy"/>
+      <div class="pc-body">
+        <div class="pc-top"><span class="tag tag-green">Business Tips</span><span class="pc-lang">🇬🇧 EN</span></div>
+        <h2 class="pc-title">The Real Cost of Managing Your Business With a Notebook</h2>
+        <p class="pc-desc">A notebook seems free. But the hidden costs of running your business without a proper system add up to far more than any software subscription.</p>
+        <div class="pc-foot"><span class="pc-date">March 28, 2026 · 5 min read</span><span class="pc-read">Read article →</span></div>
+      </div>
     </a>
-    <a href="vrai-cout-gerer-entreprise-avec-carnet.html" class="post-card" data-lang="fr" data-tag="conseils business" data-title="le vrai coût de gérer son entreprise avec un carnet" data-desc="un carnet semble gratuit. mais les coûts cachés sont bien plus élevés que n'importe quel abonnement.">
-      <div class="pc-top"><span class="tag tag-green">Conseils Business</span><span class="pc-lang">🇫🇷 FR</span></div>
-      <h2 class="pc-title">Le vrai coût de gérer son entreprise avec un carnet</h2>
-      <p class="pc-desc">Un carnet semble gratuit. Mais les coûts cachés sont bien plus élevés que n'importe quel abonnement.</p>
-      <div class="pc-foot"><span class="pc-date">28 mars 2026 · 5 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
+    <a href="vrai-cout-gerer-entreprise-avec-carnet.html" class="post-card" data-lang="fr" data-tag="conseils business" data-title="le vrai coût de gérer son entreprise avec un carnet" data-desc="un carnet semble gratuit. mais les coûts cachés sont bien plus élevés que n'importe quel abonnement logiciel.">
+      <img src="notebook-cost.png" alt="Le vrai coût de gérer son entreprise avec un carnet" class="pc-img" loading="lazy"/>
+      <div class="pc-body">
+        <div class="pc-top"><span class="tag tag-green">Conseils Business</span><span class="pc-lang">🇫🇷 FR</span></div>
+        <h2 class="pc-title">Le vrai coût de gérer son entreprise avec un carnet</h2>
+        <p class="pc-desc">Un carnet semble gratuit. Mais les coûts cachés sont bien plus élevés que n'importe quel abonnement logiciel.</p>
+        <div class="pc-foot"><span class="pc-date">28 mars 2026 · 5 min de lecture</span><span class="pc-read">Lire l'article →</span></div>
+      </div>
     </a>
     <div class="empty-state hidden" id="empty-state">
       <h3>No articles found</h3>
@@ -349,79 +394,49 @@ a{color:inherit;text-decoration:none}
     </div>
   </div>
 </div>
-
 <footer class="footer">
   <div class="container">
     <div class="foot-grid">
-      <div>
-        <svg width="160" height="44" viewBox="0 0 180 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;margin-bottom:8px">
-          <rect width="44" height="44" rx="12" fill="rgba(255,255,255,0.15)"/>
-          <circle cx="38" cy="10" r="5" fill="#10b981"/>
-          <text x="54" y="17" font-family="DM Sans,sans-serif" font-size="12" font-weight="500" fill="rgba(255,255,255,0.55)">Shop</text>
-          <text x="54" y="35" font-family="DM Sans,sans-serif" font-size="17" font-weight="800" fill="#fff">Track</text>
-        </svg>
-        <p class="foot-desc">The bilingual business platform built for Cameroon — expanding across Africa. Works offline.</p>
-      </div>
+      <div><svg width="160" height="44" viewBox="0 0 180 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;margin-bottom:8px"><rect width="44" height="44" rx="12" fill="rgba(255,255,255,0.15)"/><circle cx="38" cy="10" r="5" fill="#10b981"/><text x="54" y="17" font-family="DM Sans,sans-serif" font-size="12" font-weight="500" fill="rgba(255,255,255,0.55)">Shop</text><text x="54" y="35" font-family="DM Sans,sans-serif" font-size="17" font-weight="800" fill="#fff">Track</text></svg><p class="foot-desc">The bilingual business platform built for Cameroon — expanding across Africa. Works offline.</p></div>
       <div><div class="foot-col-ttl">Platform</div><ul class="foot-links"><li><a href="../index.html">Home</a></li><li><a href="index.html">Blog</a></li><li><a href="https://shoptrack.org" target="_blank">Open App</a></li></ul></div>
       <div><div class="foot-col-ttl">Contact</div><ul class="foot-links"><li><a href="mailto:info@shoptrack.work">info@shoptrack.work</a></li><li><a href="https://shoptrack.org/affiliates" target="_blank">Affiliates</a></li></ul></div>
     </div>
     <div class="foot-bot">© 2026 ShopTrack · shoptrack.live · shoptrack.org</div>
   </div>
 </footer>
-
 <script>
 let activeFilter = 'all';
-
 function setFilter(filter, btn) {
   activeFilter = filter;
-  // Update button states
-  document.querySelectorAll('.filter-btn').forEach(b => {
-    b.classList.remove('active','active-en','active-fr');
-  });
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active','active-en','active-fr'));
   if (filter === 'lang-en') btn.classList.add('active-en');
   else if (filter === 'lang-fr') btn.classList.add('active-fr');
   else btn.classList.add('active');
   applyFilters();
 }
-
 function applyFilters() {
   const searchTerm = document.getElementById('search-input').value.toLowerCase().trim();
   const cards = document.querySelectorAll('.post-card');
   let visible = 0;
-
   cards.forEach(card => {
     const lang = card.dataset.lang;
     const tag = card.dataset.tag;
     const title = card.dataset.title;
     const desc = card.dataset.desc;
-
-    // Language / category filter
     let filterMatch = true;
     if (activeFilter === 'lang-en') filterMatch = lang === 'en';
     else if (activeFilter === 'lang-fr') filterMatch = lang === 'fr';
     else if (activeFilter !== 'all') filterMatch = tag.includes(activeFilter.toLowerCase());
-
-    // Search filter
     let searchMatch = true;
-    if (searchTerm) {
-      searchMatch = title.includes(searchTerm) || desc.includes(searchTerm) || tag.includes(searchTerm);
-    }
-
+    if (searchTerm) searchMatch = title.includes(searchTerm) || desc.includes(searchTerm) || tag.includes(searchTerm);
     const show = filterMatch && searchMatch;
     card.classList.toggle('hidden', !show);
     if (show) visible++;
   });
-
   document.getElementById('showing-num').textContent = visible;
   document.getElementById('empty-state').classList.toggle('hidden', visible > 0);
 }
-
-// Live search
 document.getElementById('search-input').addEventListener('input', applyFilters);
-
-// Update all-button count on load
-document.querySelector('[data-filter="all"]').textContent = 'All (30)';
 </script>
-
 </body>
 </html>
